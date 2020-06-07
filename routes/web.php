@@ -16,7 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'HomeController@index');
 
 //Admin
-Route::get('/admin','AdminController@index');
-Route::get('/dashboard','AdminController@dashboard');
-Route::post('/login_admin','AdminController@login_admin');
-Route::get('/logout_admin','AdminController@logout_admin');
+
+    Route::get('/admin','AdminController@index');
+    Route::get('/dashboard','AdminController@dashboard');
+    Route::post('/login_admin','AdminController@login_admin');
+    Route::get('/logout_admin','AdminController@logout_admin');
+
+    //Category Product
+        Route::get('/add_category_product','CategoryProduct@add_category');
+        Route::get('/list_category_product','CategoryProduct@list_category');

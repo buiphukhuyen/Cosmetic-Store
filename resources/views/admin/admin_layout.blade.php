@@ -1,403 +1,1010 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Trình quản lý</title>
-
-    <!-- Custom fonts for this template-->
-    <link href="public/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-    <!-- Custom styles for this template-->
-    <link href="public/admin/css/sb-admin-2.min.css" rel="stylesheet">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta content="template language" name="keywords">
+    <meta content="Tamerlan Soziev" name="author">
+    <meta content="QuizHutech Admin" name="description">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="/favicon.ico" rel="shortcut icon">
+    <link href="apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" type="text/css">
+    <link href="public/admin//css/main.css?version=4.4.0" rel="stylesheet">
+    <script src="public/admin/components/jquery/dist/jquery.min.js"></script>
+    <link href="public/admin/components/select2/dist/css/select2.min.css" rel="stylesheet">
+    <link href="public/admin/components/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <link href="public/admin/components/dropzone/dist/dropzone.css" rel="stylesheet">
+    <link href="public/admin/components/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet">
+    <link href="public/admin/components/perfect-scrollbar/css/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="public/admin/components/slick-carousel/slick/slick.css" rel="stylesheet">
+    <link href="public/admin/components/fontawesome/css/all.min.css" rel="stylesheet" type="text/css">
 
 </head>
 
-<body id="page-top">
+<body class="menu-position-side menu-side-left full-screen with-content-panel">
+    <style>
+        .menu-w .logo-w img {
+            width: 50px;
+            height: auto;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    </style>
 
-<!-- Page Wrapper -->
-<div id="wrapper">
-
-    <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-        <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-            <div class="sidebar-brand-icon rotate-n-15">
-                <i class="fas fa-laugh-wink"></i>
-            </div>
-            <div class="sidebar-brand-text mx-3">Cosmetic<sup>store</sup></div>
-        </a>
-
-        <!-- Divider -->
-        <hr class="sidebar-divider my-0">
-
-        <!-- Nav Item - Dashboard -->
-        <li class="nav-item active">
-            <a class="nav-link" href="index.html">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Tổng quan</span></a>
-        </li>
-
-        <!-- Divider -->
-        <hr class="sidebar-divider">
-
-        <!-- Heading -->
-        <div class="sidebar-heading">
-            QUẢN LÝ
-        </div>
-
-        <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-fw fa-cog"></i>
-                <span>Danh mục sản phẩm</span>
-            </a>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Danh mục sản phẩm</h6>
-                    <a class="collapse-item" href="buttons.html">Thêm danh mục</a>
-                    <a class="collapse-item" href="cards.html">Danh sách danh mục</a>
-                </div>
-            </div>
-        </li>
-
-        <!-- Nav Item - Utilities Collapse Menu -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-                <i class="fas fa-fw fa-wrench"></i>
-                <span>Utilities</span>
-            </a>
-            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Custom Utilities:</h6>
-                    <a class="collapse-item" href="utilities-color.html">Colors</a>
-                    <a class="collapse-item" href="utilities-border.html">Borders</a>
-                    <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                    <a class="collapse-item" href="utilities-other.html">Other</a>
-                </div>
-            </div>
-        </li>
-
-        <!-- Divider -->
-        <hr class="sidebar-divider">
-
-        <!-- Heading -->
-        <div class="sidebar-heading">
-            Addons
-        </div>
-
-        <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-                <i class="fas fa-fw fa-folder"></i>
-                <span>Pages</span>
-            </a>
-            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Login Screens:</h6>
-                    <a class="collapse-item" href="login.html">Login</a>
-                    <a class="collapse-item" href="register.html">Register</a>
-                    <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                    <div class="collapse-divider"></div>
-                    <h6 class="collapse-header">Other Pages:</h6>
-                    <a class="collapse-item" href="404.html">404 Page</a>
-                    <a class="collapse-item" href="blank.html">Blank Page</a>
-                </div>
-            </div>
-        </li>
-
-        <!-- Nav Item - Charts -->
-        <li class="nav-item">
-            <a class="nav-link" href="charts.html">
-                <i class="fas fa-fw fa-chart-area"></i>
-                <span>Charts</span></a>
-        </li>
-
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="tables.html">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Tables</span></a>
-        </li>
-
-        <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block">
-
-        <!-- Sidebar Toggler (Sidebar) -->
-        <div class="text-center d-none d-md-inline">
-            <button class="rounded-circle border-0" id="sidebarToggle"></button>
-        </div>
-
-    </ul>
-    <!-- End of Sidebar -->
-
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
-
-        <!-- Main Content -->
-        <div id="content">
-
-            <!-- Topbar -->
-            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-                <!-- Sidebar Toggle (Topbar) -->
-                <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                    <i class="fa fa-bars"></i>
-                </button>
-
-                <!-- Topbar Search -->
-                <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                    <div class="input-group">
-                        <input type="text" class="form-control bg-light border-0 small" placeholder="Tìm kiếm..." aria-label="Search" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" type="button">
-                                <i class="fas fa-search fa-sm"></i>
-                            </button>
+    <div class="all-wrapper with-side-panel solid-bg-all">
+        <div class="layout-w">
+            <!--------------------
+            START - Mobile Menu
+            -------------------->
+            <div class="menu-mobile menu-activated-on-click color-scheme-dark">
+                <div class="mm-logo-buttons-w">
+                    <a class="mm-logo" href="index.html"><img src="/img/logo.png"><span>QuizHutech</span></a>
+                    <div class="mm-buttons">
+                        <div class="content-panel-open">
+                            <div class="os-icon os-icon-grid-circles"></div>
+                        </div>
+                        <div class="mobile-menu-trigger">
+                            <div class="os-icon os-icon-hamburger-menu-1"></div>
                         </div>
                     </div>
-                </form>
-
-                <!-- Topbar Navbar -->
-                <ul class="navbar-nav ml-auto">
-
-                    <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                    <li class="nav-item dropdown no-arrow d-sm-none">
-                        <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <!-- Dropdown - Messages -->
-                        <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-                            <form class="form-inline mr-auto w-100 navbar-search">
-                                <div class="input-group">
-                                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-primary" type="button">
-                                            <i class="fas fa-search fa-sm"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
+                </div>
+                <div class="menu-and-user">
+                    <div class="logged-user-w">
+                        <div class="avatar-w">
+                            <img alt="" src="https://scontent.fdad3-2.fna.fbcdn.net/v/t1.0-9/16427671_621067844760417_1913042800580632288_n.jpg?_nc_cat=107&_nc_sid=174925&_nc_ohc=qlKbnglvTlsAX_Pdv0C&_nc_ht=scontent.fdad3-2.fna&oh=2e23642f77396c59f2a983f8159e687d&oe=5ECBFE21">
                         </div>
-                    </li>
-
-                    <!-- Nav Item - Alerts -->
-                    <li class="nav-item dropdown no-arrow mx-1">
-                        <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-bell fa-fw"></i>
-                            <!-- Counter - Alerts -->
-                            <span class="badge badge-danger badge-counter">3+</span>
-                        </a>
-                        <!-- Dropdown - Alerts -->
-                        <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
-                            <h6 class="dropdown-header">
-                                Alerts Center
-                            </h6>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
-                                <div class="mr-3">
-                                    <div class="icon-circle bg-primary">
-                                        <i class="fas fa-file-alt text-white"></i>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="small text-gray-500">December 12, 2019</div>
-                                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                                </div>
-                            </a>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
-                                <div class="mr-3">
-                                    <div class="icon-circle bg-success">
-                                        <i class="fas fa-donate text-white"></i>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="small text-gray-500">December 7, 2019</div>
-                                    $290.29 has been deposited into your account!
-                                </div>
-                            </a>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
-                                <div class="mr-3">
-                                    <div class="icon-circle bg-warning">
-                                        <i class="fas fa-exclamation-triangle text-white"></i>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="small text-gray-500">December 2, 2019</div>
-                                    Spending Alert: We've noticed unusually high spending for your account.
-                                </div>
-                            </a>
-                            <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                        <div class="logged-user-info-w">
+                            <div class="logged-user-name">
+                                Maria Gomez
+                            </div>
+                            <div class="logged-user-role">
+                                Administrator
+                            </div>
                         </div>
-                    </li>
-
-                    <!-- Nav Item - Messages -->
-                    <li class="nav-item dropdown no-arrow mx-1">
-                        <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-envelope fa-fw"></i>
-                            <!-- Counter - Messages -->
-                            <span class="badge badge-danger badge-counter">7</span>
-                        </a>
-                        <!-- Dropdown - Messages -->
-                        <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
-                            <h6 class="dropdown-header">
-                                Message Center
-                            </h6>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
-                                <div class="dropdown-list-image mr-3">
-                                    <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
-                                    <div class="status-indicator bg-success"></div>
+                    </div>
+                    <!--------------------
+                    START - Mobile Menu List
+                    -------------------->
+                    <ul class="main-menu">
+                        <li class="has-sub-menu">
+                            <a href="index.html">
+                                <div class="icon-w">
+                                    <div class="os-icon os-icon-layout"></div>
                                 </div>
-                                <div class="font-weight-bold">
-                                    <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been having.</div>
-                                    <div class="small text-gray-500">Emily Fowler · 58m</div>
-                                </div>
+                                <span>QUẢN LÝ</span>
                             </a>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
-                                <div class="dropdown-list-image mr-3">
-                                    <img class="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="">
-                                    <div class="status-indicator"></div>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="index.html">Dashboard 1</a>
+                                </li>
+                                <li>
+                                    <a href="apps_crypto.html">Crypto Dashboard <strong class="badge badge-danger">Hot</strong></a>
+                                </li>
+                                <li>
+                                    <a href="apps_support_dashboard.html">Dashboard 3</a>
+                                </li>
+                                <li>
+                                    <a href="apps_projects.html">Dashboard 4</a>
+                                </li>
+                                <li>
+                                    <a href="apps_bank.html">Dashboard 5</a>
+                                </li>
+                                <li>
+                                    <a href="layouts_menu_top_image.html">Dashboard 6</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-sub-menu">
+                            <a href="layouts_menu_top_image.html">
+                                <div class="icon-w">
+                                    <div class="os-icon os-icon-layers"></div>
                                 </div>
-                                <div>
-                                    <div class="text-truncate">I have the photos that you ordered last month, how would you like them sent to you?</div>
-                                    <div class="small text-gray-500">Jae Chun · 1d</div>
-                                </div>
+                                <span>Menu Styles</span>
                             </a>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
-                                <div class="dropdown-list-image mr-3">
-                                    <img class="rounded-circle" src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt="">
-                                    <div class="status-indicator bg-warning"></div>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="layouts_menu_side_full.html">Side Menu Light</a>
+                                </li>
+                                <li>
+                                    <a href="layouts_menu_side_full_dark.html">Side Menu Dark</a>
+                                </li>
+                                <li>
+                                    <a href="layouts_menu_side_transparent.html">Side Menu Transparent <strong class="badge badge-danger">New</strong></a>
+                                </li>
+                                <li>
+                                    <a href="apps_pipeline.html">Side &amp; Top Dark</a>
+                                </li>
+                                <li>
+                                    <a href="apps_projects.html">Side &amp; Top</a>
+                                </li>
+                                <li>
+                                    <a href="layouts_menu_side_mini.html">Mini Side Menu</a>
+                                </li>
+                                <li>
+                                    <a href="layouts_menu_side_mini_dark.html">Mini Menu Dark</a>
+                                </li>
+                                <li>
+                                    <a href="layouts_menu_side_compact.html">Compact Side Menu</a>
+                                </li>
+                                <li>
+                                    <a href="layouts_menu_side_compact_dark.html">Compact Menu Dark</a>
+                                </li>
+                                <li>
+                                    <a href="layouts_menu_right.html">Right Menu</a>
+                                </li>
+                                <li>
+                                    <a href="layouts_menu_top.html">Top Menu Light</a>
+                                </li>
+                                <li>
+                                    <a href="layouts_menu_top_dark.html">Top Menu Dark</a>
+                                </li>
+                                <li>
+                                    <a href="layouts_menu_top_image.html">Top Menu Image <strong class="badge badge-danger">New</strong></a>
+                                </li>
+                                <li>
+                                    <a href="layouts_menu_sub_style_flyout.html">Sub Menu Flyout</a>
+                                </li>
+                                <li>
+                                    <a href="layouts_menu_sub_style_flyout_dark.html">Sub Flyout Dark</a>
+                                </li>
+                                <li>
+                                    <a href="layouts_menu_sub_style_flyout_bright.html">Sub Flyout Bright</a>
+                                </li>
+                                <li>
+                                    <a href="layouts_menu_side_compact_click.html">Menu Inside Click</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-sub-menu">
+                            <a href="apps_bank.html">
+                                <div class="icon-w">
+                                    <div class="os-icon os-icon-package"></div>
                                 </div>
-                                <div>
-                                    <div class="text-truncate">Last month's report looks great, I am very happy with the progress so far, keep up the good work!</div>
-                                    <div class="small text-gray-500">Morgan Alvarez · 2d</div>
-                                </div>
+                                <span>Applications</span>
                             </a>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
-                                <div class="dropdown-list-image mr-3">
-                                    <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
-                                    <div class="status-indicator bg-success"></div>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="apps_email.html">Email Application</a>
+                                </li>
+                                <li>
+                                    <a href="apps_support_dashboard.html">Support Dashboard</a>
+                                </li>
+                                <li>
+                                    <a href="apps_support_index.html">Tickets Index</a>
+                                </li>
+                                <li>
+                                    <a href="apps_crypto.html">Crypto Dashboard <strong class="badge badge-danger">New</strong></a>
+                                </li>
+                                <li>
+                                    <a href="apps_projects.html">Projects List</a>
+                                </li>
+                                <li>
+                                    <a href="apps_bank.html">Banking <strong class="badge badge-danger">New</strong></a>
+                                </li>
+                                <li>
+                                    <a href="apps_full_chat.html">Chat Application</a>
+                                </li>
+                                <li>
+                                    <a href="apps_todo.html">To Do Application <strong class="badge badge-danger">New</strong></a>
+                                </li>
+                                <li>
+                                    <a href="misc_chat.html">Popup Chat</a>
+                                </li>
+                                <li>
+                                    <a href="apps_pipeline.html">CRM Pipeline</a>
+                                </li>
+                                <li>
+                                    <a href="rentals_index_grid.html">Property Listing <strong class="badge badge-danger">New</strong></a>
+                                </li>
+                                <li>
+                                    <a href="misc_calendar.html">Calendar</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-sub-menu">
+                            <a href="#">
+                                <div class="icon-w">
+                                    <div class="os-icon os-icon-file-text"></div>
                                 </div>
-                                <div>
-                                    <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</div>
-                                    <div class="small text-gray-500">Chicken the Dog · 2w</div>
-                                </div>
+                                <span>Pages</span>
                             </a>
-                            <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="misc_invoice.html">Invoice</a>
+                                </li>
+                                <li>
+                                    <a href="rentals_index_grid.html">Property Listing <strong class="badge badge-danger">New</strong></a>
+                                </li>
+                                <li>
+                                    <a href="misc_charts.html">Charts</a>
+                                </li>
+                                <li>
+                                    <a href="auth_login.html">Login</a>
+                                </li>
+                                <li>
+                                    <a href="auth_register.html">Register</a>
+                                </li>
+                                <li>
+                                    <a href="auth_lock.html">Lock Screen</a>
+                                </li>
+                                <li>
+                                    <a href="misc_pricing_plans.html">Pricing Plans</a>
+                                </li>
+                                <li>
+                                    <a href="misc_error_404.html">Error 404</a>
+                                </li>
+                                <li>
+                                    <a href="misc_error_500.html">Error 500</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-sub-menu">
+                            <a href="#">
+                                <div class="icon-w">
+                                    <div class="os-icon os-icon-life-buoy"></div>
+                                </div>
+                                <span>UI Kit</span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="uikit_modals.html">Modals <strong class="badge badge-danger">New</strong></a>
+                                </li>
+                                <li>
+                                    <a href="uikit_alerts.html">Alerts</a>
+                                </li>
+                                <li>
+                                    <a href="uikit_grid.html">Grid</a>
+                                </li>
+                                <li>
+                                    <a href="uikit_progress.html">Progress</a>
+                                </li>
+                                <li>
+                                    <a href="uikit_popovers.html">Popover</a>
+                                </li>
+                                <li>
+                                    <a href="uikit_tooltips.html">Tooltips</a>
+                                </li>
+                                <li>
+                                    <a href="uikit_buttons.html">Buttons</a>
+                                </li>
+                                <li>
+                                    <a href="uikit_dropdowns.html">Dropdowns</a>
+                                </li>
+                                <li>
+                                    <a href="uikit_typography.html">Typography</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-sub-menu">
+                            <a href="#">
+                                <div class="icon-w">
+                                    <div class="os-icon os-icon-mail"></div>
+                                </div>
+                                <span>Emails</span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="emails_welcome.html">Welcome Email</a>
+                                </li>
+                                <li>
+                                    <a href="emails_order.html">Order Confirmation</a>
+                                </li>
+                                <li>
+                                    <a href="emails_payment_due.html">Payment Due</a>
+                                </li>
+                                <li>
+                                    <a href="emails_forgot.html">Forgot Password</a>
+                                </li>
+                                <li>
+                                    <a href="emails_activate.html">Activate Account</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-sub-menu">
+                            <a href="#">
+                                <div class="icon-w">
+                                    <div class="os-icon os-icon-users"></div>
+                                </div>
+                                <span>Users</span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="users_profile_big.html">Big Profile</a>
+                                </li>
+                                <li>
+                                    <a href="users_profile_small.html">Compact Profile</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-sub-menu">
+                            <a href="#">
+                                <div class="icon-w">
+                                    <div class="os-icon os-icon-edit-32"></div>
+                                </div>
+                                <span>Quản lý bình luận</span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="forms_regular.html">Regular Forms</a>
+                                </li>
+                                <li>
+                                    <a href="forms_validation.html">Form Validation</a>
+                                </li>
+                                <li>
+                                    <a href="forms_wizard.html">Form Wizard</a>
+                                </li>
+                                <li>
+                                    <a href="forms_uploads.html">File Uploads</a>
+                                </li>
+                                <li>
+                                    <a href="forms_wisiwig.html">Wisiwig Editor</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-sub-menu">
+                            <a href="#">
+                                <div class="icon-w">
+                                    <div class="os-icon os-icon-grid"></div>
+                                </div>
+                                <span>Tables</span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="tables_regular.html">Regular Tables</a>
+                                </li>
+                                <li>
+                                    <a href="tables_datatables.html">Data Tables</a>
+                                </li>
+                                <li>
+                                    <a href="tables_editable.html">Editable Tables</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-sub-menu">
+                            <a href="#">
+                                <div class="icon-w">
+                                    <div class="os-icon os-icon-zap"></div>
+                                </div>
+                                <span>Icons</span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="icon_fonts_simple_line_icons.html">Simple Line Icons</a>
+                                </li>
+                                <li>
+                                    <a href="icon_fonts_feather.html">Feather Icons</a>
+                                </li>
+                                <li>
+                                    <a href="icon_fonts_themefy.html">Themefy Icons</a>
+                                </li>
+                                <li>
+                                    <a href="icon_fonts_picons_thin.html">Picons Thin</a>
+                                </li>
+                                <li>
+                                    <a href="icon_fonts_dripicons.html">Dripicons</a>
+                                </li>
+                                <li>
+                                    <a href="icon_fonts_eightyshades.html">Eightyshades</a>
+                                </li>
+                                <li>
+                                    <a href="icon_fonts_entypo.html">Entypo</a>
+                                </li>
+                                <li>
+                                    <a href="icon_fonts_font_awesome.html">Font Awesome</a>
+                                </li>
+                                <li>
+                                    <a href="icon_fonts_foundation_icon_font.html">Foundation Icon Font</a>
+                                </li>
+                                <li>
+                                    <a href="icon_fonts_metrize_icons.html">Metrize Icons</a>
+                                </li>
+                                <li>
+                                    <a href="icon_fonts_picons_social.html">Picons Social</a>
+                                </li>
+                                <li>
+                                    <a href="icon_fonts_batch_icons.html">Batch Icons</a>
+                                </li>
+                                <li>
+                                    <a href="icon_fonts_dashicons.html">Dashicons</a>
+                                </li>
+                                <li>
+                                    <a href="icon_fonts_typicons.html">Typicons</a>
+                                </li>
+                                <li>
+                                    <a href="icon_fonts_weather_icons.html">Weather Icons</a>
+                                </li>
+                                <li>
+                                    <a href="icon_fonts_light_admin.html">Light Admin</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!--------------------
+                    END - Mobile Menu List
+                    -------------------->
+                    <div class="mobile-menu-magic">
+                        <h4>
+                            Light Admin
+                        </h4>
+                        <p>
+                            Clean Bootstrap 4 Template
+                        </p>
+                        <div class="btn-w">
+                            <a class="btn btn-white btn-rounded" href="https://themeforest.net/item/light-admin-clean-bootstrap-dashboard-html-template/19760124?ref=Osetin" target="_blank">Purchase Now</a>
                         </div>
-                    </li>
-
-                    <div class="topbar-divider d-none d-sm-block"></div>
-
-                    <!-- Nav Item - User Information -->
-                    <li class="nav-item dropdown no-arrow">
-                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-                                <?php
-                                use Illuminate\Support\Facades\Session;
-                                    $name = Session::get("admin_name");
-                                    if($name) {
-                                        echo $name;
-                                    }
-                                ?>
-                            </span>
-                            <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
-                        </a>
-                        <!-- Dropdown - User Information -->
-                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                            <a class="dropdown-item" href="#">
-                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Thông tin tài khoản
-                            </a>
-                            <a class="dropdown-item" href="#">
-                                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Cài đặt
-                            </a>
-                            <a class="dropdown-item" href="#">
-                                <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Lịch sử truy cập
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Đăng xuất
-                            </a>
-                        </div>
-                    </li>
-
-                </ul>
-
-            </nav>
-            <!-- End of Topbar -->
-
-            @yield('dashboard');
-
-        </div>
-        <!-- End of Main Content -->
-
-        <!-- Footer -->
-        <footer class="sticky-footer bg-white">
-            <div class="container my-auto">
-                <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; Cosmetic Store 2020</span>
+                    </div>
                 </div>
             </div>
-        </footer>
-        <!-- End of Footer -->
+            <!--------------------
+            END - Mobile Menu
+            -------------------->
+            <!--------------------
+            START - Main Menu
+            -------------------->
+            <div class="menu-w color-scheme-light color-style-transparent menu-position-side menu-side-left menu-layout-compact sub-menu-style-over sub-menu-color-bright selected-menu-color-light menu-activated-on-hover menu-has-selected-link">
+                <div class="logo-w">
+                    <a class="logo" href="/">
+                        <img src="/favicon.ico" />
+                        <div class="logo-label" style="font-size:18px; font-weight:600">
+                            Cosmetic<sup>Store</sup>
+                        </div>
+                    </a>
+                </div>
+                <h1 class="menu-page-header">
+                    Page Header
+                </h1>
+                <ul class="main-menu">
+                    <li class="sub-header">
+                        <span style="font-weight:bold; font-size:15px">QUẢN LÝ</span>
+                    </li>
+                    <li class="selected has-sub-menu">
+                        <a asp-action="Index" asp-controller="User">
+                            <div class="icon-w">
+                                <div class="os-icon os-icon-users"></div>
+                            </div>
+                            <span>Danh mục sản phẩm</span>
+                        </a>
+                        <div class="sub-menu-w">
+                            <div class="sub-menu-header">
+                                Danh mục sản phẩm
+                            </div>
+                            <div class="sub-menu-icon">
+                                <i class="os-icon os-icon-users"></i>
+                            </div>
+                            <div class="sub-menu-i">
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="add_category_product">Thêm danh mục</a>
+                                    </li>
+                                    <li>
+                                        <a href="list_category_product">Danh sách danh mục</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class=" has-sub-menu">
+                        <a asp-action="Index" asp-controller="MajorClass">
+                            <div class="icon-w">
+                                <div class="os-icon os-icon-hierarchy-structure-2"></div>
+                            </div>
+                            <span>Khoa/Lớp</span>
+                        </a>
+                    </li>
 
-    </div>
-    <!-- End of Content Wrapper -->
+                    <li class=" has-sub-menu" style="padding-bottom:15px">
+                        <a asp-action="Index" asp-controller="Subject">
+                            <div class="icon-w">
+                                <div class="os-icon os-icon-grid"></div>
+                            </div>
+                            <span>Học phần</span>
+                        </a>
+                    </li>
 
-</div>
-<!-- End of Page Wrapper -->
-
-<!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-</a>
-
-<!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Đăng xuất</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
+                    <li class="sub-header">
+                        <span style="font-weight:bold; font-size:15px">TRẮC NGHIỆM</span>
+                    </li>
+                    <li class=" has-sub-menu">
+                        <a asp-controller="Subject" asp-action="Index">
+                            <div class="icon-w">
+                                <div class="os-icon os-icon-package"></div>
+                            </div>
+                            <span>Ngân hàng câu hỏi</span>
+                        </a>
+                        <div class="sub-menu-w">
+                            <div class="sub-menu-header">
+                                Ngân hàng câu hỏi
+                            </div>
+                            <div class="sub-menu-icon">
+                                <i class="os-icon os-icon-package"></i>
+                            </div>
+                            <div class="sub-menu-i">
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a asp-action="Prepare" asp-controller="QBank">Thêm mới câu hỏi</a>
+                                    </li>
+                                    <li>
+                                        <a href="apps_support_dashboard.html">Danh sách câu hỏi</a>
+                                    </li>
+                                    <li>
+                                        <a href="apps_crypto.html">Thêm mới câu hỏi từ MS Word <strong class="badge badge-danger">Mới</strong></a>
+                                    </li>
+                                    <li>
+                                        <a href="apps_crypto.html">Thêm mới câu hỏi từ MS Excel <strong class="badge badge-danger">Mới</strong></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class=" has-sub-menu">
+                        <a href="#">
+                            <div class="icon-w">
+                                <div class="os-icon os-icon-file-text"></div>
+                            </div>
+                            <span>Đề Luyện/Thi</span>
+                        </a>
+                        <div class="sub-menu-w">
+                            <div class="sub-menu-header">
+                                Đề Luyện/Thi
+                            </div>
+                            <div class="sub-menu-icon">
+                                <i class="os-icon os-icon-file-text"></i>
+                            </div>
+                            <div class="sub-menu-i">
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="misc_invoice.html">Thêm Đề Luyện/Thi mới</a>
+                                    </li>
+                                    <li>
+                                        <a href="misc_charts.html">Danh sách Đề Luyện/Thi</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class=" has-sub-menu" style="padding-bottom:15px">
+                        <a href="#">
+                            <div class="icon-w">
+                                <div class="os-icon os-icon-edit-32"></div>
+                            </div>
+                            <span>Lịch sử làm bài</span>
+                        </a>
+                    </li>
+                    <li class="sub-header">
+                        <span style="font-weight:bold; font-size:15px">HỆ THỐNG</span>
+                    </li>
+                    <li class=" has-sub-menu">
+                        <a href="#">
+                            <div class="icon-w">
+                                <div class="os-icon os-icon-mail"></div>
+                            </div>
+                            <span>Thông báo</span>
+                        </a>
+                        <div class="sub-menu-w">
+                            <div class="sub-menu-header">
+                                Emails
+                            </div>
+                            <div class="sub-menu-icon">
+                                <i class="os-icon os-icon-mail"></i>
+                            </div>
+                            <div class="sub-menu-i">
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="emails_welcome.html">Welcome Email</a>
+                                    </li>
+                                    <li>
+                                        <a href="emails_order.html">Order Confirmation</a>
+                                    </li>
+                                    <li>
+                                        <a href="emails_payment_due.html">Payment Due</a>
+                                    </li>
+                                    <li>
+                                        <a href="emails_forgot.html">Forgot Password</a>
+                                    </li>
+                                    <li>
+                                        <a href="emails_activate.html">Activate Account</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class=" has-sub-menu">
+                        <a href="#">
+                            <div class="icon-w">
+                                <div class="os-icon os-icon-users"></div>
+                            </div>
+                            <span>Quản lý quyền</span>
+                        </a>
+                        <div class="sub-menu-w">
+                            <div class="sub-menu-header">
+                                Quản lý quyền
+                            </div>
+                            <div class="sub-menu-icon">
+                                <i class="os-icon os-icon-users"></i>
+                            </div>
+                            <div class="sub-menu-i">
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="users_profile_big.html">Big Profile</a>
+                                    </li>
+                                    <li>
+                                        <a href="users_profile_small.html">Compact Profile</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class=" has-sub-menu">
+                        <a href="#">
+                            <div class="icon-w">
+                                <div class="os-icon os-icon-edit-32"></div>
+                            </div>
+                            <span>Quản lý bình luận</span>
+                        </a>
+                        <div class="sub-menu-w">
+                            <div class="sub-menu-header">
+                                Forms
+                            </div>
+                            <div class="sub-menu-icon">
+                                <i class="os-icon os-icon-edit-32"></i>
+                            </div>
+                            <div class="sub-menu-i">
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="forms_regular.html">Regular Forms</a>
+                                    </li>
+                                    <li>
+                                        <a href="forms_validation.html">Form Validation</a>
+                                    </li>
+                                    <li>
+                                        <a href="forms_wizard.html">Form Wizard</a>
+                                    </li>
+                                    <li>
+                                        <a href="forms_uploads.html">File Uploads</a>
+                                    </li>
+                                    <li>
+                                        <a href="forms_wisiwig.html">Wisiwig Editor</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class=" has-sub-menu">
+                        <a href="#">
+                            <div class="icon-w">
+                                <div class="os-icon os-icon-grid"></div>
+                            </div>
+                            <span>Quản lý Tài liệu</span>
+                        </a>
+                        <div class="sub-menu-w">
+                            <div class="sub-menu-header">
+                                Tables
+                            </div>
+                            <div class="sub-menu-icon">
+                                <i class="os-icon os-icon-grid"></i>
+                            </div>
+                            <div class="sub-menu-i">
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="tables_regular.html">Regular Tables</a>
+                                    </li>
+                                    <li>
+                                        <a href="tables_datatables.html">Data Tables</a>
+                                    </li>
+                                    <li>
+                                        <a href="tables_editable.html">Editable Tables</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class=" has-sub-menu">
+                        <a href="#">
+                            <div class="icon-w">
+                                <div class="os-icon os-icon-zap"></div>
+                            </div>
+                            <span>Thiết lập hệ thống</span>
+                        </a>
+                        <div class="sub-menu-w">
+                            <div class="sub-menu-header">
+                                Thiết lập hệ thống
+                            </div>
+                            <div class="sub-menu-icon">
+                                <i class="os-icon os-icon-zap"></i>
+                            </div>
+                            <div class="sub-menu-i">
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="icon_fonts_simple_line_icons.html">Simple Line Icons</a>
+                                    </li>
+                                    <li>
+                                        <a href="icon_fonts_feather.html">Feather Icons</a>
+                                    </li>
+                                    <li>
+                                        <a href="icon_fonts_themefy.html">Themefy Icons</a>
+                                    </li>
+                                    <li>
+                                        <a href="icon_fonts_picons_thin.html">Picons Thin</a>
+                                    </li>
+                                    <li>
+                                        <a href="icon_fonts_dripicons.html">Dripicons</a>
+                                    </li>
+                                    <li>
+                                        <a href="icon_fonts_eightyshades.html">Eightyshades</a>
+                                    </li>
+                                </ul><ul class="sub-menu">
+                                    <li>
+                                        <a href="icon_fonts_entypo.html">Entypo</a>
+                                    </li>
+                                    <li>
+                                        <a href="icon_fonts_font_awesome.html">Font Awesome</a>
+                                    </li>
+                                    <li>
+                                        <a href="icon_fonts_foundation_icon_font.html">Foundation Icon Font</a>
+                                    </li>
+                                    <li>
+                                        <a href="icon_fonts_metrize_icons.html">Metrize Icons</a>
+                                    </li>
+                                    <li>
+                                        <a href="icon_fonts_picons_social.html">Picons Social</a>
+                                    </li>
+                                    <li>
+                                        <a href="icon_fonts_batch_icons.html">Batch Icons</a>
+                                    </li>
+                                </ul><ul class="sub-menu">
+                                    <li>
+                                        <a href="icon_fonts_dashicons.html">Dashicons</a>
+                                    </li>
+                                    <li>
+                                        <a href="icon_fonts_typicons.html">Typicons</a>
+                                    </li>
+                                    <li>
+                                        <a href="icon_fonts_weather_icons.html">Weather Icons</a>
+                                    </li>
+                                    <li>
+                                        <a href="icon_fonts_light_admin.html">Light Admin</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <div class="modal-body">Bạn có chắc chắn muốn Đăng xuất?</div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Huỷ bỏ</button>
-                <a class="btn btn-primary" href="logout_admin">Đăng xuất</a>
+            <!--------------------
+            END - Main Menu
+            -------------------->
+            <div class="content-w">
+                <!--------------------
+    START - Top Bar
+    -------------------->
+                <div class="top-bar color-scheme-transparent">
+                    <!--------------------
+        START - Top Menu Controls
+        -------------------->
+                    <div class="top-menu-controls">
+                        <div class="element-search autosuggest-search-activator">
+                            <input placeholder="Tìm kiếm..." type="text">
+                        </div>
+                        <!--------------------
+            START - Settings Link in secondary top menu
+            -------------------->
+                        <div class="top-icon top-settings os-dropdown-trigger os-dropdown-position-left">
+                            <i class="os-icon os-icon-ui-46"></i>
+                            <div class="os-dropdown">
+                                <div class="icon-w">
+                                    <i class="os-icon os-icon-ui-46"></i>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="users_profile_small.html"><i class="os-icon os-icon-ui-49"></i><span>Thông tin tài khoản</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="users_profile_small.html"><i class="os-icon os-icon-grid-10"></i><span>Billing Info</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="users_profile_small.html"><i class="os-icon os-icon-ui-44"></i><span>My Invoices</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="logout_admin"><i class="os-icon os-icon-ui-15"></i><span>Đăng xuất</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--------------------
+            END - Settings Link in secondary top menu
+            -------------------->
+                        <!--------------------
+            START - User avatar and menu in secondary top menu
+            -------------------->
+                        <div class="logged-user-w">
+                            <div class="logged-user-i">
+                                <div class="avatar-w">
+                                    <img alt="" src="https://scontent.fdad3-2.fna.fbcdn.net/v/t1.0-9/16427671_621067844760417_1913042800580632288_n.jpg?_nc_cat=107&_nc_sid=174925&_nc_ohc=qlKbnglvTlsAX_Pdv0C&_nc_ht=scontent.fdad3-2.fna&oh=2e23642f77396c59f2a983f8159e687d&oe=5ECBFE21">
+                                </div>
+                                <div class="logged-user-menu color-style-bright">
+                                    <div class="logged-user-avatar-info">
+                                        <div class="avatar-w">
+                                            <img alt="" src="https://scontent.fdad3-2.fna.fbcdn.net/v/t1.0-9/16427671_621067844760417_1913042800580632288_n.jpg?_nc_cat=107&_nc_sid=174925&_nc_ohc=qlKbnglvTlsAX_Pdv0C&_nc_ht=scontent.fdad3-2.fna&oh=2e23642f77396c59f2a983f8159e687d&oe=5ECBFE21">
+                                        </div>
+                                        <div class="logged-user-info-w">
+                                            <div class="logged-user-name">
+                                                Maria Gomez
+                                            </div>
+                                            <div class="logged-user-role">
+                                                Administrator
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bg-icon">
+                                        <i class="os-icon os-icon-wallet-loaded"></i>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <a href="apps_email.html"><i class="os-icon os-icon-mail-01"></i><span>Incoming Mail</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="users_profile_big.html"><i class="os-icon os-icon-user-male-circle2"></i><span>Profile Details</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="users_profile_small.html"><i class="os-icon os-icon-coins-4"></i><span>Billing Details</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="os-icon os-icon-others-43"></i><span>Notifications</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="os-icon os-icon-signs-11"></i><span>Logout</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--------------------
+            END - User avatar and menu in secondary top menu
+            -------------------->
+                    </div>
+                    <!--------------------
+        END - Top Menu Controls
+        -------------------->
+                </div>
+                <!--------------------
+    END - Top Bar
+    -------------------->
+                <!--------------------
+
+    START - Breadcrumbs
+
+                      <ul class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="index.html">Trang chủ</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="index.html">Products</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <span>Laptop with retina screen</span>
+                    </li>
+                </ul>
+    -------------------->
+                <!--------------------
+    END - Breadcrumbs
+    -------------------->
+
+                <div class="content-panel-toggler">
+                    <i class="os-icon os-icon-grid-squares-22"></i><span>Sidebar</span>
+                </div>
+                <div class="content-i">
+                    <div class="content-box">
+                         <!--------------------
+                        Nội dung
+                        -------------------->
+                        @yield('dashboard')
+                        @yield('add_category')
+                        @yield('list_category')
+                    </div>
+                    <!--------------------
+        START - Sidebar
+        -------------------->
+                    <div class="content-panel">
+                        <div class="content-panel-close">
+                            <i class="os-icon os-icon-close"></i>
+                        </div>
+                        <div class="element-wrapper">
+                            <h6 class="element-header">
+                                TRUY CẬP NHANH
+                            </h6>
+                            <div class="element-box-tp">
+                                <div class="el-buttons-list full-width">
+                                    <a class="btn btn-white btn-sm" href="#"><i class="os-icon os-icon-delivery-box-2"></i><span>Tạo mới Sinh viên</span></a><a class="btn btn-white btn-sm" href="#"><i class="os-icon os-icon-window-content"></i><span>Tạo mới Ngân hàng câu hỏi</span></a><a class="btn btn-white btn-sm" href="#"><i class="os-icon os-icon-wallet-loaded"></i><span>Tạo mới Đề thi</span></a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!--------------------
+            START - Team Members
+            -------------------->
+                        <div class="element-wrapper" style="padding-top:20px">
+                            <h6 class="element-header">
+                                QUẢN TRỊ VIÊN
+                            </h6>
+                            <div class="element-box-tp">
+                                <div class="input-search-w">
+                                    <input class="form-control rounded bright" placeholder="Tìm kiếm..." type="search">
+                                </div>
+                                <div class="users-list-w">
+                                    <div class="user-w with-status status-green">
+                                        <div class="user-avatar-w">
+                                            <div class="user-avatar">
+                                                <img alt="" src="https://scontent.fdad3-2.fna.fbcdn.net/v/t1.0-9/16427671_621067844760417_1913042800580632288_n.jpg?_nc_cat=107&_nc_sid=174925&_nc_ohc=qlKbnglvTlsAX_Pdv0C&_nc_ht=scontent.fdad3-2.fna&oh=2e23642f77396c59f2a983f8159e687d&oe=5ECBFE21">
+                                            </div>
+                                        </div>
+                                        <div class="user-name">
+                                            <h6 class="user-title">
+                                                Bùi Phú Khuyên
+                                            </h6>
+                                            <div class="user-role">
+                                                Administrator
+                                            </div>
+                                        </div>
+                                        <a class="user-action" href="users_profile_small.html">
+                                            <div class="os-icon os-icon-email-forward"></div>
+                                        </a>
+                                    </div>
+                                    <div class="user-w with-status status-green">
+                                        <div class="user-avatar-w">
+                                            <div class="user-avatar">
+                                                <img alt="" src="https://scontent.fdad3-2.fna.fbcdn.net/v/t1.0-9/18813202_1879079208997211_2535962000938818949_n.jpg?_nc_cat=101&_nc_sid=174925&_nc_ohc=RZSDpMeXuYgAX_O5kVq&_nc_ht=scontent.fdad3-2.fna&oh=5c3f1e5d68da0b291aaba4d634104ad9&oe=5ECB0AC9">
+                                            </div>
+                                        </div>
+                                        <div class="user-name">
+                                            <h6 class="user-title">
+                                                Phạm Quốc Huy
+                                            </h6>
+                                            <div class="user-role">
+                                                Account Manager
+                                            </div>
+                                        </div>
+                                        <a class="user-action" href="users_profile_small.html">
+                                            <div class="os-icon os-icon-email-forward"></div>
+                                        </a>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--------------------
+            END - Team Members
+            -------------------->
+                    </div>
+                    <!--------------------
+        END - Sidebar
+        -------------------->
+                </div>
             </div>
         </div>
+        <div class="display-type"></div>
     </div>
-</div>
+    <div class="text-center" style="color:white; padding:5px">
+        <b>
+            Copyright © 2020 <a href="http://www.hutech.edu.vn/khoacntt" style="color:white">Khoa CNTT - trường Đại học Công Nghệ TPHCM</a><br>
+            <small style="font-weight:bold; color:white">Xây dựng và phát triển bởi <a href="https://fb.com/buiphukhuyen" style="color:white">Bùi Phú Khuyên</a> </small>
+        </b>
+    </div>
+    <script src="public/admin/components/popper.js/dist/umd/popper.min.js"></script>
+    <script src="public/admin/components/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="public/admin/components/ion.rangeSlider/js/ion.rangeSlider.min.js"></script>
+    <script src="public/admin/components/bootstrap-validator/dist/validator.min.js"></script>
+    <script src="public/admin/components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="public/admin/components/tether/dist/js/tether.min.js"></script>
+    <script src="public/admin/components/bootstrap/js/dist/util.js"></script>
+    <script src="public/admin/components/bootstrap/js/dist/carousel.js"></script>
+    <script src="public/admin/components/bootstrap/js/dist/modal.js"></script>
+    <script src="public/admin/components/bootstrap/js/dist/tooltip.js"></script>
+    <script src="public/admin/components/bootstrap/js/dist/popover.js"></script>
 
-<!-- Bootstrap core JavaScript-->
-<script src="public/admin/vendor/jquery/jquery.min.js"></script>
-<script src="public/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-<!-- Core plugin JavaScript-->
-<script src="public/admin/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-<!-- Custom scripts for all pages-->
-<script src="public/admin/js/sb-admin-2.min.js"></script>
-
-<!-- Page level plugins -->
-<script src="public/admin/vendor/chart.js/Chart.min.js"></script>
-
-<!-- Page level custom scripts -->
-<script src="public/admin/js/demo/chart-area-demo.js"></script>
-<script src="public/admin/js/demo/chart-pie-demo.js"></script>
-
+    <script src="public/admin//js/main.js?version=4.4.0"></script>
 </body>
-
 </html>

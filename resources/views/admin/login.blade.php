@@ -1,109 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-
+<html>
+  <head>
+    <title>Admin Dashboard HTML Template</title>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Đăng nhập Quản trị viên</title>
-
-    <!-- Custom fonts for this template-->
-    <link href="public/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-    <!-- Custom styles for this template-->
-    <link href="public/admin/css/sb-admin-2.min.css" rel="stylesheet">
-
-</head>
-
-<body class="bg-gradient-primary">
-
-<div class="container">
-
-    <!-- Outer Row -->
-    <div class="row justify-content-center">
-
-        <div class="col-xl-10 col-lg-12 col-md-9">
-
-            <div class="card o-hidden border-0 shadow-lg my-5">
-                <div class="card-body p-0">
-                    <!-- Nested Row within Card Body -->
-                    <div class="row">
-                        <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
-                        <div class="col-lg-6">
-                            <div class="p-5">
-                                <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">ĐĂNG NHẬP QUẢN TRỊ VIÊN</h1>
-                                </div>
-                                <form id="login_admin" class="user" action="login_admin" method="post">
-
-                                    <div class="form-group">
-                                        @csrf
-                                        <input type="email" class="form-control form-control-user" name="admin_email" aria-describedby="emailHelp" placeholder="Nhập địa chỉ Email..." required>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" class="form-control form-control-user" name="admin_password" placeholder="Mật khẩu" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="custom-control custom-checkbox small">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck">
-                                            <label class="custom-control-label" for="customCheck">Ghi nhớ tài khoản</label>
-                                        </div>
-                                    </div>
-                                    <?php
-                                    use Illuminate\Support\Facades\Session;
-                                    $error_login = Session::get('error_login');
-                                    if($error_login) {
-                                        echo '<p class="text-danger text-center">'.$error_login.'</p>';
-                                        Session::put('error_login', null);
-                                    }
-                                    ?>
-
-                                    <a href="javascript:$('#login_admin').submit();" class="btn btn-primary btn-user btn-block">
-                                        ĐĂNG NHẬP
-                                    </a>
-
-                                    <hr>
-                                    <a href="index.html" class="btn btn-google btn-user btn-block">
-                                        <i class="fab fa-google fa-fw"></i> Đăng nhập bằng Google
-                                    </a>
-                                    <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                                        <i class="fab fa-facebook-f fa-fw"></i> Đăng nhập bằng Facebook
-                                    </a>
-                                </form>
-                                <hr>
-                                <div class="text-center">
-                                    <a class="small" href="forgot-password.html">Quên mật khẩu?</a>
-                                </div>
-                                <div class="text-center">
-                                    <a class="small" href="register.html">Tạo tài khoản mới!</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta content="template language" name="keywords">
+    <meta content="Tamerlan Soziev" name="author">
+    <meta content="Admin dashboard html template" name="description">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="favicon.png" rel="shortcut icon">
+    <link href="public/admin/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" type="text/css">
+    <link href="public/admin/components/select2/dist/css/select2.min.css" rel="stylesheet">
+    <link href="public/admin/components/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <link href="public/admin/components/dropzone/dist/dropzone.css" rel="stylesheet">
+    <link href="public/admin/components/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="public/admin/components/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet">
+    <link href="public/admin/components/perfect-scrollbar/css/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="public/admin/components/slick-carousel/slick/slick.css" rel="stylesheet">
+    <link href="public/admin/css/main.css?version=4.4.0" rel="stylesheet">
+  </head>
+  <body class="auth-wrapper">
+    <div class="all-wrapper menu-side with-pattern">
+      <div class="auth-box-w">
+        <div class="logo-w">
+          <a href="."><img alt="" src="public/admin/img/logo-big.png"></a>
         </div>
-
+        <h4 class="auth-header">
+          ĐĂNG NHẬP QUẢN TRỊ
+        </h4>
+        <form action="login_admin" method="post">
+            @csrf
+          <div class="form-group">
+            <label for="">Email</label>
+            <input class="form-control" placeholder="Nhập Email" type="email" name="admin_email">
+            <div class="pre-icon os-icon os-icon-user-male-circle"></div>
+          </div>
+          <div class="form-group">
+            <label for="">Mật khẩu</label>
+            <input class="form-control" placeholder="Nhập mật khẩu" type="password" name="admin_password">
+            <div class="pre-icon os-icon os-icon-fingerprint"></div>
+          </div>
+          <?php
+          use Illuminate\Support\Facades\Session;
+          $error_login = Session::get('error_login');
+          if($error_login) {
+              echo '<p class="text-danger text-center">'.$error_login.'</p>';
+              Session::put('error_login', null);
+          }
+          ?>
+          <div class="buttons-w">
+            <button class="btn btn-primary" type="submit">ĐĂNG NHẬP</button>
+            <div class="form-check-inline">
+              <label class="form-check-label"><input class="form-check-input" type="checkbox">Ghi nhớ đăng nhập</label>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
-
-</div>
-
-<!-- Bootstrap core JavaScript-->
-<script src="public/admin/vendor/jquery/jquery.min.js"></script>
-<script src="public/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-<!-- Core plugin JavaScript-->
-<script src="public/admin/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-<!-- Custom scripts for all pages-->
-<script src="public/admin/js/sb-admin-2.min.js"></script>
-
-</body>
-
+  </body>
 </html>
