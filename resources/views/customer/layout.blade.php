@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Apple store</title>
+    <title>Cosmetic store</title>
     <style type="text/css">
         img.wp-smiley,
         img.emoji {

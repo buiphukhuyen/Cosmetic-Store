@@ -11,15 +11,15 @@
     <link href="/favicon.ico" rel="shortcut icon">
     <link href="apple-touch-icon.png" rel="apple-touch-icon">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" type="text/css">
-    <link href="public/admin//css/main.css?version=4.4.0" rel="stylesheet">
-    <script src="public/admin/components/jquery/dist/jquery.min.js"></script>
-    <link href="public/admin/components/select2/dist/css/select2.min.css" rel="stylesheet">
-    <link href="public/admin/components/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
-    <link href="public/admin/components/dropzone/dist/dropzone.css" rel="stylesheet">
-    <link href="public/admin/components/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet">
-    <link href="public/admin/components/perfect-scrollbar/css/perfect-scrollbar.min.css" rel="stylesheet">
-    <link href="public/admin/components/slick-carousel/slick/slick.css" rel="stylesheet">
-    <link href="public/admin/components/fontawesome/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="{{asset('public/admin//css/main.css?version=4.4.0')}}" rel="stylesheet">
+    <script src="{{asset('public/admin/components/jquery/dist/jquery.min.js')}}"></script>
+    <link href="{{asset('public/admin/components/select2/dist/css/select2.min.css')}}" rel="stylesheet">
+    <link href="{{asset('public/admin/components/bootstrap-daterangepicker/daterangepicker.css')}}" rel="stylesheet">
+    <link href="{{asset('public/admin/components/dropzone/dist/dropzone.css" rel="stylesheet')}}">
+    <link href="{{asset('public/admin/components/fullcalendar/dist/fullcalendar.min.css')}}" rel="stylesheet">
+    <link href="{{asset('public/admin/components/perfect-scrollbar/css/perfect-scrollbar.min.css')}}" rel="stylesheet">
+    <link href="{{asset('public/admin/components/slick-carousel/slick/slick.css')}}" rel="stylesheet">
+    <link href="{{asset('public/admin/components/fontawesome/css/all.min.css')}}" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -476,10 +476,10 @@
                             <div class="sub-menu-i">
                                 <ul class="sub-menu">
                                     <li>
-                                        <a href="add_category_product">Thêm danh mục</a>
+                                        <a href="{{URL::to('/add_category_product')}}">Thêm danh mục</a>
                                     </li>
                                     <li>
-                                        <a href="list_category_product">Danh sách danh mục</a>
+                                        <a href="{{URL::to('/list_category_product')}}">Danh sách danh mục</a>
                                     </li>
                                 </ul>
                             </div>
@@ -899,9 +899,10 @@
                          <!--------------------
                         Nội dung
                         -------------------->
-                        @yield('dashboard')
+
                         @yield('add_category')
                         @yield('list_category')
+                        @yield('edit_category')
                     </div>
                     <!--------------------
         START - Sidebar
@@ -993,18 +994,17 @@
             <small style="font-weight:bold; color:white">Xây dựng và phát triển bởi <a href="https://fb.com/buiphukhuyen" style="color:white">Bùi Phú Khuyên</a> </small>
         </b>
     </div>
-    <script src="public/admin/components/popper.js/dist/umd/popper.min.js"></script>
-    <script src="public/admin/components/bootstrap-daterangepicker/daterangepicker.js"></script>
-    <script src="public/admin/components/ion.rangeSlider/js/ion.rangeSlider.min.js"></script>
-    <script src="public/admin/components/bootstrap-validator/dist/validator.min.js"></script>
-    <script src="public/admin/components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"></script>
-    <script src="public/admin/components/tether/dist/js/tether.min.js"></script>
-    <script src="public/admin/components/bootstrap/js/dist/util.js"></script>
-    <script src="public/admin/components/bootstrap/js/dist/carousel.js"></script>
-    <script src="public/admin/components/bootstrap/js/dist/modal.js"></script>
-    <script src="public/admin/components/bootstrap/js/dist/tooltip.js"></script>
-    <script src="public/admin/components/bootstrap/js/dist/popover.js"></script>
-
-    <script src="public/admin//js/main.js?version=4.4.0"></script>
+    <script src="{{asset('public/admin/components/popper.js/dist/umd/popper.min.js')}}"></script>
+    <script src="{{asset('public/admin/components/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
+    <script src="{{asset('public/admin/components/ion.rangeSlider/js/ion.rangeSlider.min.js')}}"></script>
+    <script src="{{asset('public/admin/components/bootstrap-validator/dist/validator.min.js')}}"></script>
+    <script src="{{asset('public/admin/components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js')}}"></script>
+    <script src="{{asset('public/admin/components/tether/dist/js/tether.min.js')}}"></script>
+    <script src="{{asset('public/admin/components/bootstrap/js/dist/util.js')}}"></script>
+    <script src="{{asset('public/admin/components/bootstrap/js/dist/carousel.js')}}"></script>
+    <script src="{{asset('public/admin/components/bootstrap/js/dist/modal.js')}}"></script>
+    <script src="{{asset('public/admin/components/bootstrap/js/dist/tooltip.js')}}"></script>
+    <script src="{{asset('public/admin/components/bootstrap/js/dist/popover.js')}}"></script>
+    <script src="{{asset('public/admin//js/main.js?version=4.4.0')}}"></script>
 </body>
 </html>

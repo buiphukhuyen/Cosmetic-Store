@@ -24,4 +24,10 @@ Route::get('/', 'HomeController@index');
 
     //Category Product
         Route::get('/add_category_product','CategoryProduct@add_category');
+        Route::post('/add_category_product','CategoryProduct@save_category');
         Route::get('/list_category_product','CategoryProduct@list_category');
+        Route::get('/active_category_product/{category_id}','CategoryProduct@active_category');
+        Route::get('/unactive_category_product/{category_id}','CategoryProduct@unactive_category');
+        Route::get('/edit_category_product/{category_id}','CategoryProduct@edit_category');
+        Route::post('/update_category_product/{category_id}','CategoryProduct@update_category');
+        Route::get('/delete_category_product/{category_id}','CategoryProduct@delete_category');

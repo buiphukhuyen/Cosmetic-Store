@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Admin Dashboard HTML Template</title>
+    <title>Đăng nhập Quản trị</title>
     <meta charset="utf-8">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <meta content="template language" name="keywords">
     <meta content="Tamerlan Soziev" name="author">
-    <meta content="Admin dashboard html template" name="description">
+    <meta content="Đăng nhập Quản trị" name="description">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <link href="favicon.png" rel="shortcut icon">
     <link href="public/admin/apple-touch-icon.png" rel="apple-touch-icon">

@@ -1,6 +1,6 @@
 @extends('admin.admin_layout')
 @section('list_category')
-
+    <title>Danh sách danh mục</title>
     <link href="public/admin/components/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <!-- Page level plugins -->
     <script src="public/admin/components/datatables/jquery.dataTables.min.js"></script>
@@ -13,13 +13,12 @@
             DANH SÁCH DANH MỤC SẢN PHẨM
         </h6>
     </div>
-
              <div class="table-responsive">
                  <table class="table table-padded" id="showCategory">
                      <thead>
                      <tr class="row-actions">
                          <th>
-                             STT
+                             ID
                          </th>
                          <th>
                              Tên danh mục
@@ -37,28 +36,34 @@
                      </thead>
 
                      <tbody>
+                        @foreach($list_category as $key => $cate_pro)
                          <tr>
                              <td class="text-center">
-                                 <span>1</span>
+                                 <span>{{$cate_pro->category_id}}</span>
                              </td>
 
                              <td class="text-center">
 
-                                 <span>Nội dung</span>
+                                 <span>{{$cate_pro->category_name}}</span>
                              </td>
                              <td class="text-center">
                         <span>
-                            Nội dung 2
-                        </span><span class="smaller lighter">Lớp</span>
+                            {{$cate_pro->created_at}}
+                        </span>
                              </td>
                              <td class="text-center">
-                                 <span class="status-pill smaller green"></span>
-                                 <span>Hoạt động</span>
+                                 @if($cate_pro->category_status==0)
+                                    <a href="active_category_product/{{$cate_pro->category_id}}"> <span class="status-pill smaller red"></span> </a>
+                                 @else
+                                     <a href="unactive_category_product/{{$cate_pro->category_id}}"> <span class="status-pill smaller green"></span> </a>
+                                 @endif
+
                              </td>
                              <td class="row-actions">
-                                 <a href="" data-target=".bd-update-major" data-toggle="modal" data-majorid="@item.Major_Id" data-majorname="@item.Major_Name"><i class="os-icon os-icon-ui-49"></i></a><a href="/MajorClass/Detail_Major/@item.Major_Id"><i class="os-icon os-icon-eye"></i></a><a href="#" onclick="DeleteMajor('@item.Major_Id');"><i class="os-icon os-icon-ui-15 text-danger"></i></a>
+                                 <a href="edit_category_product/{{$cate_pro->category_id}}"><i class="os-icon os-icon-ui-49"></i></a><a onclick="return (confirm('Bạn có muốn xoá Danh mục này?'));" href="delete_category_product/{{$cate_pro->category_id}}" ><i class="os-icon os-icon-ui-15 text-danger"></i></a>
                              </td>
                          </tr>
+                        @endforeach
                      </tbody>
                  </table>
           </div>
@@ -67,6 +72,17 @@
             $('#showCategory').dataTable({
             });
         });
+    </script>
+
+    <script>
+        function DeleteCategory(category_id) {
+            if ) {
+                Delete(category_id);
+            }
+            else {
+                return false;
+            }
+        }
     </script>
 
 @endsection
