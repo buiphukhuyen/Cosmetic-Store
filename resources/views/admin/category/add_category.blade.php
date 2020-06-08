@@ -29,14 +29,16 @@
             <label>Trạng thái</label>
             <select class="form-control" name="category_status">
                 <option value="0">Ẩn</option>
-                <option value="1">Hiển thị</option>
+                <option value="1" selected>Hiển thị</option>
             </select>
         </div>
         <?php
                 use Illuminate\Support\Facades\Session;
                 $success = Session::get('success');
                 if($success) {
-                    echo '<p class="text-danger text-center">'.$success.'</p>';
+                    echo '<div class="alert alert-success" role="alert">
+                                  <strong>Thành công!</strong>'.$success.'
+                          </div>'
                     Session::put('success', null);
                 }
         ?>

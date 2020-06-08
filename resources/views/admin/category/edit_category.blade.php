@@ -1,5 +1,5 @@
 @extends('admin.admin_layout')
-@section('add_category')
+@section('edit_category')
     <title>Chỉnh sửa Danh mục sản phẩm</title>
     <!-- Page Heading -->
     <div class="element-wrapper">

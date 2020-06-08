@@ -460,7 +460,7 @@
                         <span style="font-weight:bold; font-size:15px">QUẢN LÝ</span>
                     </li>
                     <li class="selected has-sub-menu">
-                        <a asp-action="Index" asp-controller="User">
+                        <a href="{{URL::to('/list_category_product')}}">
                             <div class="icon-w">
                                 <div class="os-icon os-icon-users"></div>
                             </div>
@@ -486,12 +486,30 @@
                         </div>
                     </li>
                     <li class=" has-sub-menu">
-                        <a asp-action="Index" asp-controller="MajorClass">
+                        <a href="">
                             <div class="icon-w">
                                 <div class="os-icon os-icon-hierarchy-structure-2"></div>
                             </div>
-                            <span>Khoa/Lớp</span>
+                            <span>Thương hiệu sản phẩm</span>
                         </a>
+                        <div class="sub-menu-w">
+                            <div class="sub-menu-header">
+                                Thương hiệu sản phẩm
+                            </div>
+                            <div class="sub-menu-icon">
+                                <i class="os-icon os-icon-users"></i>
+                            </div>
+                            <div class="sub-menu-i">
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="{{URL::to('/add_brand')}}">Thêm thương hiệu</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{URL::to('/list_brand')}}">Danh sách thương hiệu</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </li>
 
                     <li class=" has-sub-menu" style="padding-bottom:15px">
@@ -897,12 +915,18 @@
                 <div class="content-i">
                     <div class="content-box">
                          <!--------------------
-                        Nội dung
+                            NỘI DUNG
                         -------------------->
+                            <!--------Danh mục--------->
+                            @yield('add_category')
+                            @yield('list_category')
+                            @yield('edit_category')
 
-                        @yield('add_category')
-                        @yield('list_category')
-                        @yield('edit_category')
+                            <!--------Thương hiệu--------->
+                            @yield('add_brand')
+                            @yield('list_brand')
+                            @yield('edit_brand')
+
                     </div>
                     <!--------------------
         START - Sidebar

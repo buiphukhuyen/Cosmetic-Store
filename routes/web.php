@@ -31,3 +31,13 @@ Route::get('/', 'HomeController@index');
         Route::get('/edit_category_product/{category_id}','CategoryProduct@edit_category');
         Route::post('/update_category_product/{category_id}','CategoryProduct@update_category');
         Route::get('/delete_category_product/{category_id}','CategoryProduct@delete_category');
+
+    //Brand
+        Route::get('/add_brand','BrandController@add_brand');
+        Route::post('/add_brand','BrandController@save_brand');
+        Route::get('/list_brand','BrandController@list_brand');
+        Route::get('/active_brand/{brand_id}','BrandController@active_brand');
+        Route::get('/unactive_brand/{brand_id}','BrandController@unactive_brand');
+        Route::get('/edit_brand/{brand_id}','BrandController@edit_brand');
+        Route::post('/update_brand/{brand_id}','BrandController@update_brand');
+        Route::get('/delete_brand/{brand_id}','BrandController@delete_brand');

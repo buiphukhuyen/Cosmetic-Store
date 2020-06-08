@@ -74,15 +74,5 @@
         });
     </script>
 
-    <script>
-        function DeleteCategory(category_id) {
-            if ) {
-                Delete(category_id);
-            }
-            else {
-                return false;
-            }
-        }
-    </script>
 
 @endsection
