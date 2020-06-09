@@ -17,13 +17,14 @@ class CreateBrandTable extends Migration
             $table->Increments('brand_id');
             $table->string('brand_name');
             $table->text('brand_description');
+            $table->string('brand_image');
             $table->integer('brand_status');
             $table->timestamps();
         });
     }
 
     /**
-     * Reverse the migrations.
+     * Reverse the migratiosns.
      *
      * @return void
      */

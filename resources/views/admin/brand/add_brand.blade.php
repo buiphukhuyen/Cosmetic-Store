@@ -7,7 +7,7 @@
             THÊM MỚI THƯƠNG HIỆU
         </h6>
     </div>
-    <form action="add_brand" method="post">
+    <form action="add_brand" method="post" enctype="multipart/form-data">
         @csrf
         <div class="element-box login-panel panel panel-default">
 
@@ -17,6 +17,12 @@
                 <input type="text" name="brand_name" class="form-control" placeholder="Tên thương hiệu" data-error="Vui lòng nhập Tên thương hiệu" required>
                 <div class="help-block form-text with-errors form-control-feedback"></div>
             </div>
+
+            <div class="form-group">
+                <label>Logo thương hiệu</label>
+                <input type="file" name="brand_image" class="form-control">
+            </div>
+
             <div class="form-group">
                 <label>Mô tả thương hiệu</label>
                 <textarea type="number" name="brand_description" class="form-control" placeholder="Mô tả thương hiệu" data-error="Vui lòng nhập Mô tả thương hiệu" required> </textarea>

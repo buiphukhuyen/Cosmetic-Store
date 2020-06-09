@@ -4,17 +4,9 @@
     <div class="bg section-bg fill bg-fill  bg-loaded">
 
     </div><!-- .section-bg -->
-
     <div class="section-content relative">
-
         <div class="container section-title-container"><h3 class="section-title section-title-normal"><b></b><span class="section-title-main">DEAL HOT Đang diễn ra</span><b></b><a href="#" target="">Xem thêm<i class="icon-angle-right"></i></a></h3></div><!-- .section-title -->
-
-
         <div class="row large-columns-6 medium-columns-3 small-columns-2 row-collapse slider row-slider slider-nav-simple slider-nav-outside slider-nav-push" data-flickity-options='{"imagesLoaded": true, "groupCells": "100%", "dragThreshold" : 5, "cellAlign": "left","wrapAround": true,"prevNextButtons": true,"percentPosition": true,"pageDots": false, "rightToLeft": false, "autoPlay" : false}'>
-
-
-
-
             <div class="col">
                 <div class="col-inner">
 
@@ -42,7 +34,6 @@
                     </div><!-- box -->
                 </div><!-- .col-inner -->
             </div><!-- col -->
-
 
             <div class="col">
                 <div class="col-inner">

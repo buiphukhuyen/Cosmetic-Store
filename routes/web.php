@@ -32,6 +32,10 @@ Route::get('/', 'HomeController@index');
         Route::post('/update_category_product/{category_id}','CategoryProduct@update_category');
         Route::get('/delete_category_product/{category_id}','CategoryProduct@delete_category');
 
+        //Customer
+        Route::get('/danh-muc-san-pham/{category_id}', 'CategoryProduct@show_category_home');
+        Route::get('/thuong-hieu/{brand_id}', 'BrandController@show_brand_home');
+
     //Brand
         Route::get('/add_brand','BrandController@add_brand');
         Route::post('/add_brand','BrandController@save_brand');
@@ -41,3 +45,13 @@ Route::get('/', 'HomeController@index');
         Route::get('/edit_brand/{brand_id}','BrandController@edit_brand');
         Route::post('/update_brand/{brand_id}','BrandController@update_brand');
         Route::get('/delete_brand/{brand_id}','BrandController@delete_brand');
+
+    //Product
+        Route::get('/add_product','ProductController@add_product');
+        Route::post('/add_product','ProductController@save_product');
+        Route::get('/list_product','ProductController@list_product');
+        Route::get('/active_product/{product_id}','ProductController@active_product');
+        Route::get('/unactive_product/{productid}','ProductController@unactive_product');
+        Route::get('/edit_product/{product_id}','ProductController@edit_product');
+        Route::post('/update_product/{product_id}','ProductController@update_product');
+        Route::get('/delete_product/{product_id}','ProductController@delete_product');

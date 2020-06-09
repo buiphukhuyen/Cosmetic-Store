@@ -486,7 +486,7 @@
                         </div>
                     </li>
                     <li class=" has-sub-menu">
-                        <a href="">
+                        <a href="{{URL::to('/list_brand')}}">
                             <div class="icon-w">
                                 <div class="os-icon os-icon-hierarchy-structure-2"></div>
                             </div>
@@ -497,7 +497,7 @@
                                 Thương hiệu sản phẩm
                             </div>
                             <div class="sub-menu-icon">
-                                <i class="os-icon os-icon-users"></i>
+                                <i class="os-icon os-icon-hierarchy-structure-2"></i>
                             </div>
                             <div class="sub-menu-i">
                                 <ul class="sub-menu">
@@ -512,13 +512,31 @@
                         </div>
                     </li>
 
-                    <li class=" has-sub-menu" style="padding-bottom:15px">
-                        <a asp-action="Index" asp-controller="Subject">
+                    <li class=" has-sub-menu">
+                        <a href="{{URL::to('/list_product')}}">
                             <div class="icon-w">
-                                <div class="os-icon os-icon-grid"></div>
+                                <div class="os-icon os-icon-hierarchy-structure-2"></div>
                             </div>
-                            <span>Học phần</span>
+                            <span>Sản phẩm</span>
                         </a>
+                        <div class="sub-menu-w">
+                            <div class="sub-menu-header">
+                                Sản phẩm
+                            </div>
+                            <div class="sub-menu-icon">
+                                <i class="os-icon os-icon-users"></i>
+                            </div>
+                            <div class="sub-menu-i">
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="{{URL::to('/add_product')}}">Thêm sản phẩm</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{URL::to('/list_product')}}">Danh sách sản phẩm</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </li>
 
                     <li class="sub-header">
@@ -926,6 +944,11 @@
                             @yield('add_brand')
                             @yield('list_brand')
                             @yield('edit_brand')
+
+                            <!--------Sản phẩm--------->
+                            @yield('add_product')
+                            @yield('list_product')
+                            @yield('edit_product')
 
                     </div>
                     <!--------------------

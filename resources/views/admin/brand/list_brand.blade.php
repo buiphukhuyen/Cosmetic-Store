@@ -24,6 +24,9 @@
                     Tên thương hiệu
                 </th>
                 <th>
+                    Logo thương hiệu
+                </th>
+                <th>
                     Ngày tạo
                 </th>
                 <th>
@@ -41,10 +44,12 @@
                     <td class="text-center">
                         <span>{{$brand->brand_id}}</span>
                     </td>
-
                     <td class="text-center">
 
                         <span>{{$brand->brand_name}}</span>
+                    </td>
+                    <td class="text-center">
+                        <img src="public/uploads/brand/{{$brand->brand_image}}" width="100px" height="70px" />
                     </td>
                     <td class="text-center">
                         <span>

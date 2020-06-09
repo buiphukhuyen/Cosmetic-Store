@@ -9,15 +9,28 @@ use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
 {
+    public function authLogin() {
+        $admin_id = Session::get('admin_id');
+        if($admin_id) {
+            return Redirect::to('dashboard');
+        }
+        else {
+            return Redirect::to('admin')->send();
+        }
+    }
     public function index() {
         return view ('admin.login');
+    }
+
+    public function dashboard() {
+        $this->authLogin();
+        return view('admin.dashboard');
     }
 
     public function login_admin(Request $request) {
         $admin_email = $request->admin_email;
         $admin_password = md5($request->admin_password);
         $result = DB::table('tbl_admin')->where('admin_email', $admin_email)->where('admin_password', $admin_password)->first();
-        //print_r($result);
         if($result) {
             Session::put('admin_id',$result->admin_id);
             Session::put('admin_name',$result->admin_name);
@@ -26,18 +39,12 @@ class AdminController extends Controller
             Session::put('error_login', 'Đăng nhập không thành công! Hãy thử lại!');
             return Redirect::to('/admin');
         }
-
     }
 
     public function logout_admin() {
+        $this->authLogin();
         Session::put('admin_id',null);
         Session::put('admin_name',null);
         return Redirect::to('/admin');
     }
-
-    public function dashboard() {
-        return view('admin.dashboard');
-    }
-
-
 }

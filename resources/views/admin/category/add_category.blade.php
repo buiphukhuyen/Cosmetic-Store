@@ -37,8 +37,8 @@
                 $success = Session::get('success');
                 if($success) {
                     echo '<div class="alert alert-success" role="alert">
-                                  <strong>Thành công!</strong>'.$success.'
-                          </div>'
+                                  <strong>Thành công! </strong>'.$success.'
+                          </div>';
                     Session::put('success', null);
                 }
         ?>
