@@ -1,19 +1,22 @@
 @extends('customer.layout')
-@section('show_category')
+@section('show_cart')
     <style>
         body.home #mega_menu {
             display: none;
         }
-         .text {
-             display: -webkit-box;
-             margin: 0 auto;
-             -webkit-line-clamp: 2;
-             -webkit-box-orient: vertical;
-             overflow: hidden;
-             text-overflow: ellipsis;
-             height: 35px;
-         }
+        .text {
+            display: -webkit-box;
+            margin: 0 auto;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            height: 35px;
+        }
     </style>
+    <?php
+        $content=Cart::content();
+    ?>
     <header id="header" class="header has-sticky sticky-jump">
         <div class="header-wrapper">
             <div id="masthead" class="header-main hide-for-sticky">
@@ -21,7 +24,7 @@
                     <!-- Logo -->
                     <div id="logo" class="flex-col logo">
                         <!-- Header logo -->
-                        <a href="..\" title="Mẫu website shop mỹ phẩm làm đẹp chuẩn seo - Thiết kế bởi Topweb" rel="home">
+                        <a href="." title="Mẫu website shop mỹ phẩm làm đẹp chuẩn seo - Thiết kế bởi Topweb" rel="home">
                             <img width="221" height="70" src="{{asset('public/customer/wp-content/uploads\2019\05\shop3.jpg')}}"    class="header_logo header-logo" alt="Mẫu website shop mỹ phẩm làm đẹp chuẩn seo"><img width="221" height="70" src="{{asset('public\customer\wp-content\uploads\2019\05\shop3.jpgs')}}" class="header-logo-dark" alt="Mẫu website shop mỹ phẩm làm đẹp chuẩn seo"></a>
                     </div>
                     <!-- Mobile Left Elements -->
@@ -217,191 +220,138 @@
         </div>
         <!-- header-wrapper-->
     </header>
-    <div class="shop-page-title category-page-title page-title ">
-        <div class="page-title-inner flex-row  medium-flex-wrap container">
-            <div class="flex-col flex-grow medium-text-center">
-                @foreach($category_name as $key=>$name)
-                            <h1 class="shop-page-title is-xlarge">
-                                {{$name->category_name}}
-                            </h1>
 
-                <div class="is-small">
-                    <nav class="woocommerce-breadcrumb breadcrumbs"><a href="../">Trang chủ</a> <span class="divider">&#47;</span> {{$name->category_name}}</nav>
-                </div>
-                @endforeach
-                <div class="category-filtering category-filter-row show-for-medium">
-                    <a href="#" data-open="#shop-sidebar" data-visible-after="true" data-pos="left" class="filter-button uppercase plain">
-                        <i class="icon-menu"></i>
-                        <strong>Lọc</strong>
-                    </a>
-                    <div class="inline-block">
-                    </div>
-                </div>
-            </div>
-            <!-- .flex-left -->
-            <div class="flex-col medium-text-center">
-                <p class="woocommerce-result-count hide-for-medium">
-                    Hiển thị một kết quả duy nhất
-                </p>
-                <form class="woocommerce-ordering" method="get">
-                    <select name="orderby" class="orderby" aria-label="Đơn hàng của cửa hàng">
-                        <option value="menu_order" selected='selected'>Thứ tự mặc định</option>
-                        <option value="popularity">Thứ tự theo mức độ phổ biến</option>
-                        <option value="rating">Thứ tự theo điểm đánh giá</option>
-                        <option value="date">Mới nhất</option>
-                        <option value="price">Thứ tự theo giá: thấp đến cao</option>
-                        <option value="price-desc">Thứ tự theo giá: cao xuống thấp</option>
-                    </select>
-                    <input type="hidden" name="paged" value="1">
-                </form>
-            </div>
-            <!-- .flex-right -->
-        </div>
-        <!-- flex-row -->
-    </div>
-    <!-- .page-title -->
     <main id="main" class="">
-        <div class="row category-page-row">
-            <div class="col large-3 hide-for-medium ">
-                <div id="shop-sidebar" class="sidebar-inner col-inner">
-                    <aside id="woof_widget-2" class="widget WOOF_Widget">
-                        <div class="widget widget-woof">
-                            <div class="woof woof_sid woof_sid_widget" data-sid="widget" data-shortcode="woof sid='widget' start_filtering_btn='0' price_filter='2' redirect='' ajax_redraw='1' " data-redirect="" data-autosubmit="1" data-ajax-redraw="1">
-                                <a href="#" class="woof_edit_view" data-sid="widget">show blocks helper</a>
-                                <div></div>
-                                <!--- here is possible drop html code which is never redraws by AJAX ---->
-                                <div class="woof_redraw_zone" data-woof-ver="2.1.7">
-                                    <div data-css-class="woof_price2_search_container" class="woof_price2_search_container woof_container">
-                                        <div class="woof_container_overlay_item"></div>
-                                        <div class="woof_container_inner">
-                                            <h4>Tìm khoảng giá</h4>
-                                            <div class="woof_price_filter_dropdown_container">
-                                                <select class="woof_price_filter_dropdown">
-                                                    <option value="-1">filter by price</option>
-                                                    <option value=" 100000-500000"><span class="woocommerce-Price-amount amount">100.000<span class="woocommerce-Price-currencySymbol">&#8363;</span></span> - <span class="woocommerce-Price-amount amount">500.000<span class="woocommerce-Price-currencySymbol">&#8363;</span></span> (1)</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div data-css-class="woof_container_pwb-brand" class="woof_container woof_container_checkbox woof_container_pwb-brand woof_container_2 woof_container_thnghiu">
-                                        <div class="woof_container_overlay_item"></div>
-                                        <div class="woof_container_inner woof_container_inner_thnghiu">
-                                            <h4>Thương hiệu	    <a href="javascript: void(0);" title="toggle" class="woof_front_toggle woof_front_toggle_opened" data-condition="opened">+</a>
-                                            </h4>
-                                            <div class="woof_block_html_items woof_section_scrolled" style="max-height:300px; overflow-y: auto;">
-                                                <ul class="woof_list woof_list_checkbox">
-                                                    <li class="woof_term_33 "><input type="checkbox" id="woof_33_5e8ab1ae4aeaa" class="woof_checkbox_term woof_checkbox_term_33" data-tax="pwb-brand" name="3w-clinic" data-term-id="33" value="33"><label class="woof_checkbox_label " for="woof_33_5e8ab1ae4aeaa">3W clinic<span class="woof_checkbox_count">(1)</span></label>
-                                                        <input type="hidden" value="3W clinic" data-anchor="woof_n_pwb-brand_3w-clinic">
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <input type="hidden" name="woof_t_pwb-brand" value="Brands"><!-- for red button search nav panel -->
-                                        </div>
-                                    </div>
-                                    <div data-css-class="woof_container_pa_xuat-xu" class="woof_container woof_container_checkbox woof_container_pa_xuat-xu woof_container_3 woof_container_">
-                                        <div class="woof_container_overlay_item"></div>
-                                        <div class="woof_container_inner woof_container_inner_">
-                                            <h4>	    <a href="javascript: void(0);" title="toggle" class="woof_front_toggle woof_front_toggle_opened" data-condition="opened">+</a>
-                                            </h4>
-                                            <div class="woof_block_html_items">
-                                                <ul class="woof_list woof_list_checkbox">
-                                                </ul>
-                                            </div>
-                                            <input type="hidden" name="woof_t_pa_xuat-xu" value=""><!-- for red button search nav panel -->
-                                        </div>
-                                    </div>
-                                    <div class="woof_submit_search_form_container">
-                                        <button style="float: left;" class="button woof_submit_search_form">Lọc tìm sản phẩm</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </aside>
-                </div>
-                <!-- .sidebar-inner -->
-            </div>
-            <!-- #shop-sidebar -->
-            <div class="col large-9">
-                <div class="shop-container">
-                    <div class="woocommerce-notices-wrapper"></div>
-                    <div class="woof_products_top_panel"></div>
-                    <div class="products row row-small large-columns-6 medium-columns-3 small-columns-2 has-equal-box-heights equalize-box">
-                        @foreach($category_by_id as $key=>$pro)
-                        <div class="product-small col has-hover product type-product post-283 status-publish first instock product_cat-clinic-spa product_cat-giam-beo product_cat-triet-long product_tag-melano-cc has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
-                            <div class="col-inner">
-                                <div class="badge-container absolute left top z-1">
-                                    <div class="callout badge badge-square">
-                                        <div class="badge-inner secondary on-sale"><span class="onsale">-20%</span></div>
-                                    </div>
-                                </div>
-                                <div class="product-small box ">
-                                    <div class="box-image">
-                                        <div class="image-zoom">
-                                            <a href="{{URL::to('/san-pham/'.$pro->product_id)}}">
-                                                <img width="212" height="238" src="{{URL::to('public/uploads/product/'.$pro->product_image)}}" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="">				</a>
-                                        </div>
-                                        <div class="image-tools is-small top right show-on-hover">
-                                        </div>
-                                        <div class="image-tools is-small hide-for-small bottom left show-on-hover">
-                                        </div>
-                                        <div class="image-tools grid-tools text-center hide-for-small bottom hover-slide-in show-on-hover">
-                                        </div>
-                                    </div>
-                                    <!-- box-image -->
-                                    <div class="box-text box-text-products">
-                                        <div class="title-wrapper">
-                                            @foreach($category as $key=>$cate)
-                                                @if($cate->category_id==$pro->category_id)
-                                                    <p class="category uppercase is-smaller no-text-overflow product-cat op-7">
-                                                        {{$cate->category_name}}
-                                                    </p>
-                                                @endif
-                                            @endforeach
-                                        </div>
-                                        <p class="name product-title">
-                                            <a class="text" href="{{URL::to('/san-pham/'.$pro->product_id)}}">{{$pro->product_description}}</a>
-                                        </p>
-                                        <div class="price-wrapper">
-                                            <div class="pwb-brands-in-loop">
-                                                    <span>
-                                                        <a href="{{URL::to('/thuong-hieu/'.$pro->brand_id)}}">
-                                                            @foreach($brand as $key=>$bra)
-                                                                @if($bra->brand_id==$pro->brand_id)
-                                                                    <img width="120" height="60" src="{{URL::to('public/uploads/brand/'.$bra->brand_image)}}" class="lazy-load attachment-thumbnail size-thumbnail" alt="">
-                                                                @endif
-                                                            @endforeach
-                                                        </a>
-                                                   </span>
-                                            </div>
-                                            <span class="price">
-                                                        <del>
-                                                            <span class="woocommerce-Price-amount amount">148.000
+        <div id="content" class="content-area page-wrapper" role="main">
+            <div class="row row-main">
+                <div class="large-12 col">
+                    <div class="col-inner">
+                        <div class="woocommerce">
+                            <div class="woocommerce-notices-wrapper"></div>
+                            <div class="woocommerce row row-large row-divided">
+                                <div class="col large-7 pb-0 ">
+                                    <form class="woocommerce-cart-form" action="{{URL::to('/update-cart-quantity')}}" method="post">
+                                        @csrf
+                                        <div class="cart-wrapper sm-touch-scroll">
+                                            <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
+                                                <thead>
+                                                <tr>
+                                                    <th class="product-name" colspan="3">Sản phẩm</th>
+                                                    <th class="product-price">Giá</th>
+                                                    <th class="product-quantity">Số lượng</th>
+                                                    <th class="product-subtotal">Tổng</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                @foreach($content as $v_content)
+                                                <tr class="woocommerce-cart-form__cart-item cart_item">
+                                                    <td class="product-remove">
+                                                        <a href="{{URL::to('delete-to-cart/'.$v_content->rowId)}}" class="remove" aria-label="Xóa sản phẩm này" data-product_id="269" data-product_sku="">&times;</a>
+                                                    </td>
+                                                    <td class="product-thumbnail">
+                                                        <a href="{{URL::to('/san-pham/'.$v_content->id)}}"><img width="300" height="300" src="{{URL::to('public/uploads/product/'.$v_content->options->image)}}" class="lazy-load attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" sizes="(max-width: 300px) 100vw, 300px" /></a>
+                                                    </td>
+                                                    <td class="product-name" data-title="Sản phẩm">
+                                                        <a href="{{URL::to('/san-pham/'.$v_content->id)}}">{{$v_content->name}}</a>
+                                                        <div class="show-for-small mobile-product-price">
+                                                            <span class="mobile-product-price__qty">{{$v_content->qty}} x </span>
+                                                            <span class="woocommerce-Price-amount amount">{{number_format($v_content->price)}}
                                                                 <span class="woocommerce-Price-currencySymbol">&#8363;
-                                                                </span>
-                                                        </span>
-                                                        </del>
-                                                        <ins>
-                                                        <span class="woocommerce-Price-amount amount">{{number_format($pro->product_price)}}
-                                                            <span class="woocommerce-Price-currencySymbol">&#8363;
-                                                            </span>
-                                                        </span>
-                                                        </ins>
-                                                </span>
+                                                                </span></span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="product-price" data-title="Giá">
+                                                        <span class="woocommerce-Price-amount amount">{{number_format($v_content->price)}}<span class="woocommerce-Price-currencySymbol">&#8363;</span></span>
+                                                    </td>
+                                                    <td class="product-quantity" data-title="Số lượng">
+                                                            <div class="quantity buttons_added">
+                                                                <input type="button" value="-" class="minus button is-form">
+                                                                <input
+                                                                    type="number"
+                                                                    class="input-text qty text"
+                                                                    step="1"
+                                                                    min="1"
+                                                                    max="9999"
+                                                                    name="cart_qty[]"
+                                                                    value="{{$v_content->qty}}"
+                                                                    title="SL"
+                                                                    size="4"
+                                                                    inputmode="numeric" />
+                                                                <input type="hidden" value="{{$v_content->rowId}}" name="rowId_cart[]" />
+                                                                <input type="button" value="+" class="plus button is-form">
+                                                            </div>
+
+                                                    </td>
+                                                    <td class="product-subtotal" data-title="Tổng">
+                                                        <span class="woocommerce-Price-amount amount">
+                                                            <?php
+                                                                $subtotal = $v_content->price * $v_content->qty;
+                                                                echo number_format($subtotal);
+                                                            ?><span class="woocommerce-Price-currencySymbol">&#8363;</span></span>
+                                                    </td>
+                                                </tr>
+                                                @endforeach
+                                                <tr>
+                                                    <td colspan="6" class="actions clear">
+                                                        <div class="continue-shopping pull-left text-left">
+                                                            <a class="button-continue-shopping button primary is-outline"  href="https://shoplamdep.haiphongweb.com/mua/">
+                                                                &#8592; Tiếp tục xem sản phẩm    </a>
+                                                        </div>
+                                                        <button type="submit" class="button primary mt-0 pull-left small" name="update_cart" value="Cập nhật giỏ hàng">Cập nhật giỏ hàng</button>
+
+                                                        <input type="hidden" id="woocommerce-cart-nonce" name="woocommerce-cart-nonce" value="19c702aaee" />
+                                                        <input type="hidden" name="_wp_http_referer" value="/gio-hang/" />
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
-                                    </div>
-                                    <!-- box-text -->
+                                    </form>
                                 </div>
-                                <!-- box -->
+                                <div class="cart-collaterals large-5 col pb-0">
+                                    <div class="cart-sidebar col-inner ">
+                                        <div class="cart_totals ">
+                                            <table cellspacing="0">
+                                                <thead>
+                                                <tr>
+                                                    <th class="product-name" colspan="2" style="border-width:3px;">Cộng giỏ hàng</th>
+                                                </tr>
+                                                </thead>
+                                            </table>
+                                            <h2>Cộng giỏ hàng</h2>
+                                            <table cellspacing="0" class="shop_table shop_table_responsive">
+                                                <tr class="cart-subtotal">
+                                                    <th>Tạm tính</th>
+                                                    <td data-title="Tạm tính"><span class="woocommerce-Price-amount amount">{{Cart::tax()}}<span class="woocommerce-Price-currencySymbol">&#8363;</span></span></td>
+                                                </tr>
+                                                <tr class="order-total">
+                                                    <th>Tổng</th>
+                                                    <td data-title="Tổng"><strong><span class="woocommerce-Price-amount amount">{{Cart::subtotal()}}<span class="woocommerce-Price-currencySymbol">&#8363;</span></span></strong> </td>
+                                                </tr>
+                                            </table>
+                                            <div class="wc-proceed-to-checkout">
+                                                <a href="https://shoplamdep.haiphongweb.com/thanh-toan/" class="checkout-button button alt wc-forward">
+                                                    Tiến hành thanh toán</a>
+                                            </div>
+                                        </div>
+                                        <form class="checkout_coupon mb-0" method="post">
+                                            <div class="coupon">
+                                                <h3 class="widget-title"><i class="icon-tag" ></i> Phiếu ưu đãi</h3>
+                                                <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="Mã ưu đãi" /> <input type="submit" class="is-form expand" name="apply_coupon" value="Áp dụng" />
+                                            </div>
+                                        </form>
+                                        <div class="cart-sidebar-content relative"></div>
+                                    </div>
+                                </div>
                             </div>
-                            <!-- .col-inner -->
+                            <div class="cart-footer-content after-cart-content relative"></div>
                         </div>
-                        <!-- col -->
-                        @endforeach
                     </div>
-                    <!-- row -->
+                    <!-- .col-inner -->
                 </div>
-                <!-- shop container -->
+                <!-- .large-12 -->
             </div>
+            <!-- .row -->
         </div>
     </main>
     <!-- #main -->

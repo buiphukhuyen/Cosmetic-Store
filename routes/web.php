@@ -32,9 +32,6 @@ Route::get('/', 'HomeController@index');
         Route::post('/update_category_product/{category_id}','CategoryProduct@update_category');
         Route::get('/delete_category_product/{category_id}','CategoryProduct@delete_category');
 
-        //Customer
-        Route::get('/danh-muc-san-pham/{category_id}', 'CategoryProduct@show_category_home');
-        Route::get('/thuong-hieu/{brand_id}', 'BrandController@show_brand_home');
 
     //Brand
         Route::get('/add_brand','BrandController@add_brand');
@@ -55,3 +52,14 @@ Route::get('/', 'HomeController@index');
         Route::get('/edit_product/{product_id}','ProductController@edit_product');
         Route::post('/update_product/{product_id}','ProductController@update_product');
         Route::get('/delete_product/{product_id}','ProductController@delete_product');
+
+
+    //Customer
+        Route::get('/danh-muc-san-pham/{category_id}', 'CategoryProduct@show_category_home');
+        Route::get('/thuong-hieu/{brand_id}', 'BrandController@show_brand_home');
+        Route::get('/san-pham/{product_id}', 'ProductController@product_detail');
+        Route::get('/show-cart', 'CartController@show_cart');
+        Route::post('/save-cart', 'CartController@save_cart');
+        Route::get('/delete-to-cart/{rowId}', 'CartController@delete_to_cart');
+        Route::post('/update-cart-quantity', 'CartController@update_cart_quantity');
+

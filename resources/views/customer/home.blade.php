@@ -18,7 +18,7 @@
                         <!-- Logo -->
                         <div id="logo" class="flex-col logo">
                             <!-- Header logo -->
-                            <a href="." title="Mẫu website shop mỹ phẩm làm đẹp chuẩn seo - Thiết kế bởi Topweb" rel="home">
+                            <a href="." title="Website shop mỹ phẩm làm đẹp chuẩn SEO" rel="home">
                                 <img width="221" height="70" src="{{asset('public/customer/wp-content/uploads\2019\05\shop3.jpg')}}" class="header_logo header-logo" alt="Mẫu website shop mỹ phẩm làm đẹp chuẩn seo"><img width="221" height="70" src="public/customer/wp-content/uploads\2019\05\shop3.jpg" class="header-logo-dark" alt="Mẫu website shop mỹ phẩm làm đẹp chuẩn seo"></a>
                         </div>
                         <!-- Mobile Left Elements -->
@@ -438,7 +438,7 @@
                                     <div class="product-small box has-hover box-normal box-text-bottom">
                                         <div class="box-image">
                                             <div class="image-overlay-add image-zoom image-cover" style="padding-top:100%;">
-                                                <a href="#">
+                                                <a href="{{URL::to('/san-pham/'.$pro->product_id)}}">
                                                     <img width="358" height="358" src="{{URL::to('public/uploads/product/'.$pro->product_image)}}"  class="lazy-load attachment-original size-original" sizes="(max-width: 358px) 100vw, 358px">									</a>
                                                 <div class="overlay fill" style="background-color: rgba(255, 255, 255, 0.27)"></div>
                                             </div>

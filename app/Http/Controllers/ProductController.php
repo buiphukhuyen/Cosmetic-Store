@@ -121,4 +121,27 @@ class ProductController extends Controller
         Session::put('success', 'Xoá Sản phẩm thành công');
         return Redirect::to('list_product');
     }
+
+    public function product_detail($product_id) {
+        $this->authLogin();
+        $cate_product = DB::table('tbl_category_product')->where('category_status','1')->orderby('category_id', 'desc')->get();
+        $brand_product = DB::table('tbl_brand')->where('brand_status','1')->orderby('brand_id', 'desc')->get();
+
+        $product_detail = DB::table('tbl_product')
+            ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
+            ->join('tbl_brand','tbl_brand.brand_id','=','tbl_product.brand_id')
+            ->where('tbl_product.product_id',$product_id)->get();
+
+        foreach($product_detail as $key => $value){
+            $category_id = $value->category_id;
+        }
+
+        $product_related = DB::table('tbl_product')
+            ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
+            ->join('tbl_brand','tbl_brand.brand_id','=','tbl_product.brand_id')
+            ->where('tbl_category_product.category_id',$category_id)->whereNotIn('tbl_product.product_id',[$product_id])->get();
+
+        $list_new_product = DB::table('tbl_product')->where('product_status','1')->orderby('product_id','desc')->limit(8)->get();
+            return view('customer.product.product_detail')->with('category',$cate_product)->with('brand', $brand_product)->with('list_new_product',$list_new_product)->with('product_detail',$product_detail)->with('product_related',$product_related);
+    }
 }

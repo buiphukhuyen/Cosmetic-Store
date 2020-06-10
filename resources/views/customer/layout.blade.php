@@ -198,11 +198,18 @@
 
     <!-- Header - Main Home -->
     @yield("home")
+
     <!-- Header - Main Show Category -->
     @yield("show_category")
 
     <!-- Header - Main Show Category -->
     @yield("show_brandff")
+
+    <!-- Header - Main Product _ Detail -->
+    @yield("product_detail")
+
+    <!-- Header - Main Show _ Cart -->
+    @yield("show_cart")
 
     <!-- Footer -->
     <footer id="footer" class="footer-wrapper">
