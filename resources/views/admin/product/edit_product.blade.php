@@ -67,8 +67,42 @@
             <div class="form-group">
                 <label>Hình ảnh Sản phẩm</label>
                 <input type="file" name="product_image" class="form-control">
-                <img src="{{URL::to('public/uploads/product/'.$pro->product_image)}}" width="200px" height="200px" />
+                <div class="inline-profile-tiles">
+                    <div class="col-4 col-sm-4 col-xxl-4">
+                        <div class="profile-tile profile-tile-inlined">
+                            <a class="profile-tile-box">
+                                <div>
+                                    <img src="{{URL::to('public/uploads/product/'.$pro->product_image)}}" width="150" height="150" />
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+
+            <div class="form-group">
+                <label>Thư viện ảnh Sản phẩm</label>
+                <input type="file" name="filename[]" class="form-control" multiple>
+                @if($pro->product_image_gallery!=null)
+                    <div class="inline-profile-tiles">
+                        <div class="row">
+                            @foreach(json_decode($pro->product_image_gallery) as $picture)
+                                <div class="col-4 col-sm-3 col-xxl-2">
+                                    <div class="profile-tile profile-tile-inlined">
+                                        <a class="profile-tile-box">
+                                            <div>
+                                                <img width="100" height="100" src="{{URL::to('public/uploads/product/'.$picture)}}"/>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                @endif
+            </div>
+
             <div class="form-group">
                 <label>Mô tả Sản phẩm</label>
                 <textarea type="number" name="product_description" class="form-control" data-error="Vui lòng nhập Mô tả sản phẩm" required> {{$pro->product_description}} </textarea>

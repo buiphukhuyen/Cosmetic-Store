@@ -211,6 +211,12 @@
     <!-- Header - Main Show _ Cart -->
     @yield("show_cart")
 
+    <!-- Header - Main Login checkout -->
+    @yield("login_checkout")
+
+    <!-- Header - Main Checkout -->
+    @yield("checkout")
+
     <!-- Footer -->
     <footer id="footer" class="footer-wrapper">
         <section class="section footer-section" id="section_696579273">
@@ -389,35 +395,24 @@
             <li class="header-search-form search-form html relative has-icon">
                 <div class="header-search-form-wrapper">
                     <div class="searchform-wrapper ux-search-box relative is-normal">
-                        <form role="search" method="get" class="searchform" action="https://shoplamdep.haiphongweb.com/">
+                        <form role="search" method="post" class="searchform" action="{{URL::to('/tim-kiem')}}">
+                            @csrf
                             <div class="flex-row relative">
-                                <div class="flex-col search-form-categories">
-                                    <select class="search_categories resize-select mb-0" name="product_cat">
-                                        <option value="" selected='selected'>All</option>
-                                        <option value="cham-soc-da-mat">Chăm sóc da mặt</option>
-                                        <option value="cham-soc-toc">Chăm sóc tóc</option>
-                                        <option value="clinic-spa">Clinic &amp; Spa</option>
-                                        <option value="giam-beo">Giảm béo</option>
-                                        <option value="trang-diem">Trang điểm</option>
-                                        <option value="triet-long">Triệt lông</option>
-                                    </select>
-                                </div>
                                 <!-- .flex-col -->
                                 <div class="flex-col flex-grow">
-                                    <input type="search" class="search-field mb-0" name="s" value="" placeholder="Tìm kiếm sản phẩm, danh mục...">
-                                    <input type="hidden" name="post_type" value="product">
+                                    <input type="search" class="search-field mb-0" name="keywords" value="" placeholder="Tìm kiếm sản phẩm">
                                 </div>
                                 <!-- .flex-col -->
                                 <div class="flex-col">
                                     <button type="submit" class="ux-search-submit submit-button secondary button icon mb-0">
-                                        <i class="icon-search"></i>				</button>
+                                        <i class="icon-search"></i>
+                                    </button>
                                 </div>
                                 <!-- .flex-col -->
                             </div>
                             <!-- .flex-row -->
                             <div class="live-search-results text-left z-top"></div>
-                        </form>
-                    </div>
+                        </form>                   </div>
                 </div>
             </li>
             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-26"><a href="danh-muc-san-pham\suc-khoe-lam-dep\index.htm" class="nav-top-link">Sức khỏe &#038; làm đẹp</a></li>
@@ -586,6 +581,8 @@
     <button class="chat-face"><a href="http://m.me/topweb.com.vn">Chat Facebook</a></button>
     <button class="hotline"><a href="tel:0986.989.626">Hotline: 0986.989.626</a></button>
 </div>
+
+
 <div id="login-form-popup" class="lightbox-content mfp-hide">
     <div class="woocommerce-notices-wrapper"></div>
     <div class="account-container lightbox-inner">
@@ -593,20 +590,23 @@
             <div class="col-1 large-6 col pb-0">
                 <div class="account-login-inner">
                     <h3 class="uppercase">Đăng nhập</h3>
-                    <form class="woocommerce-form woocommerce-form-login login" method="post">
+                    <form action="{{URL::to('/login-customer')}}" class="woocommerce-form woocommerce-form-login login" method="post">
+                        @csrf
                         <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-                            <label for="username">Tên tài khoản hoặc địa chỉ email&nbsp;<span class="required">*</span></label>
-                            <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="username" autocomplete="username" value="">
+                            <label for="username">Địa chỉ email&nbsp;<span class="required">*</span></label>
+                            <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="customer_email" id="username" value="">
                         </p>
                         <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
                             <label for="password">Mật khẩu&nbsp;<span class="required">*</span></label>
-                            <input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="password" autocomplete="current-password">
+                            <input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="customer_password" id="password" autocomplete="current-password">
                         </p>
                         <p class="form-row">
                             <label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
                                 <input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever"> <span>Ghi nhớ mật khẩu</span>
                             </label>
-                            <input type="hidden" id="woocommerce-login-nonce" name="woocommerce-login-nonce" value="2080123d63"><input type="hidden" name="_wp_http_referer" value="/">						<button type="submit" class="woocommerce-Button button woocommerce-form-login__submit" name="login" value="Đăng nhập">Đăng nhập</button>
+                            <input type="hidden" id="woocommerce-login-nonce" name="woocommerce-login-nonce" value="2080123d63">
+                            <input type="hidden" name="_wp_http_referer" value="/">
+                            <button type="submit" class="woocommerce-Button button woocommerce-form-login__submit" name="login" value="Đăng nhập">Đăng nhập</button>
                         </p>
                         <p class="woocommerce-LostPassword lost_password">
                             <a href="tai-khoan\lost-password\index.htm">Quên mật khẩu?</a>
@@ -618,15 +618,28 @@
             <div class="col-2 large-6 col pb-0">
                 <div class="account-register-inner">
                     <h3 class="uppercase">Đăng ký</h3>
-                    <form method="post" class="woocommerce-form woocommerce-form-register register">
+                    <form action="{{URL::to('add-customer')}}" method="post" class="woocommerce-form woocommerce-form-register register">
+                        @csrf
+                        <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                            <label for="reg_name">Họ và tên&nbsp;<span class="required">*</span></label>
+                            <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="reg_name" id="reg_name" value="">
+                        </p>
                         <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
                             <label for="reg_email">Địa chỉ email&nbsp;<span class="required">*</span></label>
-                            <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="reg_email" autocomplete="email" value="">
+                            <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="reg_email" id="reg_email" value="">
                         </p>
-                        <p>Một mật khẩu sẽ được gửi đến địa chỉ email của bạn.</p>
+                        <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                            <label for="password">Mật khẩu&nbsp;<span class="required">*</span></label>
+                            <input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="reg_password" id="reg_password">
+                        </p>
+                        <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                            <label for="reg_phone">Số điện thoại&nbsp;<span class="required">*</span></label>
+                            <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="reg_phone" id="reg_phone" value="">
+                        </p>
                         <div class="woocommerce-privacy-policy-text"></div>
                         <p class="woocommerce-FormRow form-row">
-                            <input type="hidden" id="woocommerce-register-nonce" name="woocommerce-register-nonce" value="dd300aa97e"><input type="hidden" name="_wp_http_referer" value="/">						<button type="submit" class="woocommerce-Button button" name="register" value="Đăng ký">Đăng ký</button>
+                            <input type="hidden" id="woocommerce-register-nonce" name="woocommerce-register-nonce" value="dd300aa97e"><input type="hidden" name="_wp_http_referer">
+                            <button type="submit" class="woocommerce-Button button" name="register" value="Đăng ký">Đăng ký</button>
                         </p>
                     </form>
                 </div>
@@ -638,7 +651,6 @@
     </div>
     <!-- .account-login-container -->
 </div>
-
 
 <script type="text/javascript">
     var c = document.body.className;

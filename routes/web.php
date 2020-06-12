@@ -58,8 +58,16 @@ Route::get('/', 'HomeController@index');
         Route::get('/danh-muc-san-pham/{category_id}', 'CategoryProduct@show_category_home');
         Route::get('/thuong-hieu/{brand_id}', 'BrandController@show_brand_home');
         Route::get('/san-pham/{product_id}', 'ProductController@product_detail');
+        Route::post('/tim-kiem', 'HomeController@search');
         Route::get('/show-cart', 'CartController@show_cart');
         Route::post('/save-cart', 'CartController@save_cart');
         Route::get('/delete-to-cart/{rowId}', 'CartController@delete_to_cart');
         Route::post('/update-cart-quantity', 'CartController@update_cart_quantity');
+        Route::get('/login-checkout', 'CheckoutController@login_checkout');
+        Route::post('/login-customer', 'CheckoutController@login_customer');
+        Route::post('/add-customer', 'CheckoutController@add_customer');
+        Route::get('/checkout', 'CheckoutController@checkout');
+        Route::post('/save-checkout-customer', 'CheckoutController@save_checkout_customer');
+        Route::get('/logout-checkout', 'CheckoutController@logout_checkout');
+
 

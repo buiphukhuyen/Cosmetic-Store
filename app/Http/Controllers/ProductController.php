@@ -37,6 +37,7 @@ class ProductController extends Controller
         $data['brand_id'] = $request->brand_id;
         $data['product_status'] = $request->product_status;
         $get_image = $request->file('product_image');
+        $get_image_gallery = $request->file('filename');
 
         if($get_image){
             $get_name_image = $get_image->getClientOriginalName();
@@ -44,12 +45,26 @@ class ProductController extends Controller
             $new_image =  $name_image.rand(0,99).'.'.$get_image->getClientOriginalExtension();
             $get_image->move('public/uploads/product',$new_image);
             $data['product_image'] = $new_image;
+
+            if($get_image_gallery) {
+                foreach($request->file('filename') as $image)
+                {
+                    $name=$image->getClientOriginalName();
+                    $new_name = current(explode('.',$name));
+                    $new_images =  $new_name.rand(0,99).'.'.$image->getClientOriginalExtension();
+                    $image->move('public/uploads/product', $new_images);
+                    $datas[] = $new_images;
+                }
+                $data['product_image_gallery'] = json_encode($datas);
+            }
+
             DB::table('tbl_product')->insert($data);
             Session::put('success', 'Thêm Sản phẩm thành công');
             return Redirect::to("add_product");
         }
-        $data['product_image'] = '';
 
+        $data['product_image'] = '';
+        $data['product_image_gallery'] ='';
         DB::table('tbl_product')->insert($data);
         Session::put('success', 'Thêm Sản phẩm thành công');
         return Redirect::to("add_product");
@@ -89,7 +104,7 @@ class ProductController extends Controller
         return view('admin.admin_layout')->with('admin.product.edit_product', $manager_product);
     }
 
-    public function update_product(Request $request, $product_id) {
+    public function update_product(Request $request, $product_id, $get_image_gallery) {
         $this->authLogin();
         $data = array();
         $data['product_name'] = $request->product_name;
@@ -105,6 +120,18 @@ class ProductController extends Controller
             $new_image =  $name_image.rand(0,99).'.'.$get_image->getClientOriginalExtension();
             $get_image->move('public/uploads/product',$new_image);
             $data['product_image'] = $new_image;
+            if($get_image_gallery) {
+                foreach($request->file('filename') as $image)
+                {
+                    $name=$image->getClientOriginalName();
+                    $new_name = current(explode('.',$name));
+                    $new_images =  $new_name.rand(0,99).'.'.$image->getClientOriginalExtension();
+                    $image->move('public/uploads/product', $new_images);
+                    $datas[] = $new_images;
+                }
+                $data['product_image_gallery'] = json_encode($datas);
+            }
+
             DB::table('tbl_product')->where('product_id',$product_id)->update($data);
             Session::put('message','Cập nhật sản phẩm thành công');
             return Redirect::to('list_product');
@@ -123,7 +150,6 @@ class ProductController extends Controller
     }
 
     public function product_detail($product_id) {
-        $this->authLogin();
         $cate_product = DB::table('tbl_category_product')->where('category_status','1')->orderby('category_id', 'desc')->get();
         $brand_product = DB::table('tbl_brand')->where('brand_status','1')->orderby('brand_id', 'desc')->get();
 

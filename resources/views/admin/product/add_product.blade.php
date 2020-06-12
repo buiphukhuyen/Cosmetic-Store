@@ -49,6 +49,11 @@
             </div>
 
             <div class="form-group">
+                <label>Thư viện ảnh Sản phẩm</label>
+                <input type="file" name="filename[]" class="form-control" multiple>
+            </div>
+
+            <div class="form-group">
                 <label>Mô tả Sản phẩm</label>
                 <textarea type="number" name="product_description" class="form-control" placeholder="Mô tả sản phẩm" data-error="Vui lòng nhập Mô tả sản phẩm" required> </textarea>
                 <div class="help-block form-text text-muted form-control-feedback">

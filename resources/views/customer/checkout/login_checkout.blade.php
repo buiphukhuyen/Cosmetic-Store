@@ -1,5 +1,5 @@
 @extends('customer.layout')
-@section('show_cart')
+@section('login_checkout')
     <style>
         body.home #mega_menu {
             display: none;
@@ -15,7 +15,7 @@
         }
     </style>
     <?php
-        $content=Cart::content();
+    $content=Cart::content();
     ?>
     <header id="header" class="header has-sticky sticky-jump">
         <div class="header-wrapper">
@@ -65,8 +65,7 @@
                                                         </div>
                                                         <!-- .flex-row -->
                                                         <div class="live-search-results text-left z-top"></div>
-                                                    </form>s
-                                                </div>
+                                                    </form>                                                </div>
                                             </div>
                                         </div>
                                         <div class="col medium-3 small-12 large-3">
@@ -99,11 +98,11 @@
                         <ul class="header-nav header-nav-main nav nav-right  nav-uppercase">
                             <li class="cart-item has-icon has-dropdown">
                                 <a href="{{URL::to('/show-cart')}}"  title="Giỏ hàng" class="header-cart-link is-small">
-                                       <span class="header-cart-title">
-                                       Giỏ hàng     </span>
+                        <span class="header-cart-title">
+                        Giỏ hàng     </span>
                                     <span class="image-icon header-cart-icon" data-icon-label="0">
-                                       <img class="cart-img-icon" alt="Giỏ hàng" src="{{asset('public/customer/wp-content/uploads\2019\02\icon_01.png')}}">
-                                       </span><!-- .cart-img-inner -->
+                        <img class="cart-img-icon" alt="Giỏ hàng" src="{{asset('public/customer/wp-content/uploads\2019\02\icon_01.png')}}">
+                        </span><!-- .cart-img-inner -->
                                 </a>
                                 <ul class="nav-dropdown nav-dropdown-default">
                                     <li class="html widget_shopping_cart">
@@ -114,33 +113,20 @@
                                 </ul>
                                 <!-- .nav-dropdown -->
                             </li>
-                            <?php
-                            $customer_id = \Illuminate\Support\Facades\Session::get('customer_id');
-                            $customer_name = \Illuminate\Support\Facades\Session::get('customer_name');
-                            if($customer_id!=NULL) {
-                            ?>
-                            <li class="account-item has-icon">
-                                <a href="{{URL::to('logout-checkout')}}" class="nav-top-link nav-top-not-logged-in">
-                                    <span>Chào <?php echo Session::get('customer_name');?> / Đăng xuất  </span>
-                                </a><!-- .account-login-link -->
-                            </li>
-                            <?php
-                            }else {?>
-                            <li class="account-item has-icon">
+                            <li class="account-item has-icon
+                     ">
                                 <a href="#" class="nav-top-link nav-top-not-logged-in " data-open="#login-form-popup">
-                                    <span>
-                                    Đăng nhập     / Đăng ký  </span>
+                     <span>
+                     Đăng nhập     / Đăng ký  </span>
                                 </a><!-- .account-login-link -->
                             </li>
-                            <?php
-                            }?>
                         </ul>
                     </div>
                     <!-- Mobile Right Elements -->
                     <div class="flex-col show-for-medium flex-right">
                         <ul class="mobile-nav nav nav-right ">
                             <li class="cart-item has-icon">
-                                <a href="..\..\gio-hang\index.htm" class="header-cart-link off-canvas-toggle nav-top-link is-small" data-open="#cart-popup" data-class="off-canvas-cart" title="Giỏ hàng" data-pos="right">
+                                <a href="{{URL::to('/show-cart')}}"  class="header-cart-link off-canvas-toggle nav-top-link is-small" data-open="#cart-popup" data-class="off-canvas-cart" title="Giỏ hàng" data-pos="right">
                         <span class="image-icon header-cart-icon" data-icon-label="0">
                         <img class="cart-img-icon" alt="Giỏ hàng" src="{{asset('public/customer/wp-content/uploads\2019\02\icon_01.png')}}">
                         </span><!-- .cart-img-inner -->
@@ -223,7 +209,6 @@
         </div>
         <!-- header-wrapper-->
     </header>
-
     <main id="main" class="">
         <div id="content" class="content-area page-wrapper" role="main">
             <div class="row row-main">
@@ -231,123 +216,77 @@
                     <div class="col-inner">
                         <div class="woocommerce">
                             <div class="woocommerce-notices-wrapper"></div>
-                            <div class="woocommerce row row-large row-divided">
-                                <div class="col large-7 pb-0 ">
-                                    <form class="woocommerce-cart-form" action="{{URL::to('/update-cart-quantity')}}" method="post">
-                                        @csrf
-                                        <div class="cart-wrapper sm-touch-scroll">
-                                            <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
-                                                <thead>
-                                                <tr>
-                                                    <th class="product-name" colspan="3">Sản phẩm</th>
-                                                    <th class="product-price">Giá</th>
-                                                    <th class="product-quantity">Số lượng</th>
-                                                    <th class="product-subtotal">Tổng</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                @foreach($content as $v_content)
-                                                <tr class="woocommerce-cart-form__cart-item cart_item">
-                                                    <td class="product-remove">
-                                                        <a href="{{URL::to('delete-to-cart/'.$v_content->rowId)}}" class="remove" aria-label="Xóa sản phẩm này" data-product_id="269" data-product_sku="">&times;</a>
-                                                    </td>
-                                                    <td class="product-thumbnail">
-                                                        <a href="{{URL::to('/san-pham/'.$v_content->id)}}"><img width="300" height="300" src="{{URL::to('public/uploads/product/'.$v_content->options->image)}}" class="lazy-load attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" sizes="(max-width: 300px) 100vw, 300px" /></a>
-                                                    </td>
-                                                    <td class="product-name" data-title="Sản phẩm">
-                                                        <a href="{{URL::to('/san-pham/'.$v_content->id)}}">{{$v_content->name}}</a>
-                                                        <div class="show-for-small mobile-product-price">
-                                                            <span class="mobile-product-price__qty">{{$v_content->qty}} x </span>
-                                                            <span class="woocommerce-Price-amount amount">{{number_format($v_content->price)}}
-                                                                <span class="woocommerce-Price-currencySymbol">&#8363;
-                                                                </span></span>
-                                                        </div>
-                                                    </td>
-                                                    <td class="product-price" data-title="Giá">
-                                                        <span class="woocommerce-Price-amount amount">{{number_format($v_content->price)}}<span class="woocommerce-Price-currencySymbol">&#8363;</span></span>
-                                                    </td>
-                                                    <td class="product-quantity" data-title="Số lượng">
-                                                            <div class="quantity buttons_added">
-                                                                <input type="button" value="-" class="minus button is-form">
-                                                                <input
-                                                                    type="number"
-                                                                    class="input-text qty text"
-                                                                    step="1"
-                                                                    min="1"
-                                                                    max="9999"
-                                                                    name="cart_qty[]"
-                                                                    value="{{$v_content->qty}}"
-                                                                    title="SL"
-                                                                    size="4"
-                                                                    inputmode="numeric" />
-                                                                <input type="hidden" value="{{$v_content->rowId}}" name="rowId_cart[]" />
-                                                                <input type="button" value="+" class="plus button is-form">
-                                                            </div>
-
-                                                    </td>
-                                                    <td class="product-subtotal" data-title="Tổng">
-                                                        <span class="woocommerce-Price-amount amount">
-                                                            <?php
-                                                                $subtotal = $v_content->price * $v_content->qty;
-                                                                echo number_format($subtotal);
-                                                            ?><span class="woocommerce-Price-currencySymbol">&#8363;</span></span>
-                                                    </td>
-                                                </tr>
-                                                @endforeach
-                                                <tr>
-                                                    <td colspan="6" class="actions clear">
-                                                        <div class="continue-shopping pull-left text-left">
-                                                            <a class="button-continue-shopping button primary is-outline"  href="https://shoplamdep.haiphongweb.com/mua/">
-                                                                &#8592; Tiếp tục xem sản phẩm    </a>
-                                                        </div>
-                                                        <button type="submit" class="button primary mt-0 pull-left small" name="update_cart" value="Cập nhật giỏ hàng">Cập nhật giỏ hàng</button>
-
-                                                        <input type="hidden" id="woocommerce-cart-nonce" name="woocommerce-cart-nonce" value="19c702aaee" />
-
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
+                            <div class="account-container lightbox-inner">
+                                <div class="col2-set row row-divided row-large" id="customer_login">
+                                    <div class="col-1 large-6 col pb-0">
+                                        <div class="account-login-inner">
+                                            <h3 class="uppercase">Đăng nhập</h3>
+                                            <form action="{{URL::to('/login-customer')}}" class="woocommerce-form woocommerce-form-login login" method="post">
+                                                @csrf
+                                                <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                                                    <label for="username">Địa chỉ email&nbsp;<span class="required">*</span></label>
+                                                    <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="customer_email" id="username" autocomplete="username" value="">
+                                                </p>
+                                                <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                                                    <label for="password">Mật khẩu&nbsp;<span class="required">*</span></label>
+                                                    <input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="customer_password" id="password" autocomplete="current-password">
+                                                </p>
+                                                <p class="form-row">
+                                                    <label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
+                                                        <input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever"> <span>Ghi nhớ mật khẩu</span>
+                                                    </label>
+                                                    <?php
+                                                    use Illuminate\Support\Facades\Session;
+                                                    $error_login = Session::get('error_login');
+                                                    if($error_login) {
+                                                        echo '<p class="text-danger text-center" style="color: red">'.$error_login.'</p>';
+                                                        Session::put('error_login', null);
+                                                    }
+                                                    ?>
+                                                    <input type="hidden" id="woocommerce-login-nonce" name="woocommerce-login-nonce" value="2080123d63"><input type="hidden" name="_wp_http_referer" value="/tai-khoan/">						<button type="submit" class="woocommerce-Button button woocommerce-form-login__submit" name="login" value="Đăng nhập">Đăng nhập</button>
+                                                </p>
+                                                <p class="woocommerce-LostPassword lost_password">
+                                                    <a href="lost-password\index.htm">Quên mật khẩu?</a>
+                                                </p>
+                                            </form>
                                         </div>
-                                    </form>
-                                </div>
-                                <div class="cart-collaterals large-5 col pb-0">
-                                    <div class="cart-sidebar col-inner ">
-                                        <div class="cart_totals ">
-                                            <table cellspacing="0">
-                                                <thead>
-                                                <tr>
-                                                    <th class="product-name" colspan="2" style="border-width:3px;">Cộng giỏ hàng</th>
-                                                </tr>
-                                                </thead>
-                                            </table>
-                                            <h2>Cộng giỏ hàng</h2>
-                                            <table cellspacing="0" class="shop_table shop_table_responsive">
-                                                <tr class="cart-subtotal">
-                                                    <th>Tạm tính</th>
-                                                    <td data-title="Tạm tính"><span class="woocommerce-Price-amount amount">{{Cart::tax()}}<span class="woocommerce-Price-currencySymbol">&#8363;</span></span></td>
-                                                </tr>
-                                                <tr class="order-total">
-                                                    <th>Tổng</th>
-                                                    <td data-title="Tổng"><strong><span class="woocommerce-Price-amount amount">{{Cart::total()}}<span class="woocommerce-Price-currencySymbol">&#8363;</span></span></strong> </td>
-                                                </tr>
-                                            </table>
-                                            <div class="wc-proceed-to-checkout">
-                                                <a href="{{URL::to('/login-checkout')}}" class="checkout-button button alt wc-forward">
-                                                    Tiến hành thanh toán</a>
-                                            </div>
-                                        </div>
-                                        <form class="checkout_coupon mb-0" method="post">
-                                            <div class="coupon">
-                                                <h3 class="widget-title"><i class="icon-tag" ></i> Phiếu ưu đãi</h3>
-                                                <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="Mã ưu đãi" /> <input type="submit" class="is-form expand" name="apply_coupon" value="Áp dụng" />
-                                            </div>
-                                        </form>
-                                        <div class="cart-sidebar-content relative"></div>
+                                        <!-- .login-inner -->
                                     </div>
+                                    <div class="col-2 large-6 col pb-0">
+                                        <div class="account-register-inner">
+                                            <h3 class="uppercase">Đăng ký</h3>
+                                            <form action="{{URL::to('add-customer')}}" method="post" class="woocommerce-form woocommerce-form-register register">
+                                                @csrf
+                                                <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                                                    <label for="reg_name">Họ và tên&nbsp;<span class="required">*</span></label>
+                                                    <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="reg_name" id="reg_name" value="">
+                                                </p>
+                                                <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                                                    <label for="reg_email">Địa chỉ email&nbsp;<span class="required">*</span></label>
+                                                    <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="reg_email" id="reg_email" value="">
+                                                </p>
+                                                <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                                                    <label for="password">Mật khẩu&nbsp;<span class="required">*</span></label>
+                                                    <input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="reg_password" id="reg_password">
+                                                </p>
+                                                <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                                                    <label for="reg_phone">Số điện thoại&nbsp;<span class="required">*</span></label>
+                                                    <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="reg_phone" id="reg_phone" value="">
+                                                </p>
+                                                <div class="woocommerce-privacy-policy-text"></div>
+                                                <p class="woocommerce-FormRow form-row">
+                                                    <input type="hidden" id="woocommerce-register-nonce" name="woocommerce-register-nonce" value="dd300aa97e"><input type="hidden" name="_wp_http_referer">
+                                                    <button type="submit" class="woocommerce-Button button" name="register" value="Đăng ký">Đăng ký</button>
+                                                </p>
+                                            </form>
+                                        </div>
+                                        <!-- .register-inner -->
+                                    </div>
+                                    <!-- .large-6 -->
                                 </div>
+                                <!-- .row -->
                             </div>
-                            <div class="cart-footer-content after-cart-content relative"></div>
+                            <!-- .account-login-container -->
                         </div>
                     </div>
                     <!-- .col-inner -->

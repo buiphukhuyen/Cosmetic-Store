@@ -985,7 +985,7 @@
                                     <div class="user-w with-status status-green">
                                         <div class="user-avatar-w">
                                             <div class="user-avatar">
-                                                <img alt="" src="https://scontent.fdad3-2.fna.fbcdn.net/v/t1.0-9/16427671_621067844760417_1913042800580632288_n.jpg?_nc_cat=107&_nc_sid=174925&_nc_ohc=qlKbnglvTlsAX_Pdv0C&_nc_ht=scontent.fdad3-2.fna&oh=2e23642f77396c59f2a983f8159e687d&oe=5ECBFE21">
+                                                <img alt="" src="{{asset("public/uploads/admin/khuyen.jpg")}}">
                                             </div>
                                         </div>
                                         <div class="user-name">
@@ -993,7 +993,7 @@
                                                 Bùi Phú Khuyên
                                             </h6>
                                             <div class="user-role">
-                                                Administrator
+                                                1611061839
                                             </div>
                                         </div>
                                         <a class="user-action" href="users_profile_small.html">
@@ -1003,15 +1003,33 @@
                                     <div class="user-w with-status status-green">
                                         <div class="user-avatar-w">
                                             <div class="user-avatar">
-                                                <img alt="" src="https://scontent.fdad3-2.fna.fbcdn.net/v/t1.0-9/18813202_1879079208997211_2535962000938818949_n.jpg?_nc_cat=101&_nc_sid=174925&_nc_ohc=RZSDpMeXuYgAX_O5kVq&_nc_ht=scontent.fdad3-2.fna&oh=5c3f1e5d68da0b291aaba4d634104ad9&oe=5ECB0AC9">
+                                                <img alt="" src="{{asset("public/uploads/admin/thang.jpg")}}">
                                             </div>
                                         </div>
                                         <div class="user-name">
                                             <h6 class="user-title">
-                                                Phạm Quốc Huy
+                                                Nguyễn Thắng
                                             </h6>
                                             <div class="user-role">
-                                                Account Manager
+                                                1611060384
+                                            </div>
+                                        </div>
+                                        <a class="user-action" href="users_profile_small.html">
+                                            <div class="os-icon os-icon-email-forward"></div>
+                                        </a>
+                                    </div>
+                                    <div class="user-w with-status status-green">
+                                        <div class="user-avatar-w">
+                                            <div class="user-avatar">
+                                                <img alt="" src="{{asset("public/uploads/admin/hieu.jpeg")}}">
+                                            </div>
+                                        </div>
+                                        <div class="user-name">
+                                            <h6 class="user-title">
+                                                Vũ Minh Hiếu
+                                            </h6>
+                                            <div class="user-role">
+                                                1611060930
                                             </div>
                                         </div>
                                         <a class="user-action" href="users_profile_small.html">

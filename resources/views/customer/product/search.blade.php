@@ -1,5 +1,5 @@
 @extends('customer.layout')
-@section('show_brand')
+@section('show_category')
     <style>
         body.home #mega_menu {
             display: none;
@@ -62,7 +62,8 @@
                                                         </div>
                                                         <!-- .flex-row -->
                                                         <div class="live-search-results text-left z-top"></div>
-                                                    </form>                                            </div>
+                                                    </form>                                                </div>
+                                            </div>
                                         </div>
                                         <div class="col medium-3 small-12 large-3">
                                             <div class="col-inner">
@@ -135,7 +136,7 @@
                     <div class="flex-col show-for-medium flex-right">
                         <ul class="mobile-nav nav nav-right ">
                             <li class="cart-item has-icon">
-                                <a href="{{URL::to('/show-cart')}}" class="header-cart-link off-canvas-toggle nav-top-link is-small" data-open="#cart-popup" data-class="off-canvas-cart" title="Giỏ hàng" data-pos="right">
+                                <a href="{{URL::to('/show-cart')}}"  class="header-cart-link off-canvas-toggle nav-top-link is-small" data-open="#cart-popup" data-class="off-canvas-cart" title="Giỏ hàng" data-pos="right">
                         <span class="image-icon header-cart-icon" data-icon-label="0">
                         <img class="cart-img-icon" alt="Giỏ hàng" src="{{asset('public/customer/wp-content/uploads\2019\02\icon_01.png')}}">
                         </span><!-- .cart-img-inner -->
@@ -221,15 +222,15 @@
     <div class="shop-page-title category-page-title page-title ">
         <div class="page-title-inner flex-row  medium-flex-wrap container">
             <div class="flex-col flex-grow medium-text-center">
-                @foreach($brand_name as $key=>$name)
-                <h1 class="shop-page-title is-xlarge">
-                    {{$name->brand_name}}
-                </h1>
-
-                <div class="is-small">
-                    <nav class="woocommerce-breadcrumb breadcrumbs"><a href="../">Trang chủ</a> <span class="divider">&#47;</span> {{$name->brand_name}}</nav>
-                </div>
-                @endforeach
+                    <h1 class="shop-page-title is-xlarge">Kết quả tìm kiếm</h1>
+                    <h1 class="shop-page-title is-xlarge">
+                    </h1>
+                    <div class="is-small">
+                        <nav class="woocommerce-breadcrumb breadcrumbs">
+                            <a href="../">Trang chủ</a>
+                            <span class="divider">&#47; </span>
+                        Kết quả tìm kiếm với từ khoá <b>{{$keywords}}</b> </nav>
+                    </div>
                 <div class="category-filtering category-filter-row show-for-medium">
                     <a href="#" data-open="#shop-sidebar" data-visible-after="true" data-pos="left" class="filter-button uppercase plain">
                         <i class="icon-menu"></i>
@@ -324,10 +325,11 @@
             <!-- #shop-sidebar -->
             <div class="col large-9">
                 <div class="shop-container">
+                    @if($search_product!=NULL)
                     <div class="woocommerce-notices-wrapper"></div>
                     <div class="woof_products_top_panel"></div>
                     <div class="products row row-small large-columns-6 medium-columns-3 small-columns-2 has-equal-box-heights equalize-box">
-                        @foreach($brand_by_id as $key=>$pro)
+                        @foreach($search_product as $key=>$pro)
                             <div class="product-small col has-hover product type-product post-283 status-publish first instock product_cat-clinic-spa product_cat-giam-beo product_cat-triet-long product_tag-melano-cc has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
                                 <div class="col-inner">
                                     <div class="badge-container absolute left top z-1">
@@ -338,7 +340,7 @@
                                     <div class="product-small box ">
                                         <div class="box-image">
                                             <div class="image-zoom">
-                                                <a href="#">
+                                                <a href="{{URL::to('/san-pham/'.$pro->product_id)}}">
                                                     <img width="212" height="238" src="{{URL::to('public/uploads/product/'.$pro->product_image)}}" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="">				</a>
                                             </div>
                                             <div class="image-tools is-small top right show-on-hover">
@@ -365,7 +367,7 @@
                                             <div class="price-wrapper">
                                                 <div class="pwb-brands-in-loop">
                                                     <span>
-                                                        <a href="#">
+                                                        <a href="{{URL::to('/thuong-hieu/'.$pro->brand_id)}}">
                                                             @foreach($brand as $key=>$bra)
                                                                 @if($bra->brand_id==$pro->brand_id)
                                                                     <img width="120" height="60" src="{{URL::to('public/uploads/brand/'.$bra->brand_image)}}" class="lazy-load attachment-thumbnail size-thumbnail" alt="">
@@ -397,8 +399,12 @@
                                 <!-- .col-inner -->
                             </div>
                             <!-- col -->
+
                         @endforeach
                     </div>
+                    @else
+                        <p class="woocommerce-info">Không tìm thấy sản phẩm nào khớp với lựa chọn của bạn.</p>
+                    @endif
                     <!-- row -->
                 </div>
                 <!-- shop container -->

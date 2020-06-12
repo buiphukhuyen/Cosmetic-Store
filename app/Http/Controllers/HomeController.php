@@ -21,4 +21,20 @@ class HomeController extends Controller
 
         return view ('customer.home')->with('category',$cate_product)->with('brand', $brand_product)->with('product', $list_product);
     }
+
+    public function search(Request $request) {
+        $cate_product = DB::table('tbl_category_product')->where('category_status','1')->orderby('category_id', 'desc')->get();
+        $brand_product = DB::table('tbl_brand')->where('brand_status','1')->orderby('brand_id', 'desc')->get();
+
+        $keywords = $request->keywords;
+
+        /* $list_product = DB::table('tbl_product')
+             ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
+             ->join('tbl_brand','tbl_brand.brand_id','=','tbl_product.brand_id')
+             ->orderby('tbl_product.product_id','desc')->get();*/
+
+        $search_product = DB::table('tbl_product')->where('product_name','like','%'.$keywords.'%')->get();
+
+        return view ('customer.product.search')->with('category',$cate_product)->with('brand', $brand_product)->with('search_product',$search_product)->with('keywords',$keywords);
+    }
 }

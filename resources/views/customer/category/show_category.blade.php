@@ -21,7 +21,7 @@
                     <!-- Logo -->
                     <div id="logo" class="flex-col logo">
                         <!-- Header logo -->
-                        <a href="..\" title="Mẫu website shop mỹ phẩm làm đẹp chuẩn seo - Thiết kế bởi Topweb" rel="home">
+                        <a href="." title="Mẫu website shop mỹ phẩm làm đẹp chuẩn seo - Thiết kế bởi Topweb" rel="home">
                             <img width="221" height="70" src="{{asset('public/customer/wp-content/uploads\2019\05\shop3.jpg')}}"    class="header_logo header-logo" alt="Mẫu website shop mỹ phẩm làm đẹp chuẩn seo"><img width="221" height="70" src="{{asset('public\customer\wp-content\uploads\2019\05\shop3.jpgs')}}" class="header-logo-dark" alt="Mẫu website shop mỹ phẩm làm đẹp chuẩn seo"></a>
                     </div>
                     <!-- Mobile Left Elements -->
@@ -45,35 +45,24 @@
                                             <div class="col-inner">
                                                 <div class="gap-element clearfix" style="display:block; height:auto; padding-top:13px"></div>
                                                 <div class="searchform-wrapper ux-search-box relative is-normal">
-                                                    <form role="search" method="get" class="searchform" action="https://shoplamdep.haiphongweb.com/">
+                                                    <form role="search" method="post" class="searchform" action="{{URL::to('/tim-kiem')}}">
+                                                        @csrf
                                                         <div class="flex-row relative">
-                                                            <div class="flex-col search-form-categories">
-                                                                <select class="search_categories resize-select mb-0" name="product_cat">
-                                                                    <option value="" selected='selected'>All</option>
-                                                                    <option value="cham-soc-da-mat">Chăm sóc da mặt</option>
-                                                                    <option value="cham-soc-toc">Chăm sóc tóc</option>
-                                                                    <option value="clinic-spa">Clinic &amp; Spa</option>
-                                                                    <option value="giam-beo">Giảm béo</option>
-                                                                    <option value="trang-diem">Trang điểm</option>
-                                                                    <option value="triet-long">Triệt lông</option>
-                                                                </select>
-                                                            </div>
                                                             <!-- .flex-col -->
                                                             <div class="flex-col flex-grow">
-                                                                <input type="search" class="search-field mb-0" name="s" value="" placeholder="Tìm kiếm sản phẩm, danh mục...">
-                                                                <input type="hidden" name="post_type" value="product">
+                                                                <input type="search" class="search-field mb-0" name="keywords" value="" placeholder="Tìm kiếm sản phẩm">
                                                             </div>
                                                             <!-- .flex-col -->
                                                             <div class="flex-col">
                                                                 <button type="submit" class="ux-search-submit submit-button secondary button icon mb-0">
-                                                                    <i class="icon-search"></i>				</button>
+                                                                    <i class="icon-search"></i>
+                                                                </button>
                                                             </div>
                                                             <!-- .flex-col -->
                                                         </div>
                                                         <!-- .flex-row -->
                                                         <div class="live-search-results text-left z-top"></div>
-                                                    </form>
-                                                </div>
+                                                    </form>                                                </div>
                                             </div>
                                         </div>
                                         <div class="col medium-3 small-12 large-3">
@@ -105,12 +94,12 @@
                     <div class="flex-col hide-for-medium flex-right">
                         <ul class="header-nav header-nav-main nav nav-right  nav-uppercase">
                             <li class="cart-item has-icon has-dropdown">
-                                <a href="..\..\gio-hang\index.htm" title="Giỏ hàng" class="header-cart-link is-small">
-                        <span class="header-cart-title">
-                        Giỏ hàng     </span>
+                                <a href="{{URL::to('/show-cart')}}"  title="Giỏ hàng" class="header-cart-link is-small">
+                                       <span class="header-cart-title">
+                                       Giỏ hàng     </span>
                                     <span class="image-icon header-cart-icon" data-icon-label="0">
-                        <img class="cart-img-icon" alt="Giỏ hàng" src="{{asset('public/customer/wp-content/uploads\2019\02\icon_01.png')}}">
-                        </span><!-- .cart-img-inner -->
+                                       <img class="cart-img-icon" alt="Giỏ hàng" src="{{asset('public/customer/wp-content/uploads\2019\02\icon_01.png')}}">
+                                       </span><!-- .cart-img-inner -->
                                 </a>
                                 <ul class="nav-dropdown nav-dropdown-default">
                                     <li class="html widget_shopping_cart">
@@ -121,20 +110,33 @@
                                 </ul>
                                 <!-- .nav-dropdown -->
                             </li>
-                            <li class="account-item has-icon
-                     ">
-                                <a href="..\..\tai-khoan\index.htm" class="nav-top-link nav-top-not-logged-in " data-open="#login-form-popup">
-                     <span>
-                     Đăng nhập     / Đăng ký  </span>
+                            <?php
+                            $customer_id = \Illuminate\Support\Facades\Session::get('customer_id');
+                            $customer_name = \Illuminate\Support\Facades\Session::get('customer_name');
+                            if($customer_id!=NULL) {
+                            ?>
+                            <li class="account-item has-icon">
+                                <a href="{{URL::to('logout-checkout')}}" class="nav-top-link nav-top-not-logged-in">
+                                    <span>Chào <?php echo Session::get('customer_name');?> / Đăng xuất  </span>
                                 </a><!-- .account-login-link -->
                             </li>
+                            <?php
+                            }else {?>
+                            <li class="account-item has-icon">
+                                <a href="#" class="nav-top-link nav-top-not-logged-in " data-open="#login-form-popup">
+                                    <span>
+                                    Đăng nhập     / Đăng ký  </span>
+                                </a><!-- .account-login-link -->
+                            </li>
+                            <?php
+                            }?>
                         </ul>
                     </div>
                     <!-- Mobile Right Elements -->
                     <div class="flex-col show-for-medium flex-right">
                         <ul class="mobile-nav nav nav-right ">
                             <li class="cart-item has-icon">
-                                <a href="..\..\gio-hang\index.htm" class="header-cart-link off-canvas-toggle nav-top-link is-small" data-open="#cart-popup" data-class="off-canvas-cart" title="Giỏ hàng" data-pos="right">
+                                <a href="{{URL::to('/show-cart')}}"  class="header-cart-link off-canvas-toggle nav-top-link is-small" data-open="#cart-popup" data-class="off-canvas-cart" title="Giỏ hàng" data-pos="right">
                         <span class="image-icon header-cart-icon" data-icon-label="0">
                         <img class="cart-img-icon" alt="Giỏ hàng" src="{{asset('public/customer/wp-content/uploads\2019\02\icon_01.png')}}">
                         </span><!-- .cart-img-inner -->
@@ -359,7 +361,7 @@
                                             @endforeach
                                         </div>
                                         <p class="name product-title">
-                                            <a class="text" href="{{URL::to('/san-pham/'.$pro->product_id)}}">{{$pro->product_description}}</a>
+                                            <a class="text" href="{{URL::to('/san-pham/'.$pro->product_id)}}">{{$pro->product_name}}</a>
                                         </p>
                                         <div class="price-wrapper">
                                             <div class="pwb-brands-in-loop">
