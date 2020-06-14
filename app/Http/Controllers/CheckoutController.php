@@ -88,6 +88,7 @@ class CheckoutController extends Controller
         $order_data['order_status'] = 'Đang chờ xử lý';
         $order_id = DB::table('tbl_order')->insertGetId($order_data);
         Session::put('order_id',$order_id);
+
         //Thêm chi tiết hoá đơn
 
         $content = Cart::content();
@@ -117,6 +118,31 @@ class CheckoutController extends Controller
         $payment_method = DB::table('tbl_payment')->where('tbl_payment.payment_id',$payment_id)->limit(1)->get();
         Cart::destroy();
         return view('customer.checkout.done_payment')->with('category',$cate_product)->with('brand', $brand_product)->with('res', $result)->with('order',$order_total)->with('payment',$payment_method);
+    }
+
+
+    //Admin
+    public function manage_order() {
+        $all_order = DB::table('tbl_order')
+            ->join('tbl_customer','tbl_order.customer_id','=','tbl_customer.customer_id')
+            ->select('tbl_order.*','tbl_customer.customer_name')
+            ->orderby('tbl_order.order_id','desc')->get();
+        $manager_order  = view('admin.manage.order')->with('all_order',$all_order);
+        return view('admin.admin_layout')->with('admin.manage.order', $manager_order);
+    }
+
+    public function view_order($order_id) {
+        $order_by_id = DB::table('tbl_order')
+            ->join('tbl_customer','tbl_order.customer_id','=','tbl_customer.customer_id')
+            ->join('tbl_shipping','tbl_order.shipping_id','=','tbl_shipping.shipping_id')
+            ->join('tbl_payment','tbl_payment.payment_id','=','tbl_order.payment_id')
+            ->join('tbl_order_details','tbl_order.order_id','=','tbl_order_details.order_id')
+            ->where('tbl_order.order_id', $order_id)
+            ->select('tbl_order.*','tbl_customer.*','tbl_shipping.*','tbl_order_details.*','tbl_payment.*')->get();
+
+        $manager_order_by_id  = view('admin.manage.view_order')->with('order_by_id',$order_by_id);
+
+        return view('admin.admin_layout')->with('admin.manage.view_order', $manager_order_by_id);
     }
 
 

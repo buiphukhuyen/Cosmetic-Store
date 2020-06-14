@@ -538,20 +538,45 @@
                             </div>
                         </div>
                     </li>
-
+                    <li class=" has-sub-menu">
+                        <a href="{{URL::to('/manage-order')}}">
+                            <div class="icon-w">
+                                <div class="os-icon os-icon-hierarchy-structure-2"></div>
+                            </div>
+                            <span>Đơn hàng</span>
+                        </a>
+                        <div class="sub-menu-w">
+                            <div class="sub-menu-header">
+                                Đơn hàng
+                            </div>
+                            <div class="sub-menu-icon">
+                                <i class="os-icon os-icon-users"></i>
+                            </div>
+                            <div class="sub-menu-i">
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="{{URL::to('/add_product')}}">Thêm sản phẩm</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{URL::to('/list_product')}}">Danh sách sản phẩm</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
                     <li class="sub-header">
-                        <span style="font-weight:bold; font-size:15px">TRẮC NGHIỆM</span>
+                        <span style="font-weight:bold; font-size:15px">ĐƠN HÀNG</span>
                     </li>
                     <li class=" has-sub-menu">
                         <a asp-controller="Subject" asp-action="Index">
                             <div class="icon-w">
                                 <div class="os-icon os-icon-package"></div>
                             </div>
-                            <span>Ngân hàng câu hỏi</span>
+                            <span>Đơn hàng</span>
                         </a>
                         <div class="sub-menu-w">
                             <div class="sub-menu-header">
-                                Ngân hàng câu hỏi
+                                Đơn hàng
                             </div>
                             <div class="sub-menu-icon">
                                 <i class="os-icon os-icon-package"></i>

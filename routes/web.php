@@ -53,6 +53,9 @@ Route::get('/', 'HomeController@index');
         Route::post('/update_product/{product_id}','ProductController@update_product');
         Route::get('/delete_product/{product_id}','ProductController@delete_product');
 
+    //Order
+        Route::get('/manage-order','CheckoutController@manage_order');
+        Route::get('/view-order/{order_id}','CheckoutController@view_order');
 
     //Customer
         Route::get('/danh-muc-san-pham/{category_id}', 'CategoryProduct@show_category_home');

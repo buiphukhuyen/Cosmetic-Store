@@ -518,10 +518,7 @@
                                             </div>
                                         </div>
                                     </form>
-                                    <a href="javascript:void(0);" class="devvn_buy_now devvn_buy_now_style" data-id="273">
-                                        <strong>Đặt hàng ngay</strong>
-                                        <span></span>
-                                    </a>
+                                    
                                     <div class="product_meta">
                                         <span class="posted_in">Danh mục: <a href="{{URL::to('/danh-muc-san-pham/'.$value->category_id)}}" rel="tag">{{$value->category_name}}</a></span>
                                     </div>
