@@ -203,7 +203,7 @@
     @yield("show_category")
 
     <!-- Header - Main Show Category -->
-    @yield("show_brandff")
+    @yield("show_brand")
 
     <!-- Header - Main Product _ Detail -->
     @yield("product_detail")

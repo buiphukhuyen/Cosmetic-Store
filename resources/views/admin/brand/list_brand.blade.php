@@ -65,7 +65,9 @@
 
                     </td>
                     <td class="row-actions">
-                        <a href="edit_brand/{{$brand->brand_id}}"><i class="os-icon os-icon-ui-49"></i></a><a onclick="return (confirm('Bạn có muốn xoá Thương hiệu này?'));" href="delete_brand/{{$brand->brand_id}}" ><i class="os-icon os-icon-ui-15 text-danger"></i></a>
+                        <a href="edit_brand/{{$brand->brand_id}}"><i class="os-icon os-icon-ui-49"></i></a>
+                        <a href="{{URL::to('/thuong-hieu/'.$brand->brand_id)}}" target="_blank" rel="noopener noreferrer"><i class="os-icon os-icon-grid-10"></i></a>
+                        <a onclick="return (confirm('Bạn có muốn xoá Thương hiệu này?'));" href="delete_brand/{{$brand->brand_id}}" ><i class="os-icon os-icon-ui-15 text-danger"></i></a>
                     </td>
                 </tr>
             @endforeach

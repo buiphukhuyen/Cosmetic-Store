@@ -58,7 +58,7 @@
                     <div class="form-group">
                         <label class="bold">Giá Sản phẩm</label>
                         <div class="input-group">
-                            <input type="text" name="product_price" class="form-control" data-error="Vui lòng nhập Giá sản phẩm" value="{{$pro->product_price}}" required>
+                            <input type="text" name="product_price" class="form-control" onkeyup="this.value=FormatNumber(this.value);"  data-error="Vui lòng nhập Giá sản phẩm" value="{{number_format($pro->product_price)}}" required>
                             <div class="help-block form-text with-errors form-control-feedback"></div>
                             <div class="input-group-prepend">
                                 <div class="input-group-text">
@@ -126,7 +126,7 @@
             </div>
 
             <div class="form-buttons-w">
-                <button class="btn btn-success" type="submit">Thêm Thương hiệu</button>
+                <button class="btn btn-success" type="submit">Cập nhật Sản phẩm</button>
             </div>
         </div>
     </form>
@@ -138,5 +138,73 @@
             plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
             toolbar_mode: 'floating',
         });
+    </script>
+    <script>
+        function FormatNumber(str) {
+            var strTemp = GetNumber(str);
+            if (strTemp.length <= 3)
+                return strTemp;
+            strResult = "";
+            for (var i = 0; i < strTemp.length; i++)
+                strTemp = strTemp.replace(",", "");
+            var m = strTemp.lastIndexOf(".");
+            if (m == -1) {
+                for (var i = strTemp.length; i >= 0; i--) {
+                    if (strResult.length > 0 && (strTemp.length - i - 1) % 3 == 0)
+                        strResult = "," + strResult;
+                    strResult = strTemp.substring(i, i + 1) + strResult;
+                }
+            } else {
+                var strphannguyen = strTemp.substring(0, strTemp.lastIndexOf("."));
+                var strphanthapphan = strTemp.substring(strTemp.lastIndexOf("."), strTemp.length);
+                var tam = 0;
+                for (var i = strphannguyen.length; i >= 0; i--) {
+
+                    if (strResult.length > 0 && tam == 4) {
+                        strResult = "," + strResult;
+                        tam = 1;
+                    }
+
+
+                    strResult = strphannguyen.substring(i, i + 1) + strResult;
+                    tam = tam + 1;
+                }
+                strResult = strResult + strphanthapphan;
+            }
+            return strResult;
+        }
+        function GetNumber(str) {
+            var count = 0;
+            for (var i = 0; i < str.length; i++) {
+                var temp = str.substring(i, i + 1);
+                if (!(temp == "," || temp == "." || (temp >= 0 && temp <= 9))) {
+                    alert(inputnumber);
+                    return str.substring(0, i);
+                }
+                if (temp == " ")
+                    return str.substring(0, i);
+                if (temp == ".") {
+                    if (count > 0)
+                        return str.substring(0, i);
+                    count++;
+                }
+            }
+            return str;
+        }
+
+        function IsNumberInt(str) {
+            for (var i = 0; i < str.length; i++) {
+                var temp = str.substring(i, i + 1);
+                if (!(temp == "." || (temp >= 0 && temp <= 9))) {
+                    alert(inputnumber);
+                    return str.substring(0, i);
+                }
+                if (temp == ",") {
+                    alert(thaythedaucham);
+                    return str.substring(0, i);
+                }
+            }
+            return str;
+        }
     </script>
 @endsection

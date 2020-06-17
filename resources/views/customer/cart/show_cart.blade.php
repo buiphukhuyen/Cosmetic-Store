@@ -65,7 +65,7 @@
                                                         </div>
                                                         <!-- .flex-row -->
                                                         <div class="live-search-results text-left z-top"></div>
-                                                    </form>s
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>

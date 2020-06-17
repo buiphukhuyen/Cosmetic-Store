@@ -60,7 +60,9 @@
 
                              </td>
                              <td class="row-actions">
-                                 <a href="edit_category_product/{{$cate_pro->category_id}}"><i class="os-icon os-icon-ui-49"></i></a><a onclick="return (confirm('Bạn có muốn xoá Danh mục này?'));" href="delete_category_product/{{$cate_pro->category_id}}" ><i class="os-icon os-icon-ui-15 text-danger"></i></a>
+                                 <a href="edit_category_product/{{$cate_pro->category_id}}"><i class="os-icon os-icon-ui-49"></i></a>
+                                 <a href="{{URL::to('/danh-muc-san-pham/'.$cate_pro->category_id)}}" target="_blank" rel="noopener noreferrer"><i class="os-icon os-icon-grid-10"></i></a>
+                                 <a onclick="return (confirm('Bạn có muốn xoá Danh mục này?'));" href="delete_category_product/{{$cate_pro->category_id}}" ><i class="os-icon os-icon-ui-15 text-danger"></i></a>
                              </td>
                          </tr>
                         @endforeach

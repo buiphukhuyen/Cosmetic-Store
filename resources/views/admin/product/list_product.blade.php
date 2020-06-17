@@ -1,5 +1,11 @@
 @extends('admin.admin_layout')
 @section('list_product')
+    <style>
+        .table .row-actions a {
+            margin-right: 0;
+            color: #3E4B5B;
+        }
+    </style>
     <title>Danh sách sản phẩm</title>
     <link href="public/admin/components/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <!-- Page level plugins -->
@@ -51,7 +57,7 @@
                         <span>{{$product->product_id}}</span>
                     </td>
 
-                    <td class="text-center">
+                    <td class="text-center"  style="width: 100px">
                         <img src="{{URL::to('public/uploads/product/'.$product->product_image)}}" width="100px" height="100px" />
                     </td>
 
@@ -85,7 +91,9 @@
 
                     </td>
                     <td class="row-actions">
-                        <a href="{{URL::to('edit_product/'.$product->product_id)}}"><i class="os-icon os-icon-ui-49"></i></a><a onclick="return (confirm('Bạn có muốn xoá Sản phẩm này?'));" href="delete_product/{{$product->product_id}}" ><i class="os-icon os-icon-ui-15 text-danger"></i></a>
+                        <a href="{{URL::to('edit_product/'.$product->product_id)}}"><i class="os-icon os-icon-ui-49"></i></a>
+                        <a href="{{URL::to('/san-pham/'.$product->product_id)}}" target="_blank" rel="noopener noreferrer"><i class="os-icon os-icon-grid-10"></i></a>
+                        <a onclick="return (confirm('Bạn có muốn xoá Sản phẩm này?'));" href="delete_product/{{$product->product_id}}" ><i class="os-icon os-icon-ui-15 text-danger"></i></a>
                     </td>
                 </tr>
             @endforeach

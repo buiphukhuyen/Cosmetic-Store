@@ -518,7 +518,7 @@
                                             </div>
                                         </div>
                                     </form>
-                                    
+
                                     <div class="product_meta">
                                         <span class="posted_in">Danh mục: <a href="{{URL::to('/danh-muc-san-pham/'.$value->category_id)}}" rel="tag">{{$value->category_name}}</a></span>
                                     </div>
@@ -546,7 +546,7 @@
                                 <div class="tab-panels">
                                     <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content active" id="tab-description" role="tabpanel" aria-labelledby="tab-title-description">
                                         <p>
-                                            {{$value->product_content}}
+                                            {!! $value->product_description !!}
                                         </p>
                                     </div>
                                     <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--pwb_tab panel entry-content " id="tab-pwb_tab" role="tabpanel" aria-labelledby="tab-title-pwb_tab">
@@ -775,3 +775,4 @@
     </main>
     <!-- #main -->
 @endsection
+

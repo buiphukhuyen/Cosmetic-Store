@@ -30,7 +30,7 @@ class ProductController extends Controller
         $this->authLogin();
         $data = array();
         $data['product_name'] = $request->product_name;
-        $data['product_price'] = $request->product_price;
+        $data['product_price'] = str_replace(',', '',$request->product_price);
         $data['product_description'] = $request->product_description;
         $data['product_content'] = $request->product_content;
         $data['category_id'] = $request->category_id;
@@ -104,16 +104,17 @@ class ProductController extends Controller
         return view('admin.admin_layout')->with('admin.product.edit_product', $manager_product);
     }
 
-    public function update_product(Request $request, $product_id, $get_image_gallery) {
+    public function update_product(Request $request, $product_id) {
         $this->authLogin();
         $data = array();
         $data['product_name'] = $request->product_name;
-        $data['product_price'] = $request->product_price;
+        $data['product_price'] = str_replace(',', '',$request->product_price);
         $data['product_description'] = $request->product_description;
         $data['product_content'] = $request->product_content;
         $data['category_id'] = $request->category_id;
         $data['brand_id'] = $request->brand_id;
         $get_image = $request->file('product_image');
+        $get_image_gallery = $request->file('filename');
         if($get_image){
             $get_name_image = $get_image->getClientOriginalName();
             $name_image = current(explode('.',$get_name_image));
