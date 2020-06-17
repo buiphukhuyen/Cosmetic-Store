@@ -57,6 +57,16 @@ Route::get('/', 'HomeController@index');
         Route::get('/manage-order','CheckoutController@manage_order');
         Route::get('/view-order/{order_id}','CheckoutController@view_order');
 
+    //Banner
+        Route::get('/manage-banner','SliderController@manage_banner');
+        Route::get('/add-banner','SliderController@add_banner');
+        Route::post('/insert-banner','SliderController@insert_banner');
+        Route::get('/active_slider/{slider_id}','SliderController@active_slider');
+        Route::get('/unactive_slider/{slider_id}','SliderController@unactive_slider');
+        Route::get('/edit_slider/{slider_id}','SliderController@edit_slider');
+        Route::post('/update_slider/{slider_id}','SliderController@update_slider');
+        Route::get('/delete_slider/{slider_id}','SliderController@delete_slider');
+
     //Customer
         Route::get('/danh-muc-san-pham/{category_id}', 'CategoryProduct@show_category_home');
         Route::get('/thuong-hieu/{brand_id}', 'BrandController@show_brand_home');

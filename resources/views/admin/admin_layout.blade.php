@@ -637,15 +637,15 @@
                         <span style="font-weight:bold; font-size:15px">HỆ THỐNG</span>
                     </li>
                     <li class=" has-sub-menu">
-                        <a href="#">
+                        <a href="{{URL::to('manage-banner')}}">
                             <div class="icon-w">
                                 <div class="os-icon os-icon-mail"></div>
                             </div>
-                            <span>Thông báo</span>
+                            <span>Banner</span>
                         </a>
                         <div class="sub-menu-w">
                             <div class="sub-menu-header">
-                                Emails
+                                Banner
                             </div>
                             <div class="sub-menu-icon">
                                 <i class="os-icon os-icon-mail"></i>
@@ -653,20 +653,12 @@
                             <div class="sub-menu-i">
                                 <ul class="sub-menu">
                                     <li>
-                                        <a href="emails_welcome.html">Welcome Email</a>
+                                        <a href="{{URL::to('add-banner')}}">Thêm mới Banner</a>
                                     </li>
                                     <li>
-                                        <a href="emails_order.html">Order Confirmation</a>
+                                        <a href="{{URL::to('manage-banner')}}">Danh sách Banner</a>
                                     </li>
-                                    <li>
-                                        <a href="emails_payment_due.html">Payment Due</a>
-                                    </li>
-                                    <li>
-                                        <a href="emails_forgot.html">Forgot Password</a>
-                                    </li>
-                                    <li>
-                                        <a href="emails_activate.html">Activate Account</a>
-                                    </li>
+
                                 </ul>
                             </div>
                         </div>

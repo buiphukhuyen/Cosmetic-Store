@@ -20,7 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de5e1244-d227-48b5-9578-ee38f2dec410" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Brand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/SliderController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Slider.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/public/uploads/product/514.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/public/uploads/product/517.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/public/uploads/product/522.png" afterDir="false" />
@@ -33,16 +34,23 @@
       <change afterPath="$PROJECT_DIR$/public/uploads/product/594.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/public/uploads/product/asus-vivobook-x40930.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/public/uploads/product/asus-vivobook-x40934.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/slider/530.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/slider/551.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/slider/554.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/slider/565.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/slider/569.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/slider/588.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/slider/593.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/slider/Slide161.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/slider/Slide253.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/banner/add_slider.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/banner/edit_slider.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/banner/list_slider.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/brand/list_brand.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/brand/list_brand.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/list_category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category/list_category.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/product/add_product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/product/add_product.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/product/edit_product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/product/edit_product.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/product/list_product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/product/list_product.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/customer/cart/show_cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/customer/cart/show_cart.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/customer/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/customer/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/customer/product/product_detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/customer/product/product_detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/admin_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/admin_layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/customer/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/customer/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,6 +255,7 @@
       <workItem from="1592268122041" duration="8000" />
       <workItem from="1592296142148" duration="391000" />
       <workItem from="1592361901896" duration="6215000" />
+      <workItem from="1592405716513" duration="5769000" />
     </task>
     <servers />
   </component>
@@ -289,10 +298,11 @@
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state x="516" y="256" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1680.976@0.23.1680.976" timestamp="1591504845162" />
-    <state x="572" y="272" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1591585013393">
-      <screen x="0" y="23" width="1680" height="972" />
+    <state x="572" y="273" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1592407974796">
+      <screen x="0" y="23" width="1680" height="975" />
     </state>
     <state x="572" y="272" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1680.972@0.23.1680.972" timestamp="1591585013393" />
+    <state x="572" y="273" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1680.975@0.23.1680.975" timestamp="1592407974796" />
     <state x="481" y="170" key="#phpunit.xml" timestamp="1591512076076">
       <screen x="0" y="23" width="1680" height="975" />
     </state>

@@ -251,9 +251,10 @@
                               "selectedAttraction": 0.1,
                               "parallax" : 0,
                               "friction": 0.6        }'>
+                                                    @foreach($slider as $key => $slide)
                                                     <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_1349624217">
                                                         <div class="img-inner image-cover dark" style="padding-top:402px;">
-                                                            <img width="650" height="400" src="public\customer\wp-content\themes\flatsome\assets\img\lazy.png" data-src="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/hasaki_homepage_650x400.jpg" class="lazy-load attachment-original size-original" alt="" srcset="" data-srcset="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/hasaki_homepage_650x400.jpg 650w, https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/hasaki_homepage_650x400-300x185.jpg 300w, https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/hasaki_homepage_650x400-600x369.jpg 600w" sizes="(max-width: 650px) 100vw, 650px">
+                                                            <img width="650" height="400" src="public/uploads/slider/{{$slide->slider_image}}" class="lazy-load attachment-original size-original" alt="" srcset="">
                                                         </div>
                                                         <style scope="scope">
                                                             #image_1349624217 {
@@ -261,26 +262,8 @@
                                                             }
                                                         </style>
                                                     </div>
-                                                    <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_732217164">
-                                                        <div class="img-inner image-cover dark" style="padding-top:402px;">
-                                                            <img width="650" height="400" src="public\customer\wp-content\themes\flatsome\assets\img\lazy.png" data-src="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/app_2019-01-08_2.jpg" class="lazy-load attachment-original size-original" alt="" srcset="" data-srcset="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/app_2019-01-08_2.jpg 650w, https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/app_2019-01-08_2-300x185.jpg 300w, https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/app_2019-01-08_2-600x369.jpg 600w" sizes="(max-width: 650px) 100vw, 650px">
-                                                        </div>
-                                                        <style scope="scope">
-                                                            #image_732217164 {
-                                                                width: 100%;
-                                                            }
-                                                        </style>
-                                                    </div>
-                                                    <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_60434173">
-                                                        <div class="img-inner image-cover dark" style="padding-top:402px;">
-                                                            <img width="650" height="400" src="public\customer\wp-content\themes\flatsome\assets\img\lazy.png" data-src="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/650x440_copy_1.jpg" class="lazy-load attachment-original size-original" alt="" srcset="" data-srcset="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/650x440_copy_1.jpg 650w, https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/650x440_copy_1-300x185.jpg 300w, https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/650x440_copy_1-600x369.jpg 600w" sizes="(max-width: 650px) 100vw, 650px">
-                                                        </div>
-                                                        <style scope="scope">
-                                                            #image_60434173 {
-                                                                width: 100%;
-                                                            }
-                                                        </style>
-                                                    </div>
+                                                    @endforeach
+
                                                 </div>
                                                 <div class="loading-spin dark large centered"></div>
                                                 <style scope="scope">
