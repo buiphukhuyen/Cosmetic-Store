@@ -664,15 +664,15 @@
                         </div>
                     </li>
                     <li class=" has-sub-menu">
-                        <a href="#">
+                        <a href="{{URL::to('manage-coupon')}}">
                             <div class="icon-w">
                                 <div class="os-icon os-icon-users"></div>
                             </div>
-                            <span>Quản lý quyền</span>
+                            <span>Mã giảm giá</span>
                         </a>
                         <div class="sub-menu-w">
                             <div class="sub-menu-header">
-                                Quản lý quyền
+                                Mã giảm giá
                             </div>
                             <div class="sub-menu-icon">
                                 <i class="os-icon os-icon-users"></i>
@@ -680,10 +680,10 @@
                             <div class="sub-menu-i">
                                 <ul class="sub-menu">
                                     <li>
-                                        <a href="users_profile_big.html">Big Profile</a>
+                                        <a href="{{URL::to('add-coupon')}}">Thêm mới Mã giảm giá</a>
                                     </li>
                                     <li>
-                                        <a href="users_profile_small.html">Compact Profile</a>
+                                        <a href="{{URL::to('manage-coupon')}}">Danh sách Mã giảm giá</a>
                                     </li>
                                 </ul>
                             </div>

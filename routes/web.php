@@ -67,6 +67,15 @@ Route::get('/', 'HomeController@index');
         Route::post('/update_slider/{slider_id}','SliderController@update_slider');
         Route::get('/delete_slider/{slider_id}','SliderController@delete_slider');
 
+    //Coupon
+        Route::post('/check-coupon','CartController@check_coupon');
+        Route::get('/manage-coupon','CouponController@manage_coupon');
+        Route::get('/add-coupon','CouponController@add_coupon');
+        Route::post('/insert-coupon','CouponController@insert_coupon');
+        Route::get('/edit_coupon/{coupon_id}','CouponController@edit_coupon');
+        Route::post('/update_coupon/{coupon_id}','CouponController@update_coupon');
+        Route::get('/delete_coupon/{coupon_id}','CouponController@delete_coupon');
+
     //Customer
         Route::get('/danh-muc-san-pham/{category_id}', 'CategoryProduct@show_category_home');
         Route::get('/thuong-hieu/{brand_id}', 'BrandController@show_brand_home');

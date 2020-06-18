@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use DB;
 use Cart;
 use Illuminate\Support\Facades\Redirect;
+use App\Coupon;
+use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
 {
@@ -33,6 +35,7 @@ class CartController extends Controller
 
     public function delete_to_cart($rowId) {
         Cart::update($rowId,0);
+        Session::put('coupon', null);
         return Redirect::to('/show-cart');
     }
 
@@ -42,4 +45,41 @@ class CartController extends Controller
         }
         return Redirect::to('/show-cart');
     }
+
+    public function check_coupon(Request $request) {
+        $data = $request->all();
+        $coupon = Coupon::where('coupon_code', $data['coupon_code'])->first();
+        if($coupon) {
+            $count_coupon = $coupon->count();
+            if($count_coupon > 0) {
+                $coupon_session = Session::get("coupon");
+                if($coupon_session==true) {
+                    $is_avaiable = 0;
+                    if($is_avaiable == 0) {
+                        $cou[] = array(
+                            'coupon_code' => $coupon->coupon_code,
+                            'coupon_function' => $coupon->coupon_function,
+                            'coupon_discount' => $coupon->coupon_discount,
+                        );
+                        Session::put('coupon', $cou);
+                    }
+                }
+                else {
+                    $cou[] = array(
+                        'coupon_code' => $coupon->coupon_code,
+                        'coupon_function' => $coupon->coupon_function,
+                        'coupon_discount' => $coupon->coupon_discount,
+                    );
+                    Session::put('coupon', $cou);
+                }
+                Session::save();
+                return redirect()->back()->with("add_coupon_success", "Thêm mã giảm giá thành công");
+             }
+        }
+        else {
+            return redirect()->back()->with("add_coupon_error", "Mã giảm giá không hợp lệ");
+        }
+    }
+
+
 }

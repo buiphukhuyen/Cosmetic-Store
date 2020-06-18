@@ -342,7 +342,7 @@
                                                         </tfoot>
                                                     </table>
                                                     <div id="payment" class="woocommerce-checkout-payment">
-                                                        <ul class="wc_payment_methods payment_methods methods">
+                                                        <ul class="wc_paymefnt_methods payment_methods methods">
                                                             <li class="wc_payment_method payment_method_bacs">
                                                                 <input id="payment_method_bacs" type="radio" class="input-radio" name="payment_option" value="Chuyển khoản ngân hàng"  checked='checked' data-order_button_text="" />
                                                                 <label for="payment_method_bacs">

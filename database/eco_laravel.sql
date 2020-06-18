@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 13, 2020 at 09:18 PM
+-- Generation Time: Jun 18, 2020 at 10:50 AM
 -- Server version: 5.7.26
 -- PHP Version: 7.4.2
 
@@ -94,7 +94,7 @@ CREATE TABLE `tbl_admin` (
 --
 
 INSERT INTO `tbl_admin` (`admin_id`, `admin_email`, `admin_password`, `admin_name`, `admin_phone`, `created_at`, `updated_at`) VALUES
-(1, 'khuyenpb@gmail.com', 'bfe9fa065a7bf3ef71edf4db889bbda4', 'Bùi Phú Khuyên', '0333093935', NULL, NULL);
+(1, 'khuyenpb@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 'Bùi Phú Khuyên', '0333093935', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -161,6 +161,29 @@ INSERT INTO `tbl_category_product` (`category_id`, `category_name`, `category_de
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_coupon`
+--
+
+CREATE TABLE `tbl_coupon` (
+  `coupon_id` int(11) NOT NULL,
+  `coupon_name` varchar(255) NOT NULL,
+  `coupon_times` int(50) NOT NULL,
+  `coupon_function` int(11) NOT NULL,
+  `coupon_code` varchar(50) NOT NULL,
+  `coupon_discount` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_coupon`
+--
+
+INSERT INTO `tbl_coupon` (`coupon_id`, `coupon_name`, `coupon_times`, `coupon_function`, `coupon_code`, `coupon_discount`) VALUES
+(1, 'Mã giảm giá', 21, 1, 'NMHHY2', 31),
+(2, 'Mã giảm giá 2', 21, 2, 'NMHHY1', 130000);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_customer`
 --
 
@@ -199,6 +222,16 @@ CREATE TABLE `tbl_order` (
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `tbl_order`
+--
+
+INSERT INTO `tbl_order` (`order_id`, `customer_id`, `shipping_id`, `payment_id`, `order_total`, `order_status`, `created_at`, `updated_at`) VALUES
+(29, 2, 32, 30, '42,096,935', 'Đang chờ xử lý', '2020-06-13 14:24:18', '2020-06-13 14:24:18'),
+(30, 2, 33, 31, '45,345,345', 'Đang chờ xử lý', '2020-06-13 14:25:48', '2020-06-13 14:25:48'),
+(31, 2, 34, 32, '48,468,468', 'Đang chờ xử lý', '2020-06-14 02:33:05', '2020-06-14 02:33:05'),
+(32, 2, 35, 33, '34,950,000', 'Đang chờ xử lý', '2020-06-17 05:09:38', '2020-06-17 05:09:38');
+
 -- --------------------------------------------------------
 
 --
@@ -216,6 +249,19 @@ CREATE TABLE `tbl_order_details` (
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `tbl_order_details`
+--
+
+INSERT INTO `tbl_order_details` (`order_details_id`, `order_id`, `product_id`, `product_name`, `product_price`, `product_sales_quantity`, `created_at`, `updated_at`) VALUES
+(48, 29, 3, 'Lenovo Ideapad 330-15IKB/Core I3 7020U/4GB/256GSSD', '38883812', 1, '2020-06-13 14:24:18', '2020-06-13 14:24:18'),
+(49, 29, 5, 'Sản phẩm test', '3213123', 1, '2020-06-13 14:24:18', '2020-06-13 14:24:18'),
+(50, 30, 4, 'Lenovo Ideapad 330-15IKB/Core I3 7020U/4GB/256GSSD', '45345345', 1, '2020-06-13 14:25:48', '2020-06-13 14:25:48'),
+(51, 31, 4, 'Lenovo Ideapad 330-15IKB/Core I3 7020U/4GB/256GSSD', '45345345', 1, '2020-06-14 02:33:05', '2020-06-14 02:33:05'),
+(52, 31, 2, 'Samsung 2', '3123123', 1, '2020-06-14 02:33:05', '2020-06-14 02:33:05'),
+(53, 32, 2, 'Samsung 2', '990000', 5, '2020-06-17 05:09:38', '2020-06-17 05:09:38'),
+(54, 32, 3, 'đĐẠKASH  JKDHAS JHDJSAHDH ASJD BHJASB DJASBDJH BMSANDHAS', '10000000', 3, '2020-06-17 05:09:38', '2020-06-17 05:09:38');
+
 -- --------------------------------------------------------
 
 --
@@ -230,6 +276,16 @@ CREATE TABLE `tbl_payment` (
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `tbl_payment`
+--
+
+INSERT INTO `tbl_payment` (`payment_id`, `payment_method`, `payment_status`, `created_at`, `updated_at`) VALUES
+(30, 'Trả tiền mặt khi nhận hàng', 'Đang chờ xử lý', '2020-06-13 14:24:18', '2020-06-13 14:24:18'),
+(31, 'Trả tiền mặt khi nhận hàng', 'Đang chờ xử lý', '2020-06-13 14:25:48', '2020-06-13 14:25:48'),
+(32, 'Trả tiền mặt khi nhận hàng', 'Đang chờ xử lý', '2020-06-14 02:33:05', '2020-06-14 02:33:05'),
+(33, 'Chuyển khoản ngân hàng', 'Đang chờ xử lý', '2020-06-17 05:09:38', '2020-06-17 05:09:38');
+
 -- --------------------------------------------------------
 
 --
@@ -242,10 +298,10 @@ CREATE TABLE `tbl_product` (
   `brand_id` int(11) NOT NULL,
   `product_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `product_description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `product_content` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `product_content` text COLLATE utf8mb4_unicode_ci,
   `product_price` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `product_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `product_image_gallery` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `product_image_gallery` text COLLATE utf8mb4_unicode_ci,
   `product_status` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
@@ -256,10 +312,8 @@ CREATE TABLE `tbl_product` (
 --
 
 INSERT INTO `tbl_product` (`product_id`, `category_id`, `brand_id`, `product_name`, `product_description`, `product_content`, `product_price`, `product_image`, `product_image_gallery`, `product_status`, `created_at`, `updated_at`) VALUES
-(2, 3, 3, 'Samsung 2', 'Màn hình :	6.5 inchs, HD+, 720 x 1520 Pixels\r\nCamera trước :	13.0 MP\r\nCamera sau :	Chính 48 MP & Phụ 8 MP, 2 MP, 2 MP\r\nRAM :	3 GB\r\nBộ nhớ trong :	32 GB\r\nCPU :	Exynos 850, 8, 8 nhân 2.0 GHz\r\nGPU :	Đang cập nhật\r\nDung lượng pin :	5000 mAh\r\nHệ điều hành :	Android 10\r\nThẻ SIM :	Nano SIM, 2 Sim\r\nXuất xứ :	Việt Nam\r\nNăm sản xuất :	2020', 'Chiếc điện thoại với những đột phá đầy ấn tượng, Samsung Galaxy A21s sở hữu 4 camera sau đa chức năng, camera trước nằm ngay trong tấm kính màn hình, mang đến trải nghiệm màn hình lớn hấp dẫn hơn bao giờ hết.', '3123123', 'IMG_018564.jpg', '', 1, '2020-06-08 03:49:12', NULL),
-(3, 2, 1, 'Lenovo Ideapad 330-15IKB/Core I3 7020U/4GB/256GSSD', 'Thông số kỹ thuật\r\nCPU :	Intel, Core i3\r\nRAM :	4 GB, DDR4\r\nỔ cứng :	SSD, 256 GB\r\nMàn hình :	15.6 inchs, 1920 x 1080 Pixels, 60Hz, Anti-Glare with 45% NTSC\r\nCard màn hình :	Intel HD Graphic 610, Tích hợp\r\nCổng kết nối :	LAN : 10/100 Mbps, WIFI : 802.11 ac\r\nHệ điều hành :	Windows 10 Home SL 64\r\nTrọng lượng :	2.2 kg\r\nKích thước :	(53x7; 5x33)cm\r\nXuất xứ :	Trung Quốc\r\nNăm sản xuất :	2019', 'Trong tầm giá dưới 10 triệu, Lenovo Ideapad 330-15IKB nổi bật khi được trang bị sẵn ổ cứng SSD cao cấp, cho tốc độ nhanh hơn và độ bền tốt hơn.', '38883812', 'Lenovo Ideapad 33025.png', '', 1, '2020-06-08 04:09:52', NULL),
-(4, 3, 5, 'Lenovo Ideapad 330-15IKB/Core I3 7020U/4GB/256GSSD', 'ÁDASD', 'SAD', '45345345', 'SaS-A21s-den59.png', '', 1, '2020-06-09 15:17:50', NULL),
-(5, 9, 4, 'Sản phẩm test', 'mô tả', 'nội dung', '3213123', 'd19.png', '[\"100892777_187625169196265_5826623474944180224_n8.png\",\"Lenovo Ideapad 33063.png\"]', 1, '2020-06-10 11:56:13', NULL);
+(2, 3, 3, 'Samsung 2', '<p style=\"box-sizing: border-box; margin-bottom: 8px; margin-top: 0px; cursor: auto; color: #303030; font-family: Roboto, sans-serif; font-size: 14px; background-color: #ffffff; user-select: text !important;\"><span style=\"box-sizing: border-box; font-weight: bolder;\">Mặt Nạ Dưỡng Săn Chắc Da&nbsp;BNBG&nbsp;Vita Genic Jelly Mask 30ml</span></p>\r\n<p style=\"box-sizing: border-box; margin-bottom: 8px; margin-top: 0px; cursor: auto; color: #303030; font-family: Roboto, sans-serif; font-size: 14px; background-color: #ffffff; user-select: text !important;\">&ldquo;Mặt nạ được xem như vị cứu tinh đối với l&agrave;n da bạn&rdquo;.&nbsp;<span style=\"box-sizing: border-box; font-weight: bolder;\">BNBG&nbsp;</span><span style=\"box-sizing: border-box; font-weight: bolder;\">Vita Genic Jelly Mask</span>&nbsp;chứa dưỡng chất Vitamin dạng gel đậm đặc, h&agrave;m lượng l&ecirc;n đến 20.000ppm được chiết xuất từ c&aacute;c tr&aacute;i c&acirc;y tươi ở h&ograve;n đảo Jeju xinh đẹp. Mang đến l&agrave;n da khỏe mạnh, b&oacute;ng mượt đầy sức sống, phục hồi độ đ&agrave;n hồi, ngăn ngừa qu&aacute; tr&igrave;nh l&atilde;o h&oacute;a đồng thời cung cấp đủ ẩm cho da lu&ocirc;n mềm, mịn m&agrave;ng.&nbsp;Khi sử dụng&nbsp;<span style=\"box-sizing: border-box; font-weight: bolder;\">BNBG&nbsp;</span><span style=\"box-sizing: border-box; font-weight: bolder;\">Vita Genic Jelly Mask</span>, bạn sẽ được trải nghiệm cảm gi&aacute;c thư gi&atilde;n v&agrave; sảng kho&aacute;i.</p>\r\n<p style=\"box-sizing: border-box; margin-bottom: 8px; margin-top: 0px; cursor: auto; color: #303030; font-family: Roboto, sans-serif; font-size: 14px; background-color: #ffffff; user-select: text !important;\"><span style=\"box-sizing: border-box; font-weight: bolder;\">BNBG&nbsp;</span>được biết đến l&agrave; một bệnh viện thẩm mỹ nổi tiếng với đội ngũ b&aacute;c sĩ c&oacute; tay nghề h&agrave;ng đầu tại H&agrave;n Quốc. L&agrave; bệnh viện ứng dụng c&aacute;c c&ocirc;ng nghệ hiện đại tại Ch&acirc;u &Aacute; để nghi&ecirc;n cứu ra c&aacute;c loại mỹ phẩm chăm s&oacute;c da cũng như c&aacute;c phương ph&aacute;p phẫu thuật mới để mang lại vẻ đẹp ho&agrave;n thiện cho phụ nữ.&nbsp;Chương tr&igrave;nh l&agrave;m đẹp uy t&iacute;n tại H&agrave;n Quốc &ldquo;Get It Beauty&rdquo; đ&atilde; đẩy cơn sốt mặt nạ jelly n&agrave;y l&ecirc;n đỉnh điểm khi c&oacute; một chị da đẹp thật đẹp, căng mọng đ&atilde; cho biết sử dụng mặt nạ n&agrave;y.</p>\r\n<p style=\"box-sizing: border-box; margin-bottom: 8px; margin-top: 0px; cursor: auto; color: #303030; font-family: Roboto, sans-serif; font-size: 14px; background-color: #ffffff; user-select: text !important;\"><img class=\"loading lazy-load-active\" style=\"box-sizing: border-box; border-style: none; max-width: 100%; height: auto; display: inline-block; vertical-align: middle; transition: opacity 1s ease 0s; opacity: 1;\" src=\"https://media.hasaki.vn/wysiwyg/nhphuong/PhuongSmall/mat-na-duong-san-chac-da-banobagi-vita-genic-jelly-mask-30ml-2_1.jpg\" alt=\"\" width=\"550\" height=\"550\" data-src=\"https://media.hasaki.vn/wysiwyg/nhphuong/PhuongSmall/mat-na-duong-san-chac-da-banobagi-vita-genic-jelly-mask-30ml-2_1.jpg\" data-was-processed=\"true\" /></p>', '<p>Chiếc điện thoại với những đột ph&aacute; đầy ấn tượng, Samsung Galaxy A21s sở hữu 4 camera sau đa chức năng, camera trước nằm ngay trong tấm k&iacute;nh m&agrave;n h&igrave;nh, mang đến trải nghiệm m&agrave;n h&igrave;nh lớn hấp dẫn hơn bao giờ hết.</p>', '9897000', 'IMG_018564.jpg', '', 1, '2020-06-08 03:49:12', NULL),
+(3, 9, 4, 'đĐẠKASH  JKDHAS JHDJSAHDH ASJD BHJASB DJASBDJH BMSANDHAS', '<p>da</p>', '<p>d&aacute;</p>', '10000000', 'asus-vivobook-x40930.png', '[\"514.png\",\"526.png\",\"55.png\"]', 1, '2020-06-17 04:21:31', '2020-06-17 04:21:31');
 
 -- --------------------------------------------------------
 
@@ -277,6 +331,40 @@ CREATE TABLE `tbl_shipping` (
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `tbl_shipping`
+--
+
+INSERT INTO `tbl_shipping` (`shipping_id`, `shipping_name`, `shipping_address`, `shipping_phone`, `shipping_email`, `shipping_notes`, `created_at`, `updated_at`) VALUES
+(32, 'Nguyễn Văn A', 'Nè', '89183812938', 'khuea@gmail.com', 'Chú thích', '2020-06-13 14:24:17', '2020-06-13 14:24:17'),
+(33, 'Bùi Phú Khuyên', '1611061839', '0333093935', 'khuyenpb@gmail.com', 'Đặt hàng', '2020-06-13 14:25:48', '2020-06-13 14:25:48'),
+(34, 'Nguyễn Văn A', 'Địa chỉ mẫu', '12345', 'khuyen@gmail.com', 'Ghi chú thêm', '2020-06-14 02:33:05', '2020-06-14 02:33:05'),
+(35, 'Bùi Phú Khuyên', '1611061839', '0333093935', 'khuyenpb@gmail.com', 'Không cần', '2020-06-17 05:09:38', '2020-06-17 05:09:38');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_slider`
+--
+
+CREATE TABLE `tbl_slider` (
+  `slider_id` int(11) NOT NULL,
+  `slider_name` varchar(255) NOT NULL,
+  `slider_status` int(11) NOT NULL,
+  `slider_image` varchar(255) NOT NULL,
+  `slider_description` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_slider`
+--
+
+INSERT INTO `tbl_slider` (`slider_id`, `slider_name`, `slider_status`, `slider_image`, `slider_description`) VALUES
+(1, 'Slide 1', 1, 'Slide161.jpg', 'Slide 1'),
+(2, 'Slide 2', 1, 'Slide253.jpg', 'Slide 2'),
+(3, 'Slide 3', 1, 'Slide341.jpg', 'Slide 3'),
+(4, 'Slide 4', 1, 'Slide436.jpg', 'Slide 4');
 
 -- --------------------------------------------------------
 
@@ -336,6 +424,12 @@ ALTER TABLE `tbl_category_product`
   ADD PRIMARY KEY (`category_id`);
 
 --
+-- Indexes for table `tbl_coupon`
+--
+ALTER TABLE `tbl_coupon`
+  ADD PRIMARY KEY (`coupon_id`);
+
+--
 -- Indexes for table `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
@@ -370,6 +464,12 @@ ALTER TABLE `tbl_product`
 --
 ALTER TABLE `tbl_shipping`
   ADD PRIMARY KEY (`shipping_id`);
+
+--
+-- Indexes for table `tbl_slider`
+--
+ALTER TABLE `tbl_slider`
+  ADD PRIMARY KEY (`slider_id`);
 
 --
 -- Indexes for table `users`
@@ -412,6 +512,12 @@ ALTER TABLE `tbl_category_product`
   MODIFY `category_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
+-- AUTO_INCREMENT for table `tbl_coupon`
+--
+ALTER TABLE `tbl_coupon`
+  MODIFY `coupon_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
@@ -421,31 +527,37 @@ ALTER TABLE `tbl_customer`
 -- AUTO_INCREMENT for table `tbl_order`
 --
 ALTER TABLE `tbl_order`
-  MODIFY `order_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `order_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `tbl_order_details`
 --
 ALTER TABLE `tbl_order_details`
-  MODIFY `order_details_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `order_details_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT for table `tbl_payment`
 --
 ALTER TABLE `tbl_payment`
-  MODIFY `payment_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `payment_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  MODIFY `product_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `product_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_shipping`
 --
 ALTER TABLE `tbl_shipping`
-  MODIFY `shipping_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `shipping_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+
+--
+-- AUTO_INCREMENT for table `tbl_slider`
+--
+ALTER TABLE `tbl_slider`
+  MODIFY `slider_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
