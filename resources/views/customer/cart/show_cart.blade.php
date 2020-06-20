@@ -108,7 +108,6 @@
                                 <ul class="nav-dropdown nav-dropdown-default">
                                     <li class="html widget_shopping_cart">
                                         <div class="widget_shopping_cart_content">
-                                            <p class="woocommerce-mini-cart__empty-message">Chưa có sản phẩm trong giỏ hàng.</p>
                                         </div>
                                     </li>
                                 </ul>
@@ -153,7 +152,6 @@
                                             <div class="is-divider"></div>
                                         </div>
                                         <div class="widget_shopping_cart_content">
-                                            <p class="woocommerce-mini-cart__empty-message">Chưa có sản phẩm trong giỏ hàng.</p>
                                         </div>
                                         <div class="cart-sidebar-content relative"></div>
                                     </div>
@@ -351,21 +349,28 @@
                                                     Tiến hành thanh toán</a>
                                             </div>
                                         </div>
-                                        <form action="{{URL::to('check-coupon')}}" class="checkout_coupon mb-0" method="post">
+                                        @if(\Illuminate\Support\Facades\Session::get('coupon'))
+                                        <form action="{{URL::to('uncheck-coupon')}}" class="checkout_coupon mb-0" method="post">
                                             @csrf
                                             <div class="coupon">
                                                 <h3 class="widget-title"><i class="icon-tag" ></i> Phiếu ưu đãi</h3>
-                                                @if(\Illuminate\Support\Facades\Session::get('coupon'))
-                                                    @foreach(\Illuminate\Support\Facades\Session::get('coupon') as $key=>$coupon)
-                                                <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="{{$coupon['coupon_code']}}" placeholder="Mã ưu đãi" disabled/>
-                                                <input  type="submit" class="is-form expand" name="apply_coupon" value="Xoá mã giảm giá" />
-                                                    @endforeach
-                                                @else
-                                                    <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="Mã ưu đãi" />
-                                                    <input  type="submit" class="is-form expand" name="apply_coupon" value="Áp dụng" />
-                                                @endif
+                                                @foreach(\Illuminate\Support\Facades\Session::get('coupon') as $key=>$coupon)
+                                                    <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="{{$coupon['coupon_code']}}" placeholder="Mã ưu đãi" disabled/>
+                                                    <input  type="submit" class="is-form expand" name="apply_coupon" value="Xoá mã giảm giá" />
+                                                @endforeach
+
                                             </div>
                                         </form>
+                                        @else
+                                            <form action="{{URL::to('check-coupon')}}" class="checkout_coupon mb-0" method="post">
+                                            @csrf
+                                            <div class="coupon">
+                                                <h3 class="widget-title"><i class="icon-tag" ></i> Phiếu ưu đãi</h3>
+                                                    <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="Mã ưu đãi" />
+                                                    <input  type="submit" class="is-form expand" name="apply_coupon" value="Áp dụng" />
+                                            </div>
+                                            </form>
+                                        @endif
                                         <?php
                                         use Illuminate\Support\Facades\Session;
                                         $success = Session::get('add_coupon_success');

@@ -228,7 +228,9 @@
                     <div class="col medium-4 small-12 large-4">
                         <div class="col-inner">
                             <h4>FANPAGE FACEBOOK</h4>
-                            <p><iframe style="border: none; overflow: hidden;" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ftopweb.com.vn&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=948110208640186" width="340" height="200" frameborder="0" scrolling="no"></iframe></p>
+                            <p>
+                                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fhutechuniversity&tabs=272&width=340&height=154&small_header=true&adapt_container_width=false&hide_cover=false&show_facepile=true&appId=292384494809982" width="340" height="154" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                            </p>
                             <div class="gap-element clearfix" style="display:block; height:auto; padding-top:12px"></div>
                             <div class="social-icons follow-icons"><a href="#" target="_blank" data-label="Facebook" rel="noopener noreferrer nofollow" class="icon primary button circle facebook tooltip" title="Follow on Facebook"><i class="icon-facebook"></i></a><a href="#" target="_blank" data-label="Twitter" rel="noopener noreferrer nofollow" class="icon primary button circle  twitter tooltip" title="Follow on Twitter"><i class="icon-twitter"></i></a><a href="mailto:#" data-label="E-mail" rel="nofollow" class="icon primary button circle  email tooltip" title="Send us an email"><i class="icon-envelop"></i></a><a href="tel:#" target="_blank" data-label="Phone" rel="noopener noreferrer nofollow" class="icon primary button circle  phone tooltip" title="Call us"><i class="icon-phone"></i></a></div>
                         </div>
@@ -252,10 +254,10 @@
                                 </div>
                                 <div class="col medium-4 small-12 large-4">
                                     <div class="col-inner">
-                                        <h4 class="tt_footer text-uppercase">VỀ HASAKI.VN</h4>
+                                        <h4 class="tt_footer text-uppercase">VỀ COSMETIC STORE</h4>
                                         <ul>
                                             <li><span style="font-size: 95%;"><a class="txt_link_hasaki" href="#">Phiếu mua hàng</a></span></li>
-                                            <li><span style="font-size: 95%;"><a class="txt_link_hasaki" href="#">Giới thiệu Hasaki.vn</a></span></li>
+                                            <li><span style="font-size: 95%;"><a class="txt_link_hasaki" href="#">Giới thiệu Cosmetic Store</a></span></li>
                                             <li><span style="font-size: 95%;"><a class="txt_link_hasaki" href="#">Tuyển Dụng</a></span></li>
                                             <li><span style="font-size: 95%;"><a class="txt_link_hasaki" href="#">Chính sách bảo mật</a></span></li>
                                             <li><span style="font-size: 95%;"><a class="txt_link_hasaki" href="#">Điều khoản sử dụng</a></span></li>
@@ -267,8 +269,8 @@
                                     <div class="col-inner">
                                         <h4 class="tt_footer text-uppercase">HỢP TÁC &amp; LIÊN KẾT</h4>
                                         <ul>
-                                            <li><span style="font-size: 95%;"><a href="https://topweb.com.vn">http://topweb.com.vn</a></span></li>
-                                            <li><span style="font-size: 95%;"><a href="https://topweb.com.vn">https://topweb.com.vn</a></span></li>
+                                            <li><span style="font-size: 95%;"><a href="http://hutech.edu.vn">http://hutech.edu.vn</a></span></li>
+                                            <li><span style="font-size: 95%;"><a href="https://sinhvien.hutech.edu.vn">https://sinhvien.hutech.edu.vn</a></span></li>
                                         </ul>
                                         <h4>TẢI ỨNG DỤNG</h4>
                                         <div class="row row-small" id="row-1519349805">
@@ -329,24 +331,20 @@
                         <div class="col-inner">
                             <p><span style="font-size: 85%;"><strong>ĐẸP</strong></span></p>
                             <p><span style="font-size: 85%;">Đẹp - Là một từ mà mọi người đều khát khao cả nam lẫn nữ. Đẹp đi đôi với khỏe mạnh, đẹp đi đôi với sự lựa chọn thông minh. Đẹp toát ra từ vẻ ngoài tươi tắn tràn đầy năng lượng sống. Chính vì vậy sức khỏe và làm đẹp ngày càng được nhiều người quan để hướng đến cuộc sống tươi vui, hạnh phúc hơn. Sức khỏe tốt được biểu hiện qua làn da hồng hào,mịn màng, vóc dáng cân đối, mái tóc bồng bềnh và hàm răng chắc khỏe. Thấu hiểu nhu cầu đó, các hãng mỹ phẩm không ngừng nghiên cứu và cho ra đời hàng nghìn loại mỹ phẩm làm đẹp đa dạng chủng loại. Nhiều nhóm hàng mỹ phẩm bao gồm chăm sóc da, chăm sóc tóc, chăm sóc toàn thân, chăm sóc cá nhân, nước hoa lần lượt ra đời và đa dạng hóa để đáp ứng nhu cầu làm đẹp của con người.</span></p>
-                            <p><span style="font-size: 85%;">Hasaki luôn tôn trọng khách hàng, lấy niềm vui, sự hài lòng của khách hàng để làm động lực, không ngừng tìm kiếm các sản phẩm tốt nhất để mỗi khách hàng đều có thể trở nên tự tin và xinh đẹp hơn. Các hãng thương hiệu mỹ phẩm ở Hasaki luôn là các thương hiệu uy tín, được mọi người tin dùng như : Secret Key, Laneige, Vichy, Avène, Yves Rocher, Laroche Posay, Lancôme,...Bên cạnh đó khi mua hàng ở Hasaki, khách luôn được giá ưu đãi tốt nhất, dịch vụ nhanh chóng &amp; nhiều chương trình Khuyến Mãi khác.</span></p>
                             <p> </p>
                         </div>
                     </div>
                     <div class="col medium-4 small-12 large-4">
                         <div class="col-inner">
                             <div class="item_footer_right">
-                                <div class=""><span style="font-size: 85%; color: #000000;"><b>Bản quyền © 2016 Hasaki.vn</b></span></div>
-                                <p><strong><span style="font-size: 85%;">Công Ty TNHH HASAKI BEAUTY &amp; S.P.A</span></strong></p>
+                                <div class=""><span style="font-size: 85%; color: #000000;"><b>Bản quyền © 2020 Cosmetic Store</b></span></div>
                             </div>
                             <ul>
                                 <li class="item_footer_right"><span style="font-size: 85%;">Địa chỉ giao dịch:</span></li>
                                 <li class="item_footer_right">
-                                    <div class=""><span style="font-size: 85%;">CN 1: 71 Hoàng Hoa Thám, Phường 13, Quận Tân Bình.</span></div>
+                                    <div class=""><span style="font-size: 85%;">CN 1: 175A Điện Biên Phủ, Phường 25, Quận Bình Thạnh.</span></div>
                                 </li>
-                                <li class="item_footer_right"><span style="font-size: 85%;">CN 2: 555 Đường 3 tháng 2, Phường 8, Quận 10.</span></li>
-                                <li class="item_footer_right"><span style="font-size: 85%;">CN 3: 176 Phan Đăng Lưu, Phường 3, Quận Phú Nhuận.</span></li>
-                                <li class="item_footer_right"><span style="font-size: 85%;">CN 4: 94 Lê Văn Việt, Phường Hiệp Phú, Quận 9.</span></li>
+                                <li class="item_footer_right"><span style="font-size: 85%;">CN 4: Khu E - Công nghệ cao, Phường Hiệp Phú, Quận 9.</span></li>
                                 <li class="item_footer_right"><span style="font-size: 85%;">Hotline: 1900 636 900</span></li>
                             </ul>
                             <div class="item_footer_right"><span style="font-size: 85%;">Giấy chứng nhận Đăng ký Kinh doanh số 0313612829 do Sở Kế hoạch và Đầu tư Thành phố Hồ Chí Minh cấp ngày 13/01/2016</span></div>
@@ -375,7 +373,7 @@
                 <!-- -right -->
                 <div class="footer-primary pull-left">
                     <div class="copyright-footer">
-                        <div style="padding-top: 5px"><strong>Copyright 2020 © <a href="https://topweb.com.vn">Thiết kế website Hà Nội</a> bởi Topweb.com.vn</strong></div>
+                        <div style="padding-top: 5px"><strong>Copyright 2020 © <a href="https://topweb.com.vn">HUTECH</strong></div>
                     </div>
                 </div>
                 <!-- .left -->

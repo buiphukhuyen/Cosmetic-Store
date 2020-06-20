@@ -1,6 +1,6 @@
 @extends('admin.admin_layout')
-@section('list_product')
-    <title>Danh sách đơn hàng</title>
+@section('list_category')
+    <title>Danh sách Quản trị viên</title>
     <link href="public/admin/components/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <!-- Page level plugins -->
     <script src="public/admin/components/datatables/jquery.dataTables.min.js"></script>
@@ -10,27 +10,27 @@
     <!-- Page Heading -->
     <div class="element-wrapper">
         <h6 class="element-header">
-            DANH SÁCH ĐƠN HÀNG
+            DANH SÁCH QUẢN TRỊ VIÊN
         </h6>
     </div>
     <div class="table-responsive">
-        <table class="table table-padded" id="showOrder">
+        <table class="table table-padded" id="showCustomer">
             <thead>
             <tr class="row-actions">
                 <th>
                     ID
                 </th>
                 <th>
-                    Tên Người đặt
+                    Tên Quản trị viên
                 </th>
                 <th>
-                    Thời gian đặt
+                    Email
                 </th>
                 <th>
-                    Tổng giá tiền
+                    Số điện thoại
                 </th>
                 <th>
-                    Tình trạng
+                    Cập nhật
                 </th>
                 <th>
                     Hành động
@@ -39,43 +39,36 @@
             </thead>
 
             <tbody>
-            @foreach($all_order as $key => $order)
+            @foreach($list_admin as $key => $admin)
                 <tr>
                     <td class="text-center">
-                        <span>{{$order->order_id}}</span>
+                        <span>{{$admin->admin_id}}</span>
                     </td>
 
                     <td class="text-center">
-                        <span>{{$order->customer_name}}</span>
-                    </td>
 
-
-                    <td class="text-center">
-                        <span>
-                            {{$order->created_at}}
-                        </span>
-                    </td>
-
-                    <td class="text-center">
-                       <span>
-                            {{$order->order_total}}
-                        </span>
-                        <span class="smaller lighter">VNĐ</span>
+                        <span>{{$admin->admin_name}}</span>
                     </td>
 
                     <td class="text-center">
                         <span>
-                            @if($order->order_status!="Đang chờ xử lý")
-                                <a href="active_category_product/{{$order->order_id}}"> <span class="status-pill smaller red"></span> </a>
-                            @else
-                                <a href="unactive_category_product/{{$order->order_id}}"> <span class="status-pill smaller green"></span> </a>
-                            @endif
+                            {{$admin->admin_email}}
                         </span>
                     </td>
 
-
+                    <td class="text-center">
+                        <span>
+                            {{$admin->admin_phone}}
+                        </span>
+                    </td>
+                    <td class="text-center">
+                        <span>
+                            {{$admin->updated_at}}
+                        </span>
+                    </td>
                     <td class="row-actions">
-                        <a href="{{URL::to('view-order/'.$order->order_id)}}"><i class="os-icon os-icon-ui-07"></i></a>
+                        <a href="edit_admin/{{$admin->admin_id}}"><i class="os-icon os-icon-ui-49"></i></a>
+                        <a onclick="return (confirm('Bạn có muốn xoá Quản trị viên này?'));" href="delete_admin/{{$admin->admin_id}}" ><i class="os-icon os-icon-ui-15 text-danger"></i></a>
                     </td>
                 </tr>
             @endforeach
@@ -84,9 +77,10 @@
     </div>
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#showOrder').dataTable({
+            $('#showCustomer').dataTable({
             });
         });
     </script>
+
 
 @endsection

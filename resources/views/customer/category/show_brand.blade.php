@@ -148,7 +148,6 @@
                                             <div class="is-divider"></div>
                                         </div>
                                         <div class="widget_shopping_cart_content">
-                                            <p class="woocommerce-mini-cart__empty-message">Chưa có sản phẩm trong giỏ hàng.</p>
                                         </div>
                                         <div class="cart-sidebar-content relative"></div>
                                     </div>

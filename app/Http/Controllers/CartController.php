@@ -36,6 +36,7 @@ class CartController extends Controller
     public function delete_to_cart($rowId) {
         Cart::update($rowId,0);
         Session::put('coupon', null);
+        Cart::setGlobalDiscount(0);
         return Redirect::to('/show-cart');
     }
 
@@ -79,6 +80,13 @@ class CartController extends Controller
         else {
             return redirect()->back()->with("add_coupon_error", "Mã giảm giá không hợp lệ");
         }
+    }
+
+    public function uncheck_coupon(Request $request) {
+        Session::put('coupon', null);
+        Cart::setGlobalDiscount(0);
+        return redirect()->back();
+
     }
 
 

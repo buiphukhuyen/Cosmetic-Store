@@ -102,7 +102,6 @@
                                     <ul class="nav-dropdown nav-dropdown-default">
                                         <li class="html widget_shopping_cart">
                                             <div class="widget_shopping_cart_content">
-                                                <p class="woocommerce-mini-cart__empty-message">Chưa có sản phẩm trong giỏ hàng.</p>
                                             </div>
                                         </li>
                                     </ul>
@@ -147,7 +146,6 @@
                                                 <div class="is-divider"></div>
                                             </div>
                                             <div class="widget_shopping_cart_content">
-                                                <p class="woocommerce-mini-cart__empty-message">Chưa có sản phẩm trong giỏ hàng.</p>
                                             </div>
                                             <div class="cart-sidebar-content relative"></div>
                                         </div>
@@ -460,12 +458,7 @@
                                                    </span>
                                                 </div>
                                                     <span class="price">
-                                                        <del>
-                                                            <span class="woocommerce-Price-amount amount">148.000
-                                                                <span class="woocommerce-Price-currencySymbol">&#8363;
-                                                                </span>
-                                                        </span>
-                                                        </del>
+
                                                         <ins>
                                                         <span class="woocommerce-Price-amount amount">{{number_format($pro->product_price)}}
                                                             <span class="woocommerce-Price-currencySymbol">&#8363;
@@ -505,13 +498,13 @@
                     </div>
                     <!-- .section-title -->
                     <div class="row row-small row-thuong-hieu" id="row-457468224">
-                        @foreach($brand as $key=>$brand)
+                        @foreach($brand as $key=>$brans)
                             <div class="col medium-3 small-6 large-3">
                                 <div class="col-inner">
                                     <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_2055271255">
-                                        <a class="" href="{{URL::to('/thuong-hieu/'.$brand->brand_id)}}" target="_self">
+                                        <a class="" href="{{URL::to('/thuong-hieu/'.$brans->brand_id)}}" target="_self">
                                             <div class="img-inner image-color dark">
-                                                <img width="150" height="75" src="public/uploads/brand/{{$brand->brand_image}}" class="lazy-load attachment-original size-original" alt="">
+                                                <img width="150" height="75" src="public/uploads/brand/{{$brans->brand_image}}" class="lazy-load attachment-original size-original" alt="">
                                             </div>
                                         </a>
                                         <style scope="scope">
@@ -527,6 +520,584 @@
                 </div>
                 <style scope="scope">
                     #section_1158551858 {
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                        background-color: rgb(245, 251, 246);
+                    }
+                </style>
+            </section>
+
+            <!-- Danh mục Trang điểm -->
+            <section class="section category-row" id="section_1976849048">
+                <div class="bg section-bg fill bg-fill  bg-loaded">
+                </div><!-- .section-bg -->
+
+                <div class="section-content relative">
+
+                    <div class="row" id="row-784981604">
+                        <div class="col small-12 large-12"><div class="col-inner">
+                                <div class="tieu-de-row">
+                                    <div class="left">
+                                        <h2><a href="#" target="blank">Trang điểm</a></h2>
+                                    </div>
+                                    <div class="clearboth"></div>
+                                </div>
+                            </div></div>
+                    </div>
+                    <div class="row row-collapse" id="row-1989959363">
+                        <div class="col cot1 medium-2 small-12 large-2"><div class="col-inner">
+                                <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_938668062">
+                                    <div class="img-inner dark">
+                                        <img width="220" height="350" src="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/220-x-350.jpg" data-src="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/220-x-350.jpg" class="attachment-original size-original lazy-load-active" alt="" srcset="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/220-x-350.jpg 220w, https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/220-x-350-189x300.jpg 189w" data-srcset="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/220-x-350.jpg 220w, https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/220-x-350-189x300.jpg 189w" sizes="(max-width: 220px) 100vw, 220px">
+                                    </div>
+
+                                    <style scope="scope">
+
+                                        #image_938668062 {
+                                            width: 100%;
+                                        }
+                                    </style>
+                                </div>
+
+                                <div class="cloud-tag">
+                                    <ul>
+                                        <li><a href="#" target="blank">Sữa rửa mặt</a></li>
+                                        <li><a href="#" target="blank">Nước hoa hồng</a></li>
+                                        <li><a href="#" target="blank">Nước cân bằng</a></li>
+                                        <li><a href="#" target="blank">Toner</a></li>
+                                        <li><a href="#" target="blank">Essenser</a></li>
+                                        <li><a href="#" target="blank">Tinh chất</a></li>
+                                        <li><a href="#" target="blank">Emulsion</a></li>
+                                    </ul>
+                                </div>
+                            </div></div>
+                        <div class="col cot2 row-sp medium-9 small-12 large-9"><div class="col-inner">
+                                <div class="row row-collapse" id="row-2056097756">
+                                    <div class="col medium-4 small-12 large-4"><div class="col-inner">
+                                            <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_705518200">
+                                                <a class="" href="#" target="_blank" rel="noopener noreferrer">						<div class="img-inner image-zoom dark">
+                                                        <img width="366" height="200" src="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/omg-desktop_4.jpg" data-src="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/omg-desktop_4.jpg" class="attachment-original size-original lazy-load-active" alt="" srcset="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/omg-desktop_4.jpg 366w, https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/omg-desktop_4-300x164.jpg 300w" data-srcset="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/omg-desktop_4.jpg 366w, https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/omg-desktop_4-300x164.jpg 300w" sizes="(max-width: 366px) 100vw, 366px">
+                                                    </div>
+                                                </a>
+                                                <style scope="scope">
+
+                                                    #image_705518200 {
+                                                        width: 100%;
+                                                    }
+                                                </style>
+                                            </div>
+
+                                        </div></div>
+                                    <div class="col medium-4 small-12 large-4"><div class="col-inner">
+                                            <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_1201493303">
+                                                <a class="" href="#" target="_self">						<div class="img-inner image-zoom dark">
+                                                        <img width="366" height="200" src="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/5_lopneni_366x200_1.jpg" data-src="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/5_lopneni_366x200_1.jpg" class="attachment-original size-original lazy-load-active" alt="" srcset="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/5_lopneni_366x200_1.jpg 366w, https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/5_lopneni_366x200_1-300x164.jpg 300w" data-srcset="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/5_lopneni_366x200_1.jpg 366w, https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/5_lopneni_366x200_1-300x164.jpg 300w" sizes="(max-width: 366px) 100vw, 366px">
+                                                    </div>
+                                                </a>
+                                                <style scope="scope">
+
+                                                    #image_1201493303 {
+                                                        width: 100%;
+                                                    }
+                                                </style>
+                                            </div>
+
+                                        </div></div>
+                                    <div class="col medium-4 small-12 large-4"><div class="col-inner">
+                                            <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_2146228890">
+                                                <a class="" href="#" target="_self">						<div class="img-inner image-zoom dark">
+                                                        <img width="366" height="200" src="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/artboard_5_copy.jpg" data-src="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/artboard_5_copy.jpg" class="attachment-original size-original lazy-load-active" alt="" srcset="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/artboard_5_copy.jpg 366w, https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/artboard_5_copy-300x164.jpg 300w" data-srcset="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/artboard_5_copy.jpg 366w, https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/artboard_5_copy-300x164.jpg 300w" sizes="(max-width: 366px) 100vw, 366px">
+                                                    </div>
+                                                </a>
+                                                <style scope="scope">
+
+                                                    #image_2146228890 {
+                                                        width: 100%;
+                                                    }
+                                                </style>
+                                            </div>
+
+                                        </div></div>
+
+                                    <style scope="scope">
+
+                                    </style>
+                                </div>
+                                <div class="container section-title-container"><h3 class="section-title section-title-normal"><b></b><span class="section-title-main">Nổi bật và bán chạy</span><b></b><a href="{{URL::to('danh-muc-san-pham/'.$list_trangdiem[0]->category_id)}}" target="">+ Xem thêm<i class="icon-angle-right"></i></a></h3></div><!-- .section-title -->
+
+
+                                <div class="row large-columns-5 medium-columns-3 small-columns-2 row-collapse slider row-slider slider-nav-simple slider-nav-push flickity-enabled is-draggable slider-lazy-load-active" data-flickity-options="{&quot;imagesLoaded&quot;: true, &quot;groupCells&quot;: &quot;100%&quot;, &quot;dragThreshold&quot; : 5, &quot;cellAlign&quot;: &quot;left&quot;,&quot;wrapAround&quot;: true,&quot;prevNextButtons&quot;: true,&quot;percentPosition&quot;: true,&quot;pageDots&quot;: false, &quot;rightToLeft&quot;: false, &quot;autoPlay&quot; : false}" tabindex="0">
+                                    @foreach($list_trangdiem as $key=>$pro)
+                                        <div class="col">
+                                            <div class="col-inner">
+                                                <div class="badge-container absolute left top z-1">
+                                                    <div class="callout badge badge-square">
+                                                        <div class="badge-inner secondary on-sale">
+                                                            <span class="onsale">-19%</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="product-small box has-hover box-normal box-text-bottom">
+                                                    <div class="box-image">
+                                                        <div class="image-overlay-add image-zoom image-cover" style="padding-top:100%;">
+                                                            <a href="{{URL::to('/san-pham/'.$pro->product_id)}}">
+                                                                <img width="358" height="358" src="{{URL::to('public/uploads/product/'.$pro->product_image)}}"  class="lazy-load attachment-original size-original" sizes="(max-width: 358px) 100vw, 358px">									</a>
+                                                            <div class="overlay fill" style="background-color: rgba(255, 255, 255, 0.27)"></div>
+                                                        </div>
+                                                        <div class="image-tools top right show-on-hover">
+                                                        </div>
+                                                        <div class="image-tools grid-tools text-center hide-for-small bottom hover-slide-in show-on-hover">
+                                                        </div>
+                                                    </div>
+                                                    <!-- box-image -->
+                                                    <div class="box-text text-left">
+                                                        <div class="title-wrapper">
+                                                            @foreach($category as $key=>$cate)
+                                                                @if($cate->category_id==$pro->category_id)
+                                                                    <p class="category uppercase is-smaller no-text-overflow product-cat op-7">
+                                                                        {{$cate->category_name}}
+                                                                    </p>
+                                                                @endif
+                                                            @endforeach
+                                                            <p class="name product-title">
+                                                                <a class="text" href="{{URL::to('/san-pham/'.$pro->product_id)}}">{{$pro->product_name}}</a>
+                                                            </p>
+                                                        </div>
+                                                        <div class="price-wrapper">
+                                                            <div class="pwb-brands-in-loop">
+                                                    <span>
+                                                        <a href="{{URL::to('/thuong-hieu/'.$pro->brand_id)}}" >
+                                                            @foreach($brand as $key=>$bras)
+                                                                @if($bras->brand_id==$pro->brand_id)
+                                                                    <img width="120" height="60" src="{{URL::to('public/uploads/brand/'.$bras->brand_image)}}" class="lazy-load attachment-thumbnail size-thumbnail" alt="">
+                                                                @endif
+                                                            @endforeach
+                                                        </a>
+                                                   </span>
+                                                            </div>
+                                                            <span class="price">
+
+                                                        <ins>
+                                                        <span class="woocommerce-Price-amount amount">{{number_format($pro->product_price)}}
+                                                            <span class="woocommerce-Price-currencySymbol">&#8363;
+                                                            </span>
+                                                        </span>
+                                                        </ins>
+                                                </span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- box-text -->
+                                                </div>
+                                                <!-- box -->
+                                            </div>
+                                            <!-- .col-inner -->
+                                        </div>
+                                        <!-- col -->
+                                    @endforeach
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <style scope="scope">
+
+                        </style>
+                    </div>
+                </div><!-- .section-content -->
+
+
+                <style scope="scope">
+
+                    #section_1976849048 {
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                        background-color: rgb(245, 251, 246);
+                    }
+                </style>
+            </section>
+
+            <!-- Danh mục Chăm sóc da mặt -->
+            <section class="section category-row cham-soc-da-mat" id="section_575941787">
+                <div class="bg section-bg fill bg-fill  bg-loaded">
+                </div><!-- .section-bg -->
+                <div class="section-content relative">
+
+                    <div class="row" id="row-92797852">
+                        <div class="col small-12 large-12"><div class="col-inner">
+                                <div class="tieu-de-row">
+                                    <div class="left">
+                                        <h2><a href="#" target="blank">Chăm sóc da mặt</a></h2>
+                                    </div>
+                                    <div class="clearboth"></div>
+                                </div>
+                            </div></div>
+                    </div>
+                    <div class="row row-collapse" id="row-1281978336">
+                        <div class="col cot1 medium-2 small-12 large-2"><div class="col-inner">
+                                <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_34280763">
+                                    <div class="img-inner dark">
+                                        <img width="220" height="350" src="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/banner-b_n-h_ng_220x350.jpg" data-src="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/banner-b_n-h_ng_220x350.jpg" class="attachment-original size-original lazy-load-active" alt="" srcset="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/banner-b_n-h_ng_220x350.jpg 220w, https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/banner-b_n-h_ng_220x350-189x300.jpg 189w" data-srcset="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/banner-b_n-h_ng_220x350.jpg 220w, https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/banner-b_n-h_ng_220x350-189x300.jpg 189w" sizes="(max-width: 220px) 100vw, 220px">
+                                    </div>
+
+                                    <style scope="scope">
+
+                                        #image_34280763 {
+                                            width: 100%;
+                                        }
+                                    </style>
+                                </div>
+
+                                <div class="cloud-tag">
+                                    <ul>
+                                        <li><a href="#" target="blank">Sữa rửa mặt</a></li>
+                                        <li><a href="#" target="blank">Nước hoa hồng</a></li>
+                                        <li><a href="#" target="blank">Nước cân bằng</a></li>
+                                        <li><a href="#" target="blank">Toner</a></li>
+                                        <li><a href="#" target="blank">Essenser</a></li>
+                                        <li><a href="#" target="blank">Tinh chất</a></li>
+                                        <li><a href="#" target="blank">Emulsion</a></li>
+                                    </ul>
+                                </div>
+                            </div></div>
+                        <div class="col cot2 row-sp medium-9 small-12 large-9"><div class="col-inner">
+                                <div class="row row-collapse" id="row-873151909">
+                                    <div class="col medium-4 small-12 large-4"><div class="col-inner">
+                                            <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_391263548">
+                                                <a class="" href="#" target="_blank" rel="noopener noreferrer">						<div class="img-inner image-zoom dark">
+                                                        <img width="366" height="200" src="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/vichy-web-366x200.jpg" data-src="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/vichy-web-366x200.jpg" class="attachment-original size-original lazy-load-active" alt="" srcset="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/vichy-web-366x200.jpg 366w, https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/vichy-web-366x200-300x164.jpg 300w" data-srcset="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/vichy-web-366x200.jpg 366w, https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/vichy-web-366x200-300x164.jpg 300w" sizes="(max-width: 366px) 100vw, 366px">
+                                                    </div>
+                                                </a>
+                                                <style scope="scope">
+
+                                                    #image_391263548 {
+                                                        width: 100%;
+                                                    }
+                                                </style>
+                                            </div>
+
+                                        </div></div>
+                                    <div class="col medium-4 small-12 large-4"><div class="col-inner">
+                                            <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_512303338">
+                                                <a class="" href="#" target="_self">						<div class="img-inner image-zoom dark">
+                                                        <img width="366" height="200" src="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/larocheposay-desktop-2018-09-24_2.jpg" data-src="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/larocheposay-desktop-2018-09-24_2.jpg" class="attachment-original size-original lazy-load-active" alt="" srcset="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/larocheposay-desktop-2018-09-24_2.jpg 366w, https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/larocheposay-desktop-2018-09-24_2-300x164.jpg 300w" data-srcset="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/larocheposay-desktop-2018-09-24_2.jpg 366w, https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/larocheposay-desktop-2018-09-24_2-300x164.jpg 300w" sizes="(max-width: 366px) 100vw, 366px">
+                                                    </div>
+                                                </a>
+                                                <style scope="scope">
+
+                                                    #image_512303338 {
+                                                        width: 100%;
+                                                    }
+                                                </style>
+                                            </div>
+
+                                        </div></div>
+                                    <div class="col medium-4 small-12 large-4"><div class="col-inner">
+                                            <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_977586321">
+                                                <a class="" href="#" target="_self">						<div class="img-inner image-zoom dark">
+                                                        <img width="366" height="200" src="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/laneige_366x200_1.jpg" data-src="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/laneige_366x200_1.jpg" class="attachment-original size-original lazy-load-active" alt="" srcset="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/laneige_366x200_1.jpg 366w, https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/laneige_366x200_1-300x164.jpg 300w" data-srcset="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/laneige_366x200_1.jpg 366w, https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/laneige_366x200_1-300x164.jpg 300w" sizes="(max-width: 366px) 100vw, 366px">
+                                                    </div>
+                                                </a>
+                                                <style scope="scope">
+
+                                                    #image_977586321 {
+                                                        width: 100%;
+                                                    }
+                                                </style>
+                                            </div>
+
+                                        </div></div>
+
+                                    <style scope="scope">
+
+                                    </style>
+                                </div>
+                                <div class="container section-title-container"><h3 class="section-title section-title-normal"><b></b><span class="section-title-main">Nổi bật và bán chạy</span><b></b><a href="{{URL::to('danh-muc-san-pham/'.$list_damat[0]->category_id)}}" target="">+ Xem thêm<i class="icon-angle-right"></i></a></h3></div><!-- .section-title -->
+
+
+                                <div class="row large-columns-5 medium-columns-3 small-columns-2 row-collapse slider row-slider slider-nav-simple slider-nav-push flickity-enabled is-draggable slider-lazy-load-active" data-flickity-options="{&quot;imagesLoaded&quot;: true, &quot;groupCells&quot;: &quot;100%&quot;, &quot;dragThreshold&quot; : 5, &quot;cellAlign&quot;: &quot;left&quot;,&quot;wrapAround&quot;: true,&quot;prevNextButtons&quot;: true,&quot;percentPosition&quot;: true,&quot;pageDots&quot;: false, &quot;rightToLeft&quot;: false, &quot;autoPlay&quot; : false}" tabindex="0">
+
+                                    @foreach($list_damat as $key=>$pro)
+                                        <div class="col">
+                                            <div class="col-inner">
+                                                <div class="badge-container absolute left top z-1">
+                                                    <div class="callout badge badge-square">
+                                                        <div class="badge-inner secondary on-sale">
+                                                            <span class="onsale">-19%</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="product-small box has-hover box-normal box-text-bottom">
+                                                    <div class="box-image">
+                                                        <div class="image-overlay-add image-zoom image-cover" style="padding-top:100%;">
+                                                            <a href="{{URL::to('/san-pham/'.$pro->product_id)}}">
+                                                                <img width="358" height="358" src="{{URL::to('public/uploads/product/'.$pro->product_image)}}"  class="lazy-load attachment-original size-original" sizes="(max-width: 358px) 100vw, 358px">									</a>
+                                                            <div class="overlay fill" style="background-color: rgba(255, 255, 255, 0.27)"></div>
+                                                        </div>
+                                                        <div class="image-tools top right show-on-hover">
+                                                        </div>
+                                                        <div class="image-tools grid-tools text-center hide-for-small bottom hover-slide-in show-on-hover">
+                                                        </div>
+                                                    </div>
+                                                    <!-- box-image -->
+                                                    <div class="box-text text-left">
+                                                        <div class="title-wrapper">
+                                                            @foreach($category as $key=>$cate)
+                                                                @if($cate->category_id==$pro->category_id)
+                                                                    <p class="category uppercase is-smaller no-text-overflow product-cat op-7">
+                                                                        {{$cate->category_name}}
+                                                                    </p>
+                                                                @endif
+                                                            @endforeach
+                                                            <p class="name product-title">
+                                                                <a class="text" href="{{URL::to('/san-pham/'.$pro->product_id)}}">{{$pro->product_name}}</a>
+                                                            </p>
+                                                        </div>
+                                                        <div class="price-wrapper">
+                                                            <div class="pwb-brands-in-loop">
+                                                    <span>
+                                                        <a href="{{URL::to('/thuong-hieu/'.$pro->brand_id)}}" >
+                                                            @foreach($brand as $key=>$bras)
+                                                                @if($bras->brand_id==$pro->brand_id)
+                                                                    <img width="120" height="60" src="{{URL::to('public/uploads/brand/'.$bras->brand_image)}}" class="lazy-load attachment-thumbnail size-thumbnail" alt="">
+                                                                @endif
+                                                            @endforeach
+                                                        </a>
+                                                   </span>
+                                                            </div>
+                                                            <span class="price">
+
+                                                        <ins>
+                                                        <span class="woocommerce-Price-amount amount">{{number_format($pro->product_price)}}
+                                                            <span class="woocommerce-Price-currencySymbol">&#8363;
+                                                            </span>
+                                                        </span>
+                                                        </ins>
+                                                </span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- box-text -->
+                                                </div>
+                                                <!-- box -->
+                                            </div>
+                                            <!-- .col-inner -->
+                                        </div>
+                                        <!-- col -->
+                                    @endforeach
+
+                                </div>
+                            </div></div>
+
+                        <style scope="scope">
+
+                        </style>
+                    </div>
+                </div><!-- .section-content -->
+
+
+                <style scope="scope">
+
+                    #section_575941787 {
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                        background-color: rgb(245, 251, 246);
+                    }
+                </style>
+            </section>
+
+
+            <!--- Clinic & Spa -->
+
+            <section class="section category-row spa" id="section_676010474">
+                <div class="bg section-bg fill bg-fill  bg-loaded">
+
+
+
+
+
+                </div><!-- .section-bg -->
+
+                <div class="section-content relative">
+
+                    <div class="row" id="row-1970465483">
+                        <div class="col small-12 large-12"><div class="col-inner">
+                                <div class="tieu-de-row">
+                                    <div class="left">
+                                        <h2><a href="#" target="blank">Clinic &amp; Spa</a></h2>
+                                    </div>
+                                    <div class="clearboth"></div>
+                                </div>
+                            </div></div>
+                    </div>
+                    <div class="row row-collapse" id="row-1117372180">
+                        <div class="col cot1 medium-2 small-12 large-2"><div class="col-inner">
+                                <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_1381528674">
+                                    <div class="img-inner dark">
+                                        <img width="220" height="350" src="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/giam-beo4.jpg" data-src="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/giam-beo4.jpg" class="attachment-original size-original lazy-load-active" alt="" srcset="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/giam-beo4.jpg 220w, https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/giam-beo4-189x300.jpg 189w" data-srcset="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/giam-beo4.jpg 220w, https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/giam-beo4-189x300.jpg 189w" sizes="(max-width: 220px) 100vw, 220px">
+                                    </div>
+
+                                    <style scope="scope">
+
+                                        #image_1381528674 {
+                                            width: 100%;
+                                        }
+                                    </style>
+                                </div>
+
+                                <div class="cloud-tag">
+                                    <ul>
+                                        <li><a href="#" target="blank">Triệt lông</a></li>
+                                        <li><a href="#" target="blank">Tẩy tế bào da</a></li>
+                                        <li><a href="#" target="blank">Điều trị mụn</a></li>
+                                        <li><a href="#" target="blank">Nâng cơ</a></li>
+                                        <li><a href="#" target="blank">Chăm sóc tóc</a></li>
+                                        <li><a href="#" target="blank">Giảm béo</a></li>
+                                        <li><a href="#" target="blank">Chăm sóc da mặt</a></li>
+                                        <li><a href="#" target="blank">Trị tàn nhang</a></li>
+                                    </ul>
+                                </div>
+                            </div></div>
+                        <div class="col cot2 row-sp medium-9 small-12 large-9"><div class="col-inner">
+                                <div class="row row-collapse" id="row-1024475138">
+                                    <div class="col medium-4 small-12 large-4"><div class="col-inner">
+                                            <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_1116117423">
+                                                <a class="" href="#" target="_blank" rel="noopener noreferrer">						<div class="img-inner image-zoom dark">
+                                                        <img width="366" height="200" src="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/vichy-web-366x200.jpg" data-src="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/vichy-web-366x200.jpg" class="attachment-original size-original lazy-load-active" alt="" srcset="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/vichy-web-366x200.jpg 366w, https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/vichy-web-366x200-300x164.jpg 300w" data-srcset="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/vichy-web-366x200.jpg 366w, https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/vichy-web-366x200-300x164.jpg 300w" sizes="(max-width: 366px) 100vw, 366px">
+                                                    </div>
+                                                </a>
+                                                <style scope="scope">
+
+                                                    #image_1116117423 {
+                                                        width: 100%;
+                                                    }
+                                                </style>
+                                            </div>
+
+                                        </div></div>
+                                    <div class="col medium-4 small-12 large-4"><div class="col-inner">
+                                            <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_598401935">
+                                                <a class="" href="#" target="_self">						<div class="img-inner image-zoom dark">
+                                                        <img width="366" height="200" src="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/larocheposay-desktop-2018-09-24_2.jpg" data-src="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/larocheposay-desktop-2018-09-24_2.jpg" class="attachment-original size-original lazy-load-active" alt="" srcset="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/larocheposay-desktop-2018-09-24_2.jpg 366w, https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/larocheposay-desktop-2018-09-24_2-300x164.jpg 300w" data-srcset="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/larocheposay-desktop-2018-09-24_2.jpg 366w, https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/larocheposay-desktop-2018-09-24_2-300x164.jpg 300w" sizes="(max-width: 366px) 100vw, 366px">
+                                                    </div>
+                                                </a>
+                                                <style scope="scope">
+
+                                                    #image_598401935 {
+                                                        width: 100%;
+                                                    }
+                                                </style>
+                                            </div>
+
+                                        </div></div>
+                                    <div class="col medium-4 small-12 large-4"><div class="col-inner">
+                                            <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_1277265133">
+                                                <a class="" href="#" target="_self">						<div class="img-inner image-zoom dark">
+                                                        <img width="366" height="200" src="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/laneige_366x200_1.jpg" data-src="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/laneige_366x200_1.jpg" class="attachment-original size-original lazy-load-active" alt="" srcset="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/laneige_366x200_1.jpg 366w, https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/laneige_366x200_1-300x164.jpg 300w" data-srcset="https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/laneige_366x200_1.jpg 366w, https://shoplamdep.haiphongweb.com/wp-content/uploads/2019/02/laneige_366x200_1-300x164.jpg 300w" sizes="(max-width: 366px) 100vw, 366px">
+                                                    </div>
+                                                </a>
+                                                <style scope="scope">
+
+                                                    #image_1277265133 {
+                                                        width: 100%;
+                                                    }
+                                                </style>
+                                            </div>
+
+                                        </div></div>
+
+                                    <style scope="scope">
+
+                                    </style>
+                                </div>
+                                <div class="container section-title-container"><h3 class="section-title section-title-normal"><b></b><span class="section-title-main">Nổi bật và bán chạy</span><b></b><a href="{{URL::to('danh-muc-san-pham/'.$list_clinicspa[0]->category_id)}}" target="">+ Xem thêm<i class="icon-angle-right"></i></a></h3></div><!-- .section-title -->
+
+
+                                <div class="row large-columns-5 medium-columns-3 small-columns-2 row-collapse slider row-slider slider-nav-simple slider-nav-push flickity-enabled is-draggable slider-lazy-load-active" data-flickity-options="{&quot;imagesLoaded&quot;: true, &quot;groupCells&quot;: &quot;100%&quot;, &quot;dragThreshold&quot; : 5, &quot;cellAlign&quot;: &quot;left&quot;,&quot;wrapAround&quot;: true,&quot;prevNextButtons&quot;: true,&quot;percentPosition&quot;: true,&quot;pageDots&quot;: false, &quot;rightToLeft&quot;: false, &quot;autoPlay&quot; : false}" tabindex="0">
+
+                                    @foreach($list_clinicspa as $key=>$pro)
+                                        <div class="col">
+                                            <div class="col-inner">
+                                                <div class="badge-container absolute left top z-1">
+                                                    <div class="callout badge badge-square">
+                                                        <div class="badge-inner secondary on-sale">
+                                                            <span class="onsale">-19%</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="product-small box has-hover box-normal box-text-bottom">
+                                                    <div class="box-image">
+                                                        <div class="image-overlay-add image-zoom image-cover" style="padding-top:100%;">
+                                                            <a href="{{URL::to('/san-pham/'.$pro->product_id)}}">
+                                                                <img width="358" height="358" src="{{URL::to('public/uploads/product/'.$pro->product_image)}}"  class="lazy-load attachment-original size-original" sizes="(max-width: 358px) 100vw, 358px">									</a>
+                                                            <div class="overlay fill" style="background-color: rgba(255, 255, 255, 0.27)"></div>
+                                                        </div>
+                                                        <div class="image-tools top right show-on-hover">
+                                                        </div>
+                                                        <div class="image-tools grid-tools text-center hide-for-small bottom hover-slide-in show-on-hover">
+                                                        </div>
+                                                    </div>
+                                                    <!-- box-image -->
+                                                    <div class="box-text text-left">
+                                                        <div class="title-wrapper">
+                                                            @foreach($category as $key=>$cate)
+                                                                @if($cate->category_id==$pro->category_id)
+                                                                    <p class="category uppercase is-smaller no-text-overflow product-cat op-7">
+                                                                        {{$cate->category_name}}
+                                                                    </p>
+                                                                @endif
+                                                            @endforeach
+                                                            <p class="name product-title">
+                                                                <a class="text" href="{{URL::to('/san-pham/'.$pro->product_id)}}">{{$pro->product_name}}</a>
+                                                            </p>
+                                                        </div>
+                                                        <div class="price-wrapper">
+                                                            <div class="pwb-brands-in-loop">
+                                                    <span>
+                                                        <a href="{{URL::to('/thuong-hieu/'.$pro->brand_id)}}" >
+                                                            @foreach($brand as $key=>$bras)
+                                                                @if($bras->brand_id==$pro->brand_id)
+                                                                    <img width="120" height="60" src="{{URL::to('public/uploads/brand/'.$bras->brand_image)}}" class="lazy-load attachment-thumbnail size-thumbnail" alt="">
+                                                                @endif
+                                                            @endforeach
+                                                        </a>
+                                                   </span>
+                                                            </div>
+                                                            <span class="price">
+                                                        <del>
+
+                                                        </del>
+                                                        <ins>
+                                                        <span class="woocommerce-Price-amount amount">{{number_format($pro->product_price)}}
+                                                            <span class="woocommerce-Price-currencySymbol">&#8363;
+                                                            </span>
+                                                        </span>
+                                                        </ins>
+                                                </span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- box-text -->
+                                                </div>
+                                                <!-- box -->
+                                            </div>
+                                            <!-- .col-inner -->
+                                        </div>
+                                        <!-- col -->
+                                    @endforeach
+                                </div>
+                                <button class="flickity-button flickity-prev-next-button previous" type="button" aria-label="Previous"><svg class="flickity-button-icon" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path></svg></button><button class="flickity-button flickity-prev-next-button next" type="button" aria-label="Next"><svg class="flickity-button-icon" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path></svg></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <style scope="scope">
+
+                        </style>
+                    </div>
+                </div><!-- .section-content -->
+
+
+                <style scope="scope">
+
+                    #section_676010474 {
                         padding-top: 10px;
                         padding-bottom: 10px;
                         background-color: rgb(245, 251, 246);

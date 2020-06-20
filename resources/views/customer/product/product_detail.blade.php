@@ -101,13 +101,7 @@
                                        <img class="cart-img-icon" alt="Giỏ hàng" src="{{asset('public/customer/wp-content/uploads\2019\02\icon_01.png')}}">
                                        </span><!-- .cart-img-inner -->
                                 </a>
-                                <ul class="nav-dropdown nav-dropdown-default">
-                                    <li class="html widget_shopping_cart">
-                                        <div class="widget_shopping_cart_content">
-                                            <p class="woocommerce-mini-cart__empty-message">Chưa có sản phẩm trong giỏ hàng.</p>
-                                        </div>
-                                    </li>
-                                </ul>
+
                                 <!-- .nav-dropdown -->
                             </li>
                             <?php
@@ -403,8 +397,7 @@
                                             <div class="woocommerce-product-gallery woocommerce-product-gallery--with-images woocommerce-product-gallery--columns-4 images relative mb-half has-hover" data-columns="4">
                                                 <div class="badge-container is-larger absolute left top z-1">
                                                     <div class="callout badge badge-square">
-                                                        <div class="badge-inner secondary on-sale">
-                                                            <span class="onsale">-31%</span></div>
+
                                                     </div>
                                                 </div>
                                                 <div class="image-tools absolute top show-on-hover right z-3">
@@ -612,9 +605,7 @@
                                     <div class="product-small col has-hover product type-product post-271 status-publish instock product_cat-cham-soc-da-mat product_tag-loreal has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
                                         <div class="col-inner">
                                             <div class="badge-container absolute left top z-1">
-                                                <div class="callout badge badge-square">
-                                                    <div class="badge-inner secondary on-sale"><span class="onsale">-36%</span></div>
-                                                </div>
+
                                             </div>
                                             <div class="product-small box ">
                                                 <div class="box-image">
@@ -635,7 +626,7 @@
                                                         <p class="category uppercase is-smaller no-text-overflow product-cat op-7">
                                                             {{$pro_related->category_name}}
                                                         </p>
-                                                        <p class="name product-title"><a class="text" href="{{URL::to('/san-pham/'.$pro_related->product_id)}}">{{$pro_related->product_description}}</a></p>
+                                                        <p class="name product-title"><a class="text" href="{{URL::to('/san-pham/'.$pro_related->product_id)}}">{{$pro_related->product_name}}</a></p>
                                                     </div>
                                                     <div class="price-wrapper">
                                                         <div class="pwb-brands-in-loop">

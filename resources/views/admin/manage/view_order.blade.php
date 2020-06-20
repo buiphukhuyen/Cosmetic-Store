@@ -1,19 +1,29 @@
 
 @extends('admin.admin_layout')
 @section('list_product')
-
+    <style>
+        .element-wrapper.compact {
+            padding-bottom: 0rem;
+        }
+    </style>
     <title>Chi tiết đơn hàng</title>
     <link href="public/admin/components/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <!-- Page level plugins -->
     <script src="public/admin/components/datatables/jquery.dataTables.min.js"></script>
     <script src="public/admin/components/datatables/dataTables.bootstrap4.min.js"></script>
 
-    <!-- Page Heading -->
-    <div class="element-wrapper">
-        <h6 class="element-header">
-            CHI TIẾT ĐƠN HÀNG
-        </h6>
+    <div class="element-wrapper compact pt-4">
+        <div class="element-actions d-none d-sm-block">
+            <a class="btn btn-primary" href="{{url('print-order/'.$order_by_id[0]->order_id)}}"><i class="os-icon os-icon-ui-22" style="color: white"></i><span style="color: white">In đơn hàng</span></a>
+        </div>
+        <div class="element-wrapper">
+            <h6 class="element-header">
+                CHI TIẾT ĐƠN HÀNG
+            </h6>
+        </div>
+
     </div>
+    <!-- Page Heading -->
 
     <div class="element-wrapper">
         <div class="element-box">
@@ -157,6 +167,9 @@
                         <th>
                             Giá sản phẩm
                         </th>
+                        <th>
+                            Thành tiền
+                        </th>
                     </tr>
                     </thead>
 
@@ -185,16 +198,28 @@
                             <span class="smaller lighter">VNĐ</span>
                         </td>
 
+                        <td class="text-center">
+                        <span>
+                            {{number_format($detail->product_sales_quantity*$detail->product_price)}}
+                        </span>
+                            <span class="smaller lighter">VNĐ</span>
+                        </td>
                     </tr>
                     @endforeach
                     </tbody>
                 </table>
                 <div class="form-buttons-w text-right compact">
                     <a class="btn btn-grey"><span>{{$order_by_id[0]->payment_method}}</span></a>
+                    @if($order_by_id[0]->order_subtotal != null)
+                    <a class="btn btn-success" style="color: white">Giảm giá: <span>{{$order_by_id[0]->order_subtotal}}</span><span class="smaller lighter" style="color: white; font-size: 8pt">VNĐ</span></a>
+                    @endif
                     <a class="btn btn-primary"><i class="os-icon os-icon-ui-22" style="color: white"></i><span style="color: white">Tổng tiền:  {{$order_by_id[0]->order_total}}</span><span class="smaller lighter" style="color: white; font-size: 8pt">VNĐ</span></a>
 
                 </div>
+                @if($order_by_id[0]->order_status == "Đang chờ xử lý")
+                    <a class="btn btn-danger" href="{{\Illuminate\Support\Facades\URL::to('verify_order/'.$order_by_id[0]->order_id)}}"><i class="os-icon os-icon-check-square" style="color: white"></i><span style="color: white">DUYỆT ĐƠN</span></a>
 
+                @endif
             </div>
         </div>
     </div>

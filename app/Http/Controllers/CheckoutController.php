@@ -2,11 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use DB;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Cart;
+use App\Customer;
+use App\Order;
+use App\OrderDetails;
+use App\Shipping;
+use App\Product;
+use App\Coupon;
+use PDF;
 class CheckoutController extends Controller
 {
 
@@ -62,6 +70,7 @@ class CheckoutController extends Controller
     }
 
     public function save_shipping_order_customer(Request $request) {
+
         //Thêm thông tin shipping
         $data = array();
         $data['shipping_name'] = $request->shipping_name;
@@ -84,13 +93,13 @@ class CheckoutController extends Controller
         $order_data['customer_id'] = Session::get('customer_id');
         $order_data['shipping_id'] = Session::get('shipping_id');
         $order_data['payment_id'] = $payment_id;
+        $order_data['order_subtotal'] = Cart::discount();
         $order_data['order_total'] = Cart::total();
         $order_data['order_status'] = 'Đang chờ xử lý';
         $order_id = DB::table('tbl_order')->insertGetId($order_data);
         Session::put('order_id',$order_id);
 
         //Thêm chi tiết hoá đơn
-
         $content = Cart::content();
         foreach($content as $v_content){
             $order_d_data['order_id'] = $order_id;
@@ -98,6 +107,7 @@ class CheckoutController extends Controller
             $order_d_data['product_name'] = $v_content->name;
             $order_d_data['product_price'] = $v_content->price;
             $order_d_data['product_sales_quantity'] = $v_content->qty;
+            $order_d_data['product_coupon'] = $request->product_coupon;
             DB::table('tbl_order_details')->insert($order_d_data);
         }
         return Redirect::to('/done-payment');
@@ -146,4 +156,186 @@ class CheckoutController extends Controller
     }
 
 
+    public function print_order($checkout_code){
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($this->print_order_convert($checkout_code));
+        return $pdf->stream();
+    }
+
+    public function print_order_convert($checkout_code){
+        $order = Order::where('order_id',$checkout_code)->get();
+        foreach($order as $key => $ord){
+            $customer_id = $ord->customer_id;
+            $shipping_id = $ord->shipping_id;
+        }
+        $customer = Customer::where('customer_id',$customer_id)->first();
+        $shipping = Shipping::where('shipping_id',$shipping_id)->first();
+
+        $order_details_product = OrderDetails::with('product')->where('order_id', $checkout_code)->get();
+
+        foreach($order_details_product as $key => $order_d){
+
+            $product_coupon = $order_d->product_coupon;
+        }
+        if($product_coupon != null){
+            $coupon = Coupon::where('coupon_code',$product_coupon)->first();
+            $coupon_number = $coupon->coupon_discount;
+            $coupon_echo = $coupon_number.'%';
+
+        }else{
+            $coupon_number = 0;
+            $coupon_echo = '0';
+        }
+
+        $output = '';
+
+        $output.='<style>body{
+			font-family: DejaVu Sans;
+		}
+		.table-styling{
+			border:1px solid #000;
+		}
+		.table-styling tbody tr td{
+			border:1px solid #000;
+		}
+		</style>
+		<h3><center>Cửa hàng Mỹ phẩm - Cosmetic Store</center></h3>
+		<h3><center>ĐƠN ĐẶT HÀNG</center></h3>
+		<p>Người đặt hàng</p>
+		<table class="table-styling">
+				<thead>
+					<tr>
+						<th>Tên khách đặt</th>
+						<th>Số điện thoại</th>
+						<th>Email</th>
+					</tr>
+				</thead>
+				<tbody>';
+
+        $output.='
+					<tr>
+						<td>'.$customer->customer_name.'</td>
+						<td>'.$customer->customer_phone.'</td>
+						<td>'.$customer->customer_email.'</td>
+
+					</tr>';
+
+
+        $output.='
+				</tbody>
+
+		</table>
+
+		<p>Ship hàng tới</p>
+			<table class="table-styling">
+				<thead>
+					<tr>
+						<th>Tên người nhận</th>
+						<th>Địa chỉ</th>
+						<th>SĐT</th>
+						<th>Email</th>
+						<th>Ghi chú</th>
+					</tr>
+				</thead>
+				<tbody>';
+
+        $output.='
+					<tr>
+						<td>'.$shipping->shipping_name.'</td>
+						<td>'.$shipping->shipping_address.'</td>
+						<td>'.$shipping->shipping_phone.'</td>
+						<td>'.$shipping->shipping_email.'</td>
+						<td>'.$shipping->shipping_notes.'</td>
+
+					</tr>';
+        $output.='
+				</tbody>
+
+		</table>
+
+		<p>Đơn hàng đặt</p>
+			<table class="table-styling">
+				<thead>
+					<tr>
+						<th>Tên sản phẩm</th>
+						<th>Mã giảm giá</th>
+						<th>Số lượng</th>
+						<th>Giá sản phẩm</th>
+						<th>Thành tiền</th>
+					</tr>
+				</thead>
+				<tbody>';
+
+        $total = 0;
+
+        foreach($order_details_product as $key => $product){
+
+            $subtotal = $product->product_price*$product->product_sales_quantity;
+            $total+=$subtotal;
+
+            if($product->product_coupon!='no'){
+                $product_coupon = $product->product_coupon;
+            }else{
+                $product_coupon = 'Không mã';
+            }
+
+            $output.='
+					<tr>
+						<td>'.$product->product_name.'</td>
+						<td>'.$product_coupon.'</td>
+						<td>'.$product->product_sales_quantity.'</td>
+						<td>'.number_format($product->product_price,0,',','.').'đ'.'</td>
+						<td>'.number_format($subtotal,0,',','.').'đ'.'</td>
+
+					</tr>';
+        }
+            $total_coupon = $total - $coupon_number;
+
+
+        $output.= '<tr>
+				<td colspan="2">
+					<p>Tổng giảm: '.$coupon_echo.'</p>
+					<p>Thanh toán : '.number_format($total_coupon,0,',','.').'đ'.'</p>
+				</td>
+		</tr>';
+        $output.='
+				</tbody>
+
+		</table>
+
+		<br/>
+			<table>
+				<thead>
+					<tr>
+						<th width="200px">Người lập phiếu</th>
+						<th width="800px">Người nhận</th>
+
+					</tr>
+				</thead>
+				<tbody>';
+
+        $now = Carbon::now();
+        $output.='
+
+				</tbody>
+
+		</table>
+		<br/><br/><br/><br/><br/><br/><br/><br/>
+        <p style="text-align: right">Ngày lập phiếu: '.$now.'</p>
+		';
+
+
+        return $output;
+
+    }
+
+    public function verify_order($order_id) {
+        DB::table('tbl_order')->where('order_id', $order_id)->update(['order_status' => 'Đã duyệt']);
+        return Redirect::to('manage-order');
+    }
+
+    public function unverify_order($order_id) {
+        DB::table('tbl_order')->where('order_id', $order_id)->update(['order_status' => 'Đang chờ xử lý']);
+        return Redirect::to('manage-order');
+    }
 }

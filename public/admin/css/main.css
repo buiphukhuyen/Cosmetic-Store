@@ -15775,7 +15775,7 @@ body.menu-side-right .layout-w {
 }
 
 .element-wrapper .element-header {
-    margin-top: 1rem;
+    margin-top: 0rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     padding-bottom: 1rem;
     margin-bottom: 1rem;
