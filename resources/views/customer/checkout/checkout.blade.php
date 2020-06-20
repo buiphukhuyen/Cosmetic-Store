@@ -107,7 +107,6 @@
                                 <ul class="nav-dropdown nav-dropdown-default">
                                     <li class="html widget_shopping_cart">
                                         <div class="widget_shopping_cart_content">
-                                            <p class="woocommerce-mini-cart__empty-message">Chưa có sản phẩm trong giỏ hàng.</p>
                                         </div>
                                     </li>
                                 </ul>
@@ -332,10 +331,24 @@
                                                         <tfoot>
                                                         <tr class="cart-subtotal">
                                                             <th>Tạm tính</th>
-                                                            <td><span class="woocommerce-Price-amount amount">{{Cart::tax()}}<span class="woocommerce-Price-currencySymbol">&#8363;</span></span></td>
+                                                            <td><span class="woocommerce-Price-amount amount">{{Cart::initial()}}<span class="woocommerce-Price-currencySymbol">&#8363;</span></span></td>
                                                         </tr>
+                                                        @if(\Illuminate\Support\Facades\Session::get('coupon'))
+                                                            @foreach(\Illuminate\Support\Facades\Session::get('coupon') as $key=>$coupon)
+                                                                <tr class="cart-subtotal">
+                                                                    <th> Mã giảm giá ({{$coupon['coupon_code']}})</th>
+                                                                    <input name="product_coupon" value="{{$coupon['coupon_code']}}" hidden/>
+                                                                    <td data-title="Giảm"><span class="woocommerce-Price-amount amount"> {{$coupon['coupon_discount']}} <span class="woocommerce-Price-currencySymbol">%</span></span></td>
+                                                                </tr>
+                                                                <tr class="cart-subtotal">
+                                                                    <th>Số tiền giảm</th>
+                                                                    <td data-title="Giảm"><span class="woocommerce-Price-amount amount"> {{Cart::setGlobalDiscount($coupon['coupon_discount'])}} {{Cart::discount()}} <span class="woocommerce-Price-currencySymbol"> &#8363;</span></span></td>
+                                                                </tr>
+
+                                                            @endforeach
+                                                        @endif
                                                         <tr class="order-total">
-                                                            <th>Tổng</th>
+                                                            <th>Tổng tiền thanh toán</th>
                                                             <td><strong><span class="woocommerce-Price-amount amount">{{Cart::total()}}<span class="woocommerce-Price-currencySymbol">&#8363;</span></span></strong> </td>
                                                         </tr>
 

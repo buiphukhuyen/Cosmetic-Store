@@ -40,7 +40,7 @@
             -------------------->
             <div class="menu-mobile menu-activated-on-click color-scheme-dark">
                 <div class="mm-logo-buttons-w">
-                    <a class="mm-logo" href="index.html"><img src="/img/logo.png"><span>QuizHutech</span></a>
+                    <a class="mm-logo" href="index.html"><img src="{{asset('public/customer/wp-content/uploads\2019\05\shop3.jpg')}}"><span>QuizHutech</span></a>
                     <div class="mm-buttons">
                         <div class="content-panel-open">
                             <div class="os-icon os-icon-grid-circles"></div>
@@ -445,8 +445,8 @@
             -------------------->
             <div class="menu-w color-scheme-light color-style-transparent menu-position-side menu-side-left menu-layout-compact sub-menu-style-over sub-menu-color-bright selected-menu-color-light menu-activated-on-hover menu-has-selected-link">
                 <div class="logo-w">
-                    <a class="logo" href="/">
-                        <img src="/favicon.ico" />
+                    <a class="logo" href="{{URL::to('/dashboard')}}">
+
                         <div class="logo-label" style="font-size:18px; font-weight:600">
                             Cosmetic<sup>Store</sup>
                         </div>
@@ -460,18 +460,44 @@
                         <span style="font-weight:bold; font-size:15px">QUẢN LÝ</span>
                     </li>
                     <li class="selected has-sub-menu">
-                        <a href="{{URL::to('/list_category_product')}}">
+                        <a href="{{URL::to('/list_customer')}}">
                             <div class="icon-w">
                                 <div class="os-icon os-icon-users"></div>
                             </div>
-                            <span>Danh mục sản phẩm</span>
+                            <span>Khách hàng</span>
                         </a>
                         <div class="sub-menu-w">
                             <div class="sub-menu-header">
-                                Danh mục sản phẩm
+                                Khách hàng
                             </div>
                             <div class="sub-menu-icon">
                                 <i class="os-icon os-icon-users"></i>
+                            </div>
+                            <div class="sub-menu-i">
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="{{URL::to('/add_customer')}}">Thêm khách hàng</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{URL::to('/list_customer')}}">Danh sách khách hàng</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="selected has-sub-menu">
+                        <a href="{{URL::to('/list_category_product')}}">
+                            <div class="icon-w">
+                                <div class="os-icon os-icon-layers"></div>
+                            </div>
+                            <span>Danh mục</span>
+                        </a>
+                        <div class="sub-menu-w">
+                            <div class="sub-menu-header">
+                                Danh mục
+                            </div>
+                            <div class="sub-menu-icon">
+                                <i class="os-icon os-icon-layers"></i>
                             </div>
                             <div class="sub-menu-i">
                                 <ul class="sub-menu">
@@ -488,16 +514,16 @@
                     <li class=" has-sub-menu">
                         <a href="{{URL::to('/list_brand')}}">
                             <div class="icon-w">
-                                <div class="os-icon os-icon-hierarchy-structure-2"></div>
+                                <div class="os-icon os-icon-award"></div>
                             </div>
-                            <span>Thương hiệu sản phẩm</span>
+                            <span>Thương hiệu</span>
                         </a>
                         <div class="sub-menu-w">
                             <div class="sub-menu-header">
-                                Thương hiệu sản phẩm
+                                Thương hiệu
                             </div>
                             <div class="sub-menu-icon">
-                                <i class="os-icon os-icon-hierarchy-structure-2"></i>
+                                <i class="os-icon os-icon-award"></i>
                             </div>
                             <div class="sub-menu-i">
                                 <ul class="sub-menu">
@@ -515,7 +541,7 @@
                     <li class=" has-sub-menu">
                         <a href="{{URL::to('/list_product')}}">
                             <div class="icon-w">
-                                <div class="os-icon os-icon-hierarchy-structure-2"></div>
+                                <div class="os-icon os-icon-shopping-bag"></div>
                             </div>
                             <span>Sản phẩm</span>
                         </a>
@@ -524,7 +550,7 @@
                                 Sản phẩm
                             </div>
                             <div class="sub-menu-icon">
-                                <i class="os-icon os-icon-users"></i>
+                                <i class="os-icon os-icon-shopping-bag"></i>
                             </div>
                             <div class="sub-menu-i">
                                 <ul class="sub-menu">
@@ -541,7 +567,7 @@
                     <li class=" has-sub-menu">
                         <a href="{{URL::to('/manage-order')}}">
                             <div class="icon-w">
-                                <div class="os-icon os-icon-hierarchy-structure-2"></div>
+                                <div class="os-icon os-icon-ui-49"></div>
                             </div>
                             <span>Đơn hàng</span>
                         </a>
@@ -550,7 +576,7 @@
                                 Đơn hàng
                             </div>
                             <div class="sub-menu-icon">
-                                <i class="os-icon os-icon-users"></i>
+                                <i class="os-icon os-icon-ui-49"></i>
                             </div>
                             <div class="sub-menu-i">
                                 <ul class="sub-menu">
@@ -565,81 +591,12 @@
                         </div>
                     </li>
                     <li class="sub-header">
-                        <span style="font-weight:bold; font-size:15px">ĐƠN HÀNG</span>
-                    </li>
-                    <li class=" has-sub-menu">
-                        <a asp-controller="Subject" asp-action="Index">
-                            <div class="icon-w">
-                                <div class="os-icon os-icon-package"></div>
-                            </div>
-                            <span>Đơn hàng</span>
-                        </a>
-                        <div class="sub-menu-w">
-                            <div class="sub-menu-header">
-                                Đơn hàng
-                            </div>
-                            <div class="sub-menu-icon">
-                                <i class="os-icon os-icon-package"></i>
-                            </div>
-                            <div class="sub-menu-i">
-                                <ul class="sub-menu">
-                                    <li>
-                                        <a asp-action="Prepare" asp-controller="QBank">Thêm mới câu hỏi</a>
-                                    </li>
-                                    <li>
-                                        <a href="apps_support_dashboard.html">Danh sách câu hỏi</a>
-                                    </li>
-                                    <li>
-                                        <a href="apps_crypto.html">Thêm mới câu hỏi từ MS Word <strong class="badge badge-danger">Mới</strong></a>
-                                    </li>
-                                    <li>
-                                        <a href="apps_crypto.html">Thêm mới câu hỏi từ MS Excel <strong class="badge badge-danger">Mới</strong></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class=" has-sub-menu">
-                        <a href="#">
-                            <div class="icon-w">
-                                <div class="os-icon os-icon-file-text"></div>
-                            </div>
-                            <span>Đề Luyện/Thi</span>
-                        </a>
-                        <div class="sub-menu-w">
-                            <div class="sub-menu-header">
-                                Đề Luyện/Thi
-                            </div>
-                            <div class="sub-menu-icon">
-                                <i class="os-icon os-icon-file-text"></i>
-                            </div>
-                            <div class="sub-menu-i">
-                                <ul class="sub-menu">
-                                    <li>
-                                        <a href="misc_invoice.html">Thêm Đề Luyện/Thi mới</a>
-                                    </li>
-                                    <li>
-                                        <a href="misc_charts.html">Danh sách Đề Luyện/Thi</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class=" has-sub-menu" style="padding-bottom:15px">
-                        <a href="#">
-                            <div class="icon-w">
-                                <div class="os-icon os-icon-edit-32"></div>
-                            </div>
-                            <span>Lịch sử làm bài</span>
-                        </a>
-                    </li>
-                    <li class="sub-header">
-                        <span style="font-weight:bold; font-size:15px">HỆ THỐNG</span>
+                        <span style="font-weight:bold; font-size:15px">KHUYẾN MÃI</span>
                     </li>
                     <li class=" has-sub-menu">
                         <a href="{{URL::to('manage-banner')}}">
                             <div class="icon-w">
-                                <div class="os-icon os-icon-mail"></div>
+                                <div class="os-icon os-icon-documents-07"></div>
                             </div>
                             <span>Banner</span>
                         </a>
@@ -648,7 +605,7 @@
                                 Banner
                             </div>
                             <div class="sub-menu-icon">
-                                <i class="os-icon os-icon-mail"></i>
+                                <i class="os-icon os-icon-documents-07"></i>
                             </div>
                             <div class="sub-menu-i">
                                 <ul class="sub-menu">
@@ -666,7 +623,7 @@
                     <li class=" has-sub-menu">
                         <a href="{{URL::to('manage-coupon')}}">
                             <div class="icon-w">
-                                <div class="os-icon os-icon-users"></div>
+                                <div class="os-icon os-icon-bar-chart-down"></div>
                             </div>
                             <span>Mã giảm giá</span>
                         </a>
@@ -675,7 +632,7 @@
                                 Mã giảm giá
                             </div>
                             <div class="sub-menu-icon">
-                                <i class="os-icon os-icon-users"></i>
+                                <i class="os-icon os-icon-bar-chart-down"></i>
                             </div>
                             <div class="sub-menu-i">
                                 <ul class="sub-menu">
@@ -684,6 +641,35 @@
                                     </li>
                                     <li>
                                         <a href="{{URL::to('manage-coupon')}}">Danh sách Mã giảm giá</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="sub-header">
+                        <span style="font-weight:bold; font-size:15px">HỆ THỐNG</span>
+                    </li>
+                    <li class="selected has-sub-menu">
+                        <a href="{{URL::to('/list_admin')}}">
+                            <div class="icon-w">
+                                <div class="os-icon os-icon-users"></div>
+                            </div>
+                            <span>Người quản trị</span>
+                        </a>
+                        <div class="sub-menu-w">
+                            <div class="sub-menu-header">
+                                Người quản trị
+                            </div>
+                            <div class="sub-menu-icon">
+                                <i class="os-icon os-icon-users"></i>
+                            </div>
+                            <div class="sub-menu-i">
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="{{URL::to('/add_admin')}}">Thêm Người quản trị</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{URL::to('/list_admin')}}">Danh sách Người quản trị</a>
                                     </li>
                                 </ul>
                             </div>
@@ -729,7 +715,7 @@
                             <div class="icon-w">
                                 <div class="os-icon os-icon-grid"></div>
                             </div>
-                            <span>Quản lý Tài liệu</span>
+                            <span>Quản lý Tin tức</span>
                         </a>
                         <div class="sub-menu-w">
                             <div class="sub-menu-header">
@@ -843,28 +829,7 @@
                         <!--------------------
             START - Settings Link in secondary top menu
             -------------------->
-                        <div class="top-icon top-settings os-dropdown-trigger os-dropdown-position-left">
-                            <i class="os-icon os-icon-ui-46"></i>
-                            <div class="os-dropdown">
-                                <div class="icon-w">
-                                    <i class="os-icon os-icon-ui-46"></i>
-                                </div>
-                                <ul>
-                                    <li>
-                                        <a href="users_profile_small.html"><i class="os-icon os-icon-ui-49"></i><span>Thông tin tài khoản</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="users_profile_small.html"><i class="os-icon os-icon-grid-10"></i><span>Billing Info</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="users_profile_small.html"><i class="os-icon os-icon-ui-44"></i><span>My Invoices</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="logout_admin"><i class="os-icon os-icon-ui-15"></i><span>Đăng xuất</span></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+
                         <!--------------------
             END - Settings Link in secondary top menu
             -------------------->
@@ -874,16 +839,16 @@
                         <div class="logged-user-w">
                             <div class="logged-user-i">
                                 <div class="avatar-w">
-                                    <img alt="" src="https://scontent.fdad3-2.fna.fbcdn.net/v/t1.0-9/16427671_621067844760417_1913042800580632288_n.jpg?_nc_cat=107&_nc_sid=174925&_nc_ohc=qlKbnglvTlsAX_Pdv0C&_nc_ht=scontent.fdad3-2.fna&oh=2e23642f77396c59f2a983f8159e687d&oe=5ECBFE21">
+                                    <img alt="" src="{{asset("public/uploads/admin/khuyen.jpg")}}">
                                 </div>
                                 <div class="logged-user-menu color-style-bright">
                                     <div class="logged-user-avatar-info">
                                         <div class="avatar-w">
-                                            <img alt="" src="https://scontent.fdad3-2.fna.fbcdn.net/v/t1.0-9/16427671_621067844760417_1913042800580632288_n.jpg?_nc_cat=107&_nc_sid=174925&_nc_ohc=qlKbnglvTlsAX_Pdv0C&_nc_ht=scontent.fdad3-2.fna&oh=2e23642f77396c59f2a983f8159e687d&oe=5ECBFE21">
+                                            <img alt="" src="{{asset("public/uploads/admin/khuyen.jpg")}}">
                                         </div>
                                         <div class="logged-user-info-w">
                                             <div class="logged-user-name">
-                                                Maria Gomez
+                                                {{\Illuminate\Support\Facades\Session::get('admin_name')}}
                                             </div>
                                             <div class="logged-user-role">
                                                 Administrator
@@ -895,19 +860,10 @@
                                     </div>
                                     <ul>
                                         <li>
-                                            <a href="apps_email.html"><i class="os-icon os-icon-mail-01"></i><span>Incoming Mail</span></a>
+                                            <a href="{{URL::to('edit_admin/'.\Illuminate\Support\Facades\Session::get('admin_id'))}}"><i class="os-icon os-icon-mail-01"></i><span>Thông tin cá nhân</span></a>
                                         </li>
                                         <li>
-                                            <a href="users_profile_big.html"><i class="os-icon os-icon-user-male-circle2"></i><span>Profile Details</span></a>
-                                        </li>
-                                        <li>
-                                            <a href="users_profile_small.html"><i class="os-icon os-icon-coins-4"></i><span>Billing Details</span></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="os-icon os-icon-others-43"></i><span>Notifications</span></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="os-icon os-icon-signs-11"></i><span>Logout</span></a>
+                                            <a href="{{URL::to('logout_admin')}}"><i class="os-icon os-icon-signs-11"></i><span>Đăng xuất</span></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -952,6 +908,7 @@
                          <!--------------------
                             NỘI DUNG
                         -------------------->
+                            @yield('dashboard')
                             <!--------Danh mục--------->
                             @yield('add_category')
                             @yield('list_category')
@@ -981,7 +938,16 @@
                             </h6>
                             <div class="element-box-tp">
                                 <div class="el-buttons-list full-width">
-                                    <a class="btn btn-white btn-sm" href="#"><i class="os-icon os-icon-delivery-box-2"></i><span>Tạo mới Sinh viên</span></a><a class="btn btn-white btn-sm" href="#"><i class="os-icon os-icon-window-content"></i><span>Tạo mới Ngân hàng câu hỏi</span></a><a class="btn btn-white btn-sm" href="#"><i class="os-icon os-icon-wallet-loaded"></i><span>Tạo mới Đề thi</span></a>
+                                    <a class="btn btn-white btn-sm" href="{{URL::to('add_customer')}}">
+                                        <i class="os-icon os-icon-users"></i>
+                                        <span>Tạo mới Khách hàng</span></a>
+                                    <a class="btn btn-white btn-sm" href="{{URL::to('add_product')}}">
+                                        <i class="os-icon os-icon-shopping-bag"></i>
+                                        <span>Tạo mới Sản phẩm</span></a>
+                                    <a class="btn btn-white btn-sm" href="{{URL::to('add_customer')}}">
+                                        <i class="os-icon os-icon-ui-49"></i>
+                                        <span>Quản lý đơn hàng</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>

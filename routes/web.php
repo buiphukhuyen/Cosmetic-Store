@@ -21,6 +21,25 @@ Route::get('/', 'HomeController@index');
     Route::get('/dashboard','AdminController@dashboard');
     Route::post('/login_admin','AdminController@login_admin');
     Route::get('/logout_admin','AdminController@logout_admin');
+    Route::get('/add_admin','AdminController@add_admin');
+    Route::post('/insert_admin','AdminController@save_admin');
+    Route::get('/list_admin','AdminController@list_admin');
+    Route::get('/active_admin/{admin_id}','AdminController@active_admin');
+    Route::get('/unactive_admin/{admin_id}','AdminController@unactive_admin');
+    Route::get('/edit_admin/{admin_id}','AdminController@edit_admin');
+    Route::post('/update_admin/{admin_id}','AdminController@update_admin');
+    Route::get('/update_admin/{admin_id}','AdminController@update_admin');
+    Route::get('/send-mail','AdminController@send_mail');
+
+    //Customer
+        Route::get('/add_customer','CustomerController@add_customer');
+        Route::post('/insert_customer','CustomerController@save_customer');
+        Route::get('/list_customer','CustomerController@list_customer');
+        Route::get('/active_customer/{customer_id}','CustomerController@active_customer');
+        Route::get('/unactive_customer/{customer_id}','CustomerController@unactive_customer');
+        Route::get('/edit_customer/{customer_id}','CustomerController@edit_customer');
+        Route::post('/update_customer/{customer_id}','CustomerController@update_customer');
+        Route::get('/delete_customer/{customer_id}','CustomerController@delete_customer');
 
     //Category Product
         Route::get('/add_category_product','CategoryProduct@add_category');
@@ -56,6 +75,9 @@ Route::get('/', 'HomeController@index');
     //Order
         Route::get('/manage-order','CheckoutController@manage_order');
         Route::get('/view-order/{order_id}','CheckoutController@view_order');
+        Route::get('/print-order/{order_id}','CheckoutController@print_order');
+        Route::get('/verify_order/{order_id}','CheckoutController@verify_order');
+        Route::get('/unverify_order/{order_id}','CheckoutController@unverify_order');
 
     //Banner
         Route::get('/manage-banner','SliderController@manage_banner');
@@ -69,6 +91,7 @@ Route::get('/', 'HomeController@index');
 
     //Coupon
         Route::post('/check-coupon','CartController@check_coupon');
+        Route::post('/uncheck-coupon','CartController@uncheck_coupon');
         Route::get('/manage-coupon','CouponController@manage_coupon');
         Route::get('/add-coupon','CouponController@add_coupon');
         Route::post('/insert-coupon','CouponController@insert_coupon');

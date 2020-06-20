@@ -18,8 +18,10 @@ class HomeController extends Controller
             ->orderby('tbl_product.product_id','desc')->get();*/
 
         $list_product = DB::table('tbl_product')->where('product_status','1')->orderby('product_id','desc')->limit(15)->get();
-
-        return view ('customer.home')->with('category',$cate_product)->with('brand', $brand_product)->with('product', $list_product)->with('slider',$slider);
+        $list_trangdiem = DB::table('tbl_product')->where('product_status','1')->where('category_id',11)->orderby('product_id','desc')->limit(8)->get();
+        $list_damat = DB::table('tbl_product')->where('product_status','1')->where('category_id',7)->orderby('product_id','desc')->limit(8)->get();
+        $list_clinicspa = DB::table('tbl_product')->where('product_status','1')->where('category_id',9)->orderby('product_id','desc')->limit(8)->get();
+        return view ('customer.home')->with('category',$cate_product)->with('brand', $brand_product)->with('product', $list_product)->with('slider',$slider)->with('list_trangdiem', $list_trangdiem)->with('list_damat', $list_damat)->with('list_clinicspa', $list_clinicspa);
     }
 
     public function search(Request $request) {
