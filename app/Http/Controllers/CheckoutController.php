@@ -15,6 +15,7 @@ use App\Shipping;
 use App\Product;
 use App\Coupon;
 use PDF;
+use Mail;
 class CheckoutController extends Controller
 {
 
@@ -329,8 +330,27 @@ class CheckoutController extends Controller
 
     }
 
+
     public function verify_order($order_id) {
         DB::table('tbl_order')->where('order_id', $order_id)->update(['order_status' => 'Đã duyệt']);
+
+        //Gửi mail xác nhận
+        $to_name = "Customer Store";
+        $to_email = "boysmarts98@gmail.com";//send to this email
+
+        //Gửi mail xác nhận
+        $to_name = "Customer Store";
+        $to_email = "boysmarts98@gmail.com";//send to this email
+
+        $data = array("name"=>"Nội dung","body"=>"Xác nhận đơn hàng");
+
+        //body of mail.blade.php
+        Mail::send('admin.manage.send_mail',$data,function($message) use ($to_name,$to_email){
+            $message->to($to_email)->subject('Xác nhận thông tin đặt hàng!');//send this mail with subject
+            $message->from($to_email,$to_name);//send from this mail
+        });
+
+
         return Redirect::to('manage-order');
     }
 

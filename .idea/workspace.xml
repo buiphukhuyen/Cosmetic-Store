@@ -20,56 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de5e1244-d227-48b5-9578-ee38f2dec410" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Customer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Order.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/OrderDetails.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Product.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Shipping.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/product/514.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/product/517.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/product/522.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/product/526.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/product/55.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/product/553.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/product/555.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/product/563.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/product/580.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/product/594.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/product/asus-vivobook-x40930.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/product/asus-vivobook-x40934.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/user/add_admin.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/user/add_customer.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/user/edit_admin.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/user/edit_customer.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/user/list_admin.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/user/list_customer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/applestore.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/applestore.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/manage/send_mail.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CheckoutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CheckoutController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/admin_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/admin_layout.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/manage/order.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/manage/order.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/manage/view_order.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/manage/view_order.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/customer/cart/show_cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/customer/cart/show_cart.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/customer/category/show_brand.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/customer/category/show_brand.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/customer/category/show_category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/customer/category/show_category.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/customer/checkout/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/customer/checkout/checkout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/customer/checkout/done_payment.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/customer/checkout/done_payment.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/customer/checkout/login_checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/customer/checkout/login_checkout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/customer/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/customer/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/customer/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/customer/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/customer/product/product_detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/customer/product/product_detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/customer/product/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/customer/product/search.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -285,7 +242,7 @@
       <workItem from="1592448383873" duration="18880000" />
       <workItem from="1592555151628" duration="689000" />
       <workItem from="1592573231140" duration="9656000" />
-      <workItem from="1592624448361" duration="2008000" />
+      <workItem from="1592624448361" duration="5739000" />
     </task>
     <servers />
   </component>

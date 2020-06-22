@@ -295,7 +295,7 @@
                                                 <tr>
                                                     <td colspan="6" class="actions clear">
                                                         <div class="continue-shopping pull-left text-left">
-                                                            <a class="button-continue-shopping button primary is-outline"  href="https://shoplamdep.haiphongweb.com/mua/">
+                                                            <a class="button-continue-shopping button primary is-outline"  href=".">
                                                                 &#8592; Tiếp tục xem sản phẩm    </a>
                                                         </div>
                                                         <button type="submit" class="button primary mt-0 pull-left small" name="update_cart" value="Cập nhật giỏ hàng">Cập nhật giỏ hàng</button>

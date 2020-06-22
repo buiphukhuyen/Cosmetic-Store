@@ -31,7 +31,7 @@
                         <div class="col-sm-4 col-xxxl-3">
                             <a class="element-box el-tablo" href="#">
                                 <div class="label">
-                                    Sản phẩm đã bán
+                                    Đơn hàng đã đặt
                                 </div>
                                 <div class="value">
                                     {{$count_product_sold}}
@@ -82,10 +82,10 @@
                 <table class="table table-lightborder">
                     <thead>
                     <tr>
-                        <th>
+                        <th class="text-center">
                             Khách hàng
                         </th>
-                        <th>
+                        <th class="text-center">
                             Thời gian đặt
                         </th>
                         <th class="text-center">

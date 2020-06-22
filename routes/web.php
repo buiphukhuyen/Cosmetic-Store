@@ -29,7 +29,7 @@ Route::get('/', 'HomeController@index');
     Route::get('/edit_admin/{admin_id}','AdminController@edit_admin');
     Route::post('/update_admin/{admin_id}','AdminController@update_admin');
     Route::get('/update_admin/{admin_id}','AdminController@update_admin');
-    Route::get('/send-mail','AdminController@send_mail');
+
 
     //Customer
         Route::get('/add_customer','CustomerController@add_customer');
@@ -78,6 +78,7 @@ Route::get('/', 'HomeController@index');
         Route::get('/print-order/{order_id}','CheckoutController@print_order');
         Route::get('/verify_order/{order_id}','CheckoutController@verify_order');
         Route::get('/unverify_order/{order_id}','CheckoutController@unverify_order');
+        Route::get('/send-mail','CheckoutController@send_mail');
 
     //Banner
         Route::get('/manage-banner','SliderController@manage_banner');
